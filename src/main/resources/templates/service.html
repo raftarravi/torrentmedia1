@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torrent Media</title>
+    <link rel="stylesheet" href="css/service.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<!-- Header -->
+<div class="header">
+    <div class="logo">Torrent<span>Media</span><br><small>GROW DIGITALLY WITH US</small></div>
+    <div class="nav">
+        <a th:class="${activePage == 'home' ? 'active' : ''}" th:href="@{/}" th:text="'Home'"></a>
+        <a th:class="${activePage == 'about' ? 'active' : ''}" th:href="@{/about}" th:text="'About Us'"></a>
+        <a th:class="${activePage == 'services' ? 'active' : ''}" th:href="@{/services}" th:text="'Services'"></a>
+        <a th:href="@{/blog}" th:text="'Blog'"></a>
+        <a th:href="@{/faq}" th:text="'FAQ'"></a>
+        <a th:href="@{/contact}" th:text="'Contact Us'"></a>
+        <div class="search-container">
+            <form th:action="@{/search}" method="get">
+                <input type="text" name="query" placeholder="Search..." required>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="search-call">
+        <a th:href="'tel:+91-7050132882'" class="call-btn">Call Anytime: +91-7050132882</a>
+    </div>
+</div>
+
+<!-- Service Hero Section -->
+<div class="service-component">
+    <div class="service-header">
+        <div class="overlay"></div>
+        <div class="content animate-fade-in-up">
+            <h1>Services</h1>
+            <p>Transform your business with cutting-edge IT, SEO, digital marketing, and design solutions at Torrent Media.</p>
+        </div>
+    </div>
+    <div class="service-content">
+        <div class="overlay"></div>
+        <div class="content animate-scale-in">
+            <h2>Our Services</h2>
+            <h3>The Ultimate Solutions by Torrent Media</h3>
+            <p>We deliver a comprehensive suite of IT, SEO, digital marketing, design, development, and sales solutions crafted to propel your business to new heights.</p>
+        </div>
+    </div>
+    <div class="side-icons">
+        <a th:href="'tel:+91-7050132882'" class="animate-scale-in">📞</a>
+        <a href="#" class="animate-scale-in">⬆</a>
+        <a th:href="'mailto:ranjan.ravi1204@gmail.com'" class="animate-scale-in">📧</a>
+    </div>
+</div>
+
+<!-- Service Cards -->
+<div class="content">
+    <a th:href="@{/services/web-design}" class="service-card animate-fade-in-up">
+        <img src="/images/web-design.jpeg" alt="Web Design">
+        <h3>Web Design & Development Services</h3>
+    </a>
+    <a th:href="@{/services/social-media}" class="service-card animate-fade-in-up">
+        <img src="/images/social-media.avif" alt="Social Media">
+        <h3>Social Media Marketing Services</h3>
+    </a>
+    <a th:href="@{/services/paid-ads}" class="service-card animate-fade-in-up">
+        <img src="/images/paid-ads.jpeg" alt="Paid Ads">
+        <h3>Paid Advertisement (Google & Meta Ads)</h3>
+    </a>
+    <a th:href="@{/services/branding}" class="service-card animate-fade-in-up">
+        <img src="/images/branding.jpeg" alt="Branding">
+        <h3>Branding & Logo Designing</h3>
+    </a>
+    <a th:href="@{/services/video-editing}" class="service-card animate-fade-in-up">
+        <img src="/images/video-editing.jpeg" alt="Video Editing">
+        <h3>Video Editing & Photoshoot Services</h3>
+    </a>
+    <a th:href="@{/services/content-marketing}" class="service-card animate-fade-in-up">
+        <img src="/images/contentmarketing.jpeg" alt="Content Marketing">
+        <h3>Content & Additional Marketing Services</h3>
+    </a>
+</div>
+
+<!-- Premium Services -->
+<div class="flecontainer">
+    <div class="flebackground-pattern"></div>
+    <div class="flecontent">
+        <div class="fleheading animate-fade-in-up">What We're Offering</div>
+        <div class="flesubheading animate-fade-in-up">Premium IT Services by Torrent Media</div>
+        <p class="fledescription animate-fade-in-up">At Torrent Media, we provide end-to-end IT solutions designed to empower businesses with precision, innovation, and scalability. From system administration to custom software development, we ensure your technology drives growth.</p>
+        <div class="fleservices">
+            <div class="fleservice-card animate-scale-in">
+                <a th:href="@{/services/branding}">
+                    <img src="images/branding.png" alt="Branding Icon">
+                    <h3>Branding & Direction</h3>
+                    <p>Craft impactful brand identities to elevate your business presence.</p>
+                </a>
+            </div>
+            <div class="fleservice-card animate-scale-in">
+                <a th:href="@{/services/product-design}">
+                    <img src="images/branding.png" alt="Product Design Icon">
+                    <h3>Product Design & Development</h3>
+                    <p>Visually stunning and functional designs that bring ideas to life.</p>
+                </a>
+            </div>
+            <div class="fleservice-card animate-scale-in">
+                <a th:href="@{/services/video-editing}">
+                    <img src="/images/editing.png" alt="Video Editing Icon">
+                    <h3>Video Editing & Grading</h3>
+                    <p>Professional editing and grading for captivating visual content.</p>
+                </a>
+            </div>
+            <div class="fleservice-card animate-scale-in">
+                <a th:href="@{/services/ui-ux}">
+                    <img src="images/uiux.png" alt="UI/UX Icon">
+                    <h3>UI/UX Designing</h3>
+                    <p>User-centric and visually appealing designs for enhanced engagement.</p>
+                </a>
+            </div>
+            <div class="fleservice-card animate-scale-in">
+                <a th:href="@{/services/data-analysis}">
+                    <img src="images/anaylisis.png" alt="Data Analysis Icon">
+                    <h3>Data Analysis</h3>
+                    <p>Data-driven insights to fuel strategic growth and communication.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="novarsis-container">
+    <!-- Quick Links -->
+    <div class="card animate-fade-in-up">
+        <h2>Quick Links</h2>
+        <div class="quick-links-grid">
+            <div class="quick-link-item">
+                <h3><a th:href="@{/about}">About Us</a></h3>
+                <p>Discover who we are</p>
+            </div>
+            <div class="quick-link-item">
+                <h3><a th:href="@{/services}">Services</a></h3>
+                <p>Explore our offerings</p>
+            </div>
+            <div class="quick-link-item">
+                <h3><a th:href="@{/gallery}">Gallery</a></h3>
+                <p>View our tech showcase</p>
+            </div>
+            <div class="quick-link-item">
+                <h3><a th:href="@{/support}">Support</a></h3>
+                <p>Connect with our team</p>
+            </div>
+            <div class="quick-link-item">
+                <h3><a th:href="@{/contact}">Contact</a></h3>
+                <p>Start a conversation</p>
+            </div>
+            <div class="quick-link-item">
+                <h3><a th:href="@{/team}">Our Team</a></h3>
+                <p>Meet our experts</p>
+            </div>
+            <div class="quick-link-item">
+                <h3><a th:href="@{/portfolio}">Portfolio</a></h3>
+                <p>See our recent projects</p>
+            </div>
+            <div class="quick-link-item">
+                <h3><a th:href="@{/help}">Need Help</a></h3>
+                <p>FAQs & support</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Official Info -->
+    <div class="card animate-fade-in-up">
+        <h2>Official Info</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> 210 ALI KHALIFA BELAISHA BIN BELAISHA ALKETBI near ADCB Bank Karama, UAE</p>
+            <p><i class="fas fa-phone"></i> +971569886214</p>
+            <p><i class="fas fa-phone"></i> +971501480206</p>
+            <p><i class="fas fa-envelope"></i> info@torrentmedia.tech</p>
+            <h3>Open Hours:</h3>
+            <p>Mon-Fri: 9:00 am - 6:00 pm</p>
+            <p>Sat: 9:00 am - 6:00 pm</p>
+            <p>Sunday - CLOSED</p>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="card newsletter animate-fade-in-up">
+        <h2>Subscribe to our Newsletter</h2>
+        <p>Stay ahead with the latest trends in digital marketing, website development, and business technology.</p>
+        <form th:action="@{/subscribe}" method="post" class="newsletter-form">
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="card animate-fade-in-up">
+        <h2>Contact Us</h2>
+        <form th:action="@{/contact}" method="post">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- JavaScript for Search Bar Interaction -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.querySelector('.search-container input');
+        searchInput.addEventListener('focus', () => {
+            searchInput.classList.add('active');
+        });
+        searchInput.addEventListener('blur', () => {
+            if (!searchInput.value) {
+                searchInput.classList.remove('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>
