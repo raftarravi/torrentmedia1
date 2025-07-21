@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torrent Media</title>
+    <link rel="stylesheet" href="css/contact-us.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="logo">Torrent<span>Media</span><br><small>GROW DIGITALLY WITH US</small></div>
+    <div class="nav">
+        <a th:class="${activePage == 'home' ? 'active' : ''}" th:href="@{/}" th:text="'Home'"></a>
+        <a th:class="${activePage == 'about' ? 'active' : ''}" th:href="@{/about}" th:text="'About Us'"></a>
+        <a th:class="${activePage == 'services' ? 'active' : ''}" th:href="@{/services}" th:text="'Services'"></a>
+        <a th:href="@{/blog}" th:text="'Blog'"></a>
+        <a th:href="@{/faq}" th:text="'FAQ'"></a>
+        <a th:href="@{/contact}" th:text="'Contact Us'"></a>
+        <div class="search-container">
+            <form th:action="@{/search}" method="get">
+                <input type="text" name="query" placeholder="Search..." required>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="search-call">
+        <a th:href="'tel:+91-9919328475'" class="call-btn">Call Anytime: +91-9919328475</a>
+    </div>
+</div>
+
+<!-- Service Hero Section -->
+<div class="service-component">
+    <div class="service-header">
+        <div class="overlay"></div>
+        <div class="content animate-fade-in-up">
+            <h1>CONTACT US</h1>
+            <p>Transform your business with cutting-edge IT, SEO, digital marketing, and design solutions at Torrent Media.</p>
+        </div>
+    </div>
+    <div class="side-icons">
+        <a th:href="'tel:+91-9919328475'" class="animate-scale-in">📞</a>
+        <a href="#" class="animate-scale-in">⬆</a>
+        <a th:href="'mailto:patelaman2708@gmail.com'" class="animate-scale-in">📧</a>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class ="con-html">
+<div id="con-main-container">
+    <div class="con-left-section">
+        <h1>Feel Free to Get in Touch</h1>
+        <p>Get in touch with us today, we're here to answer your questions and bring your vision to life. Our team is available to assist you!</p>
+        <div class="con-contact-info">
+            <div><i class="fas fa-phone"></i> <span class="con-animated-text">Call Anytime</span> </div>
+            <div><i class="fas fa-envelope"></i> <span class="con-animated-text">Send Email</span></a></div>
+        </div>
+    </div>
+    <div class="con-right-section">
+        <form th:action="@{/submitContact}" method="post" th:object="${contactForm}">
+            <input type="text" th:field="*{name}" placeholder="Your name" required>
+            <input type="email" th:field="*{email}" placeholder="Your Email" required>
+            <input type="text" th:field="*{subject}" placeholder="Subject" required>
+            <input type="tel" th:field="*{phone}" placeholder="Phone No.">
+            <textarea th:field="*{message}" placeholder="Your message (optional)"></textarea>
+            <button type="submit">Send Now</button>
+        </form>
+    </div>
+</div>
+</div>
+
+<!--  Map Section -->
+
+<div id="conmap-container">
+    <header class="conmap-header">
+        <div class="conmap-logo">Torrent Media</div>
+        <h1 class="conmap-title">Our Coworking Spaces</h1>
+        <p class="conmap-subtitle">Innovative Workspaces Across India</p>
+        <div class="conmap-divider"></div>
+    </header>
+
+    <div class="conmap-location-card">
+        <h2 class="conmap-location-title">Our Locations in India</h2>
+        <p class="conmap-address">Find your perfect workspace in our strategically located centers across the country.</p>
+        <div class="conmap-map-container">
+            <div class="conmap-map" id="conmap-indiaMap">
+                <div class="conmap-marker" style="top: 72%; left: 68%;">
+                    <div class="conmap-tooltip">Bengaluru</div>
+                </div>
+                <div class="conmap-marker" style="top: 38%; left: 70%;">
+                    <div class="conmap-tooltip">Haridwar</div>
+                </div>
+                <div class="conmap-marker" style="top: 42%; left: 73%;">
+                    <div class="conmap-tooltip">Uttar Pradesh</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="conmap-location-list">
+        <h3 class="conmap-location-list-title">Our Coworking Spaces</h3>
+        <div class="conmap-location-grid">
+            <div class="conmap-location-item">
+                <h4>Bengaluru Center</h4>
+                <p>Tech Park, Whitefield</p>
+                <p>Bengaluru, Karnataka 560066</p>
+                <p>Open: Mon-Fri, 8AM-10PM</p>
+                <p class="conmap-contact">contact.patelaman2708@gmail.com</p>
+            </div>
+            <div class="conmap-location-item" style="animation-delay: 0.2s;">
+                <h4>Haridwar Center</h4>
+                <p>Industrial Area, Sidcul</p>
+                <p>Haridwar, Uttarakhand 249403</p>
+                <p>Open: Mon-Sat, 9AM-8PM</p>
+                <p class="conmap-contact">contact.patelaman2708@gmail.com</p>
+            </div>
+            <div class="conmap-location-item" style="animation-delay: 0.4s;">
+                <h4>Uttar Pradesh Center</h4>
+                <p>Sector 62, Noida</p>
+                <p>Uttar Pradesh 201309</p>
+                <p>Open: Mon-Sun, 7AM-11PM</p>
+                <p class="conmap-contact">contact.patelaman2708@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+<div class="novarsis-container">
+    <!-- Quick Links -->
+    <div class="card animate-fade-in-up">
+        <h2>Quick Links</h2>
+        <div class="quick-links-grid">
+            <div class="quick-link-item"><h3><a th:href="@{/about}">About Us</a></h3><p>Discover who we are</p></div>
+            <div class="quick-link-item"><h3><a th:href="@{/services}">Services</a></h3><p>Explore our offerings</p></div>
+            <div class="quick-link-item"><h3><a th:href="@{/gallery}">Gallery</a></h3><p>View our tech showcase</p></div>
+            <div class="quick-link-item"><h3><a th:href="@{/support}">Support</a></h3><p>Connect with our team</p></div>
+            <div class="quick-link-item"><h3><a th:href="@{/contact}">Contact</a></h3><p>Start a conversation</p></div>
+            <div class="quick-link-item"><h3><a th:href="@{/team}">Our Team</a></h3><p>Meet our experts</p></div>
+            <div class="quick-link-item"><h3><a th:href="@{/portfolio}">Portfolio</a></h3><p>See our recent projects</p></div>
+            <div class="quick-link-item"><h3><a th:href="@{/help}">Need Help</a></h3><p>FAQs & support</p></div>
+        </div>
+    </div>
+
+    <!-- Official Info -->
+    <div class="card animate-fade-in-up">
+        <h2>Official Info</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> TorrentMedia, HSR Layout, Bengaluru, Karnataka, India</p>
+            <p><i class="fas fa-phone"></i>+91-9919328475</p>
+            <p><i class="fas fa-phone"></i> +91-6392994165</p>
+            <p><i class="fas fa-envelope"></i> patelaman2708@gmail.com</p>
+            <h3>Open Hours:</h3>
+            <p>Mon-Fri: 9:00 am - 6:00 pm</p>
+            <p>Sat: 9:00 am - 6:00 pm</p>
+            <p>Sunday - CLOSED</p>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="card newsletter animate-fade-in-up">
+        <h2>Subscribe to our Newsletter</h2>
+        <p>Stay ahead with the latest trends in digital marketing, website development, and business technology.</p>
+        <form th:action="@{/subscribe}" method="post" class="newsletter-form">
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="card animate-fade-in-up">
+        <h2>Contact Us</h2>
+        <form th:action="@{/contact}" method="post">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.querySelector('.search-container input');
+        searchInput.addEventListener('focus', () => {
+            searchInput.classList.add('active');
+        });
+        searchInput.addEventListener('blur', () => {
+            if (!searchInput.value) {
+                searchInput.classList.remove('active');
+            }
+        });
+    });
+</script>
+    <script>
+        // Enhanced interaction for the markers
+        document.addEventListener('DOMContentLoaded', function() {
+            const markers = document.querySelectorAll('#conmap-container .conmap-marker');
+
+            // Animate text elements sequentially
+            const textElements = document.querySelectorAll('#conmap-container [class*="conmap-"]');
+            textElements.forEach((el, index) => {
+                if (!el.style.animation) {
+                    el.style.animationDelay = `${index * 0.1}s`;
+                }
+            });
+
+            // Marker interactions
+            markers.forEach(marker => {
+                // Click event
+                marker.addEventListener('click', function() {
+                    const tooltip = this.querySelector('.conmap-tooltip');
+
+                    // Create a ripple effect
+                    const ripple = document.createElement('span');
+                    ripple.className = 'conmap-ripple';
+                    ripple.style.width = ripple.style.height = `${Math.max(this.offsetWidth, this.offsetHeight)}px`;
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                        alert(`TorrentMedia ${tooltip.textContent} Coworking Space\n\nWe'd love to show you around! Contact us to schedule a tour.`);
+                    }, 600);
+                });
+
+                // Hover effects
+                marker.addEventListener('mouseenter', function() {
+                    this.style.animation = 'none';
+                    this.style.transform = 'rotate(-45deg) translate(-50%, -50%) scale(1.2)';
+                });
+
+                marker.addEventListener('mouseleave', function() {
+                    this.style.animation = 'conmap-bounce 2s infinite';
+                });
+            });
+
+            // Add floating animation to location items
+            const locationItems = document.querySelectorAll('.conmap-location-item');
+            locationItems.forEach((item, index) => {
+                item.style.animation = `conmap-float 4s ease-in-out infinite ${index * 0.2}s`;
+            });
+        });
+    </script>
+</body>
+</html>
