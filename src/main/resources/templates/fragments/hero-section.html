@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- fragments/hero-section.html -->
+
+<div th:fragment="hero">
+    <div class="faq-hero">
+        <div class="overlay"></div>
+
+        <!-- Page title and breadcrumb -->
+        <div class="content fade-in">
+            <p class="breadcrumb">Home / [[${pageName}]]</p>
+            <h1 class="title">[[${pageName}]]</h1>
+        </div>
+
+        <!-- Wavy Line -->
+        <svg class="wavy-left" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0,50 Q25,30 50,50 T100,50" stroke="#fff" stroke-width="4" fill="transparent" />
+        </svg>
+
+        <!-- Double Circle -->
+        <div class="circle-wrapper">
+            <div class="circle-bg"></div>
+            <div class="circle-border"></div>
+        </div>
+
+        <!-- Vertical Lines -->
+        <div class="vline vline-left"></div>
+        <div class="vline vline-right"></div>
+
+        <!-- Bottom Corner Circle -->
+        <div class="corner-circle"></div>
+    </div>
+</div>
+
+
+</body>
+</html>

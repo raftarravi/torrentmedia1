@@ -446,499 +446,185 @@
 
                 /* Map Section */
 
-          /* Map Section */
-                 #conmap-container {
-                     --conmap-primary: #1a237e;
-                     --conmap-secondary: #00bcd4;
-                     --conmap-light: #e8f5e9;
-                     --conmap-dark: #0d47a1;
-                     --conmap-accent: #ff5722;
-                     padding: 120px 40px;
-                     background: url('https://images.unsplash.com/photo-1526778548025-fa2f539b4196?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
-                     background-size: cover;
-                     background-attachment: fixed;
-                     position: relative;
-                     overflow: hidden;
-                     margin-bottom: 80px;
-                 }
-
-                 #conmap-container::before {
-                     content: '';
-                     position: absolute;
-                     top: 0;
-                     left: 0;
-                     right: 0;
-                     bottom: 0;
-                     background: rgba(0, 0, 0, 0.5);
-                     z-index: 0;
-                 }
-
-                 .conmap-header {
-                     text-align: center;
-                     position: relative;
-                     z-index: 1;
-                     margin-bottom: 80px;
-                     padding: 60px 40px;
-                     border-radius: 20px;
-                     background: rgba(255, 255, 255, 0.15);
-                     backdrop-filter: blur(12px);
-                     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-                 }
-
-                 .conmap-logo {
-                     font-size: 3rem;
-                     font-weight: 800;
-                     color: var(--conmap-secondary);
-                     animation: fadeInUp 0.8s ease-out;
-                     margin-bottom: 20px;
-                 }
-
-                 .conmap-title {
-                     font-size: 3.8rem;
-                     font-weight: 900;
-                     color: #fff;
-                     margin: 20px 0;
-                     animation: fadeInUp 0.9s ease-out 0.2s both;
-                     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-                 }
-
-                 .conmap-subtitle {
-                     font-size: 1.9rem;
-                     font-weight: 300;
-                     color: rgba(255, 255, 255, 0.9);
-                     animation: fadeInUp 1s ease-out 0.3s both;
-                 }
-
-                 .conmap-divider {
-                     height: 6px;
-                     width: 140px;
-                     background: linear-gradient(90deg, transparent, var(--conmap-secondary), transparent);
-                     margin: 40px auto;
-                     border-radius: 5px;
-                     animation: scaleIn 0.8s ease-out 0.4s both;
-                 }
-
-                 .conmap-location-card {
-                     max-width: 1200px;
-                     margin: 0 auto 80px;
-                     background: #fff;
-                     border-radius: 20px;
-                     padding: 60px;
-                     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-                     animation: fadeInUp 0.8s ease-out;
-                     position: relative;
-                     z-index: 1;
-                 }
-
-                 .conmap-location-card::before {
-                     content: '';
-                     position: absolute;
-                     top: -20px;
-                     left: 50%;
-                     transform: translateX(-50%);
-                     width: 80%;
-                     height: 30px;
-                     background: rgba(0, 0, 0, 0.1);
-                     filter: blur(15px);
-                     border-radius: 50%;
-                     z-index: -1;
-                 }
-
-                 .conmap-location-title {
-                     color: var(--conmap-primary);
-                     font-size: 2.8rem;
-                     font-weight: 800;
-                     margin-bottom: 25px;
-                     position: relative;
-                 }
-
-                 .conmap-location-title::after {
-                     content: '';
-                     position: absolute;
-                     bottom: -10px;
-                     left: 0;
-                     width: 70px;
-                     height: 5px;
-                     background: var(--conmap-secondary);
-                     transition: width 0.4s ease;
-                 }
-
-                 .conmap-location-card:hover .conmap-location-title::after {
-                     width: 120px;
-                 }
-
-                 .conmap-address {
-                     font-size: 1.3rem;
-                     color: #4b5563;
-                     line-height: 1.8;
-                     margin-bottom: 40px;
-                     animation: fadeInUp 0.9s ease-out 0.2s both;
-                 }
-
-                 .conmap-map-container {
-                     height: 550px;
-                     border-radius: 15px;
-                     overflow: hidden;
-                     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-                     transform: perspective(1000px) rotateX(3deg);
-                     transition: transform 0.5s ease;
-                     position: relative;
-                     z-index: 1;
-                 }
-
-                 .conmap-map-container:hover {
-                     transform: perspective(1000px) rotateX(0);
-                 }
-
-                 .conmap-map {
-                     width: 100%;
-                     height: 100%;
-                     background-image: url('https://mapsvg.com/static/maps/geo-calibrated/india-detailed.svg');
-                     background-size: cover;
-                     background-position: center;
-                     position: relative;
-                     border-radius: 15px;
-                 }
-
-                 .conmap-marker {
-                     position: absolute;
-                     width: 32px;
-                     height: 32px;
-                     background-color: var(--conmap-accent);
-                     border-radius: 50% 50% 50% 0;
-                     transform: rotate(-45deg) translate(-50%, -50%);
-                     box-shadow: 0 0 0 6px rgba(255, 87, 34, 0.3);
-                     cursor: pointer;
-                     transition: all 0.3s ease;
-                     animation: float 2s infinite ease-in-out;
-                 }
-
-                 .conmap-marker:hover {
-                     transform: rotate(-45deg) translate(-50%, -50%) scale(1.4);
-                     box-shadow: 0 0 0 8px rgba(255, 87, 34, 0.4);
-                     animation: none;
-                 }
-
-                 .conmap-marker::after {
-                     content: '';
-                     position: absolute;
-                     width: 16px;
-                     height: 16px;
-                     background-color: white;
-                     border-radius: 50%;
-                     top: 50%;
-                     left: 50%;
-                     transform: translate(-50%, -50%) rotate(45deg);
-                 }
-
-                 .conmap-tooltip {
-                     position: absolute;
-                     bottom: calc(100% + 15px);
-                     left: 50%;
-                     transform: translateX(-50%);
-                     background: #fff;
-                     padding: 12px 18px;
-                     border-radius: 8px;
-                     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-                     font-size: 15px;
-                     color: var(--conmap-dark);
-                     font-weight: 600;
-                     opacity: 0;
-                     transition: all 0.3s ease;
-                     pointer-events: none;
-                 }
-
-                 .conmap-marker:hover .conmap-tooltip {
-                     opacity: 1;
-                     bottom: calc(100% + 12px);
-                 }
-
-                 .conmap-location-list {
-                     max-width: 1200px;
-                     margin: 0 auto 80px;
-                     animation: fadeInUp 0.8s ease-out 0.2s both;
-                 }
-
-                 .conmap-location-list-title {
-                     font-size: 2.5rem;
-                     font-weight: 800;
-                     color: #fff;
-                     text-align: center;
-                     margin-bottom: 50px;
-                     position: relative;
-                     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-                 }
-
-                 .conmap-location-list-title::after {
-                     content: '';
-                     position: absolute;
-                     bottom: -10px;
-                     left: 50%;
-                     transform: translateX(-50%);
-                     width: 100px;
-                     height: 5px;
-                     background: linear-gradient(90deg, var(--conmap-secondary), transparent);
-                 }
-
-                 .conmap-location-grid {
-                     display: grid;
-                     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-                     gap: 40px;
-                 }
-
-                 .conmap-location-item {
-                     background: #fff;
-                     padding: 40px;
-                     border-radius: 15px;
-                     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-                     transition: all 0.4s ease;
-                     border-top: 5px solid var(--conmap-secondary);
-                     position: relative;
-                     overflow: hidden;
-                     animation: float 3s infinite ease-in-out;
-                 }
-
-                 .conmap-location-item:hover {
-                     transform: translateY(-10px);
-                     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-                 }
-
-                 .conmap-location-item::before {
-                     content: '';
-                     position: absolute;
-                     top: 0;
-                     left: 0;
-                     width: 100%;
-                     height: 100%;
-                     background: linear-gradient(135deg, rgba(0, 188, 212, 0.1), transparent);
-                     opacity: 0;
-                     transition: opacity 0.3s ease;
-                 }
-
-                 .conmap-location-item:hover::before {
-                     opacity: 1;
-                 }
-
-                 .conmap-location-item h4 {
-                     color: var(--conmap-primary);
-                     font-size: 1.6rem;
-                     font-weight: 700;
-                     margin-bottom: 20px;
-                     position: relative;
-                 }
-
-                 .conmap-location-item h4::after {
-                     content: '';
-                     position: absolute;
-                     bottom: -5px;
-                     left: 0;
-                     width: 50px;
-                     height: 3px;
-                     background: var(--conmap-accent);
-                     transition: width 0.3s ease;
-                 }
-
-                 .conmap-location-item:hover h4::after {
-                     width: 80px;
-                 }
-
-                 .conmap-location-item p {
-                     color: #4b5563;
-                     font-size: 1.1rem;
-                     line-height: 1.6;
-                     margin-bottom: 15px;
-                 }
-
-                 .conmap-contact {
-                     color: var(--conmap-secondary);
-                     font-weight: 600;
-                     transition: color 0.3s ease;
-                 }
-
-                 .conmap-location-item:hover .conmap-contact {
-                     color: var(--conmap-accent);
-                 }
-        /* Footer Section */
-        .novarsis-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 80px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 50px;
-            background: linear-gradient(135deg, #111827, #1f2937);
-        }
-
-        .novarsis-container h2 {
-            color: #60a5fa;
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 30px;
-            border-bottom: 4px solid #60a5fa;
-            padding-bottom: 12px;
-        }
-
-        .novarsis-container h3 {
-            color: #60a5fa;
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .novarsis-container a {
-            color: #60a5fa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .novarsis-container a:hover {
-            color: #93c5fd;
-        }
-
-        .novarsis-container .card {
-            background: #1e293b;
+          #conmap-container {
+            max-width: 1440px;
+            margin: 60px auto; /* Top and bottom margin added */
+            padding: 40px 20px;
+            background-color: #FFFFFF;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
             border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+          }
 
-        .novarsis-container .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .novarsis-container .quick-links-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .novarsis-container .quick-link-item {
-            padding: 20px;
-            border-left: 5px solid #60a5fa;
-            background: rgba(96, 165, 250, 0.1);
-            border-radius: 8px;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .novarsis-container .quick-link-item:hover {
-            background: rgba(96, 165, 250, 0.2);
-            transform: translateX(8px);
-        }
-
-        .novarsis-container .quick-link-item p {
-            color: #d1d5db;
-            font-size: 16px;
-            margin-top: 8px;
-        }
-
-        .novarsis-container .contact-info p {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            font-size: 18px;
-        }
-
-        .novarsis-container .contact-info i {
-            margin-right: 12px;
-            color: #60a5fa;
-            width: 24px;
+          .conmap-header {
             text-align: center;
-        }
+            padding-bottom: 30px;
+          }
 
-        .novarsis-container .newsletter {
-            background: rgba(96, 165, 250, 0.15);
-            border: 2px solid #60a5fa;
-            padding: 30px;
-            border-radius: 12px;
-        }
+          .conmap-logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #3b82f6;
+          }
 
-        .novarsis-container .newsletter-form {
-            display: flex;
-            gap: 12px;
-        }
-
-        .novarsis-container .newsletter-form input {
-            flex: 1;
-            padding: 12px;
-            border: 2px solid #4b5563;
-            border-radius: 8px 0 0 8px;
-            background: #374151;
-            color: #e5e7eb;
-            font-size: 18px;
-            transition: border-color 0.3s ease;
-        }
-
-        .novarsis-container .newsletter-form input:focus {
-            border-color: #60a5fa;
-            outline: none;
-        }
-
-        .novarsis-container .newsletter-form button {
-            background: linear-gradient(90deg, #60a5fa, #3b82f6);
-            color: #fff;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 0 8px 8px 0;
-            cursor: pointer;
-            font-weight: 700;
-            transition: background 0.3s ease;
-        }
-
-        .novarsis-container .newsletter-form button:hover {
-            background: linear-gradient(90deg, #93c5fd, #60a5fa);
-        }
-
-        .novarsis-container .form-group {
-            margin-bottom: 25px;
-        }
-
-        .novarsis-container .form-group label {
-            display: block;
-            font-size: 16px;
-            color: #e5e7eb;
-            margin-bottom: 10px;
+          .conmap-title {
+            font-size: 36px;
+            margin-top: 12px;
             font-weight: 600;
-        }
+            color: #0f172a;
+          }
+          .conmap-logo,
+          .conmap-title {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #3b82f6;
+            width: 0;
+            display: inline-block;
+          }
 
-        .novarsis-container .form-group input,
-        .novarsis-container .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #4b5563;
-            border-radius: 8px;
-            background: #374151;
-            color: #e5e7eb;
+          /* Animation only when 'typing-start' is added */
+          .typing-start .conmap-logo {
+            animation: typing 2.5s steps(20, end) forwards, blink 0.75s step-end infinite;
+          }
+
+          .typing-start .conmap-title {
+            animation: typing 2.5s steps(25, end) forwards 2.7s, blink 0.75s step-end infinite 2.7s;
+          }
+
+          /* Subtitle stays normal */
+          .conmap-subtitle {
             font-size: 18px;
-            transition: border-color 0.3s ease;
-        }
+            color: #64748b;
+            margin-top: 10px;
+          }
 
-        .novarsis-container .form-group input:focus,
-        .novarsis-container .form-group textarea:focus {
-            border-color: #60a5fa;
-            outline: none;
-        }
+          @keyframes typing {
+            to {
+              width: 100%;
+            }
+          }
 
-        .novarsis-container .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
+          @keyframes blink {
+            50% {
+              border-color: transparent;
+            }
+          }
+          .conmap-subtitle {
+            font-size: 20px;
+            color: #64748b;
+          }
 
-        .novarsis-container .submit-btn {
-            background: linear-gradient(90deg, #60a5fa, #3b82f6);
-            color: #fff;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: background 0.3s ease;
-        }
+          .conmap-divider {
+            height: 4px;
+            width: 60px;
+            background-color: #3b82f6;
+            margin: 30px auto;
+            border-radius: 2px;
+          }
 
-        .novarsis-container .submit-btn:hover {
-            background: linear-gradient(90deg, #93c5fd, #60a5fa);
-        }
+          .conmap-location-card {
+            margin-bottom: 60px;
+          }
+
+          .conmap-location-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #1e293b;
+          }
+
+          .conmap-address {
+            color: #475569;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+          }
+
+          .conmap-map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+          }
+
+          .conmap-location-list {
+            margin-top: 60px;
+          }
+
+          .conmap-location-list-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #0f172a;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;  /* horizontal */
+            align-items: center;
+            color:blue;
+          }
+
+            .conmap-location-grid {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 24px;
+              margin-bottom: 40px;
+            }
+
+           .conmap-location-item {
+             background-color: #f9fafb;
+             color: #1e293b;
+             padding: 24px;
+             border-radius: 12px;
+             flex: 1 1 calc(33.333% - 24px);
+             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+             transition: all 0.4s ease;
+             position: relative;
+             overflow: hidden;
+             z-index: 1;
+             min-height: 160px;
+           }
+
+           .conmap-location-item::before {
+             content: "";
+             position: absolute;
+             top: 100%;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             background: linear-gradient(135deg, #8b5cf6, #ec4899);
+             transition: all 0.4s ease;
+             z-index: -1;
+           }
+
+           .conmap-location-item:hover::before {
+             top: 0;
+           }
+
+           .conmap-location-item:hover {
+             color: white;
+             transform: translateY(-6px) scale(1.03);
+             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+           }
+
+           .conmap-location-item * {
+             transition: color 0.4s ease;
+           }
+
+          .conmap-contact {
+            font-weight: 500;
+            color: #3b82f6;
+            margin-top: 15px;
+            font-size: 16px;
+          }
+
+          @media screen and (max-width: 768px) {
+            .conmap-location-grid {
+              flex-direction: column;
+            }
+
+            .conmap-location-item {
+              flex: 1 1 100%;
+            }
+          }
 
         /* Responsive Design */
         @media (max-width: 1200px) {

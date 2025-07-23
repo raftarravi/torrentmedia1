@@ -4,149 +4,268 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torrent Media</title>
-    <link rel="stylesheet" href="css/service.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/contact-us.css">
+    <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
+    <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- third page -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- for fourth page -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
 <body>
-<!-- Header -->
-<div class="header">
-    <div class="logo">Torrent<span>Media</span><br><small>GROW DIGITALLY WITH US</small></div>
-    <div class="nav">
-        <a th:class="${activePage == 'home' ? 'active' : ''}" th:href="@{/}" th:text="'Home'"></a>
-        <a th:class="${activePage == 'about' ? 'active' : ''}" th:href="@{/about}" th:text="'About Us'"></a>
-        <a th:class="${activePage == 'services' ? 'active' : ''}" th:href="@{/services}" th:text="'Services'"></a>
-        <a th:href="@{/blog}" th:text="'Blog'"></a>
-        <a th:href="@{/faq}" th:text="'FAQ'"></a>
-        <a th:href="@{/contact}" th:text="'Contact Us'"></a>
-        <div class="search-container">
-            <form th:action="@{/search}" method="get">
-                <input type="text" name="query" placeholder="Search..." required>
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-        </div>
-    </div>
-    <div class="search-call">
-        <a th:href="'tel:+91-7050132882'" class="call-btn">Call Anytime: +91-7050132882</a>
-    </div>
-</div>
+
+<div th:insert="~{fragments/navbar :: mainNavbar}"></div>
+<div th:insert="~{fragments/sidebar-icons :: sideIcons}"></div>
 
 <!-- Service Hero Section -->
-<div class="service-component">
-    <div class="service-header">
+<div class="service-component" id="services">
+    <div class="service-combined">
+        <div class="bg-image"></div>
         <div class="overlay"></div>
         <div class="content animate-fade-in-up">
             <h1>Services</h1>
-            <p>Transform your business with cutting-edge IT, SEO, digital marketing, and design solutions at Torrent Media.</p>
-        </div>
-    </div>
-    <div class="service-content">
-        <div class="overlay"></div>
-        <div class="content animate-scale-in">
-            <h2>Our Services</h2>
             <h3>The Ultimate Solutions by Torrent Media</h3>
-            <p>We deliver a comprehensive suite of IT, SEO, digital marketing, design, development, and sales solutions crafted to propel your business to new heights.</p>
+            <p class="subhead">Transform your business with cutting-edge IT, SEO, digital marketing, and design solutions at Torrent Media.</p>
+            <p class="description">We deliver a comprehensive suite of IT, SEO, digital marketing, design, development, and sales solutions crafted to propel your business to new heights.</p>
         </div>
-    </div>
-    <div class="side-icons">
-        <a th:href="'tel:+91-7050132882'" class="animate-scale-in">📞</a>
-        <a href="#" class="animate-scale-in">⬆</a>
-        <a th:href="'mailto:ranjan.ravi1204@gmail.com'" class="animate-scale-in">📧</a>
     </div>
 </div>
 
-<!-- Service Cards -->
+
+
+<!-- second page that having card  -->
+<div  class="body-homesec">
+<div class="homesec-services-container">
+    <div class="homesec-card homesec-quality">
+        <div class="homesec-icon homesec-quality">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <h3 class="homesec-title">Quality Service</h3>
+        <p class="homesec-description">We deliver tailored solutions with precision, ensuring top-notch quality in every project.</p>
+        <a href="#" class="homesec-link">Learn More</a>
+    </div>
+    <div class="homesec-card homesec-team">
+        <div class="homesec-icon homesec-team">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h3 class="homesec-title">Expert Team</h3>
+        <p class="homesec-description">Our skilled professionals bring industry expertise to drive innovation and best results.</p>
+        <a href="#" class="homesec-link">Learn More</a>
+    </div>
+    <div class="homesec-card homesec-support">
+        <div class="homesec-icon homesec-support">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+        </div>
+        <h3 class="homesec-title">Excellent Support</h3>
+        <p class="homesec-description">We provide fast responsive, 24/7 support to keep your business running smoothly.</p>
+        <a href="#" class="homesec-link">Learn More</a>
+    </div>
+    <div class="homesec-card homesec-management">
+        <div class="homesec-icon homesec-management">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15v-2h2v2h-2zm4-4V9h-4v4h2v2h2v-2h-2zm-2-8v2h2v2h2v2h2v4h-2v-2h-2v-2h-2V7h-2z"/></svg>
+        </div>
+        <h3 class="homesec-title">Management</h3>
+        <p class="homesec-description">From planning to execution, we manage every detail with strategic efficiency.</p>
+        <a href="#" class="homesec-link">Learn More</a>
+    </div>
+</div>
+</div>
+<!-- third page which show about -->
+
+<div id="homethree-container" class="homethree-container">
+    <div class="homethree-about-content">
+
+        <!-- Left Image -->
+        <div class="homethree-image-box">
+            <img th:src="@{/images/experiance.webp}" alt="Team Working">
+            <div class="homethree-experience-box">
+                <h2><span>3</span> Years<br>Experience</h2>
+            </div>
+        </div>
+
+        <!-- Right Text -->
+        <div class="homethree-text-box homethree-fade-in">
+            <p class="homethree-subtitle">About Torrent Media</p>
+            <h1 class="homethree-heading">We are Partner of Your <span class="homethree-highlight">Success</span></h1>
+            <p class="homethree-description">
+                Torrent Media is a dynamic digital powerhouse dedicated to elevating brands through advanced IT services and creative strategy.
+                From digital marketing to branding and product media, our expert team crafts custom digital solutions that drive impact and inspire growth.
+            </p>
+
+            <!-- Feature Cards -->
+            <div class="homethree-cards">
+                <div class="homethree-card">
+                    <img th:src="@{/images/brand-promotion.png}" alt="Consultant Icon">
+                    <h4>Brand Promotion</h4>
+                    <p>Smarter Solutions</p>
+                </div>
+                <div class="homethree-card">
+                    <img th:src="@{/images/itservice.png}" alt="Specialist Icon">
+                    <h4>IT Specialist</h4>
+                    <p>Faster Delivery</p>
+                </div>
+            </div>
+
+            <!-- Feature List -->
+            <ul class="homethree-points">
+                <li>We are a team of skilled IT specialists.</li>
+                <li>We provide reliable, efficient technology solutions & consultations.</li>
+                <li>Our expertise includes all services from Branding to Sales & Organic Growth.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- home five section before 4 due to some reason -->
+
+<div id="homefive-body">
+    <section id="homefive-services">
+        <p class="homefive-subtitle">What We're Offering</p>
+        <h2 class="homefive-title">Dealing in all Professional IT Services</h2>
+        <p class="homefive-description">
+            We offer a complete range of IT, SEO, digital marketing, design, development, and sales solutions tailored to grow your business.
+        </p>
+
+        <div class="homefive-card-container">
+            <div class="homefive-card">
+                <img src="/images/Website-Service.webp" alt="Web Design">
+                <h3>Brand Promotion.</h3>
+                <p>We craft user-friendly websites with premium design and dev. tailored to your brand.</p>
+                <a href="#">Read More →</a>
+            </div>
+
+            <div class="homefive-card">
+                <img src="/images/Social-Media-Marketing-Service.webp" alt="Social Marketing">
+                <h3>Social Marketing.</h3>
+                <p>We grow your brand online through targeted and engaging social media marketing.</p>
+                <a href="#">Read More →</a>
+            </div>
+
+            <div class="homefive-card">
+                <img src="/images/Sales.webp" alt="Paid Ads">
+                <h3>Paid Advertisement.</h3>
+                <p>We drive results with strategic paid ads across Google, Meta, and other leading platforms.</p>
+                <a href="#">Read More →</a>
+            </div>
+
+            <div class="homefive-card">
+                <img src="/images/Shopify.webp" alt="eCommerce">
+                <h3>eCommerce Solution.</h3>
+                <p>We design high-converting eCommerce stores to boost online revenue.</p>
+                <a href="#">Read More →</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- fourth page that having what we offer -->
+<div class="homefour-premium-services-section">
+    <div class="homefour-section-content">
+        <div class="homefour-left-text">
+            <p class="homefour-small-title">What We’re Offering</p>
+            <h2 class="homefour-main-title">Also dealing in these IT Premium Services</h2>
+        </div>
+        <div class="homefour-right-description">
+            <p>
+                At Torrent Media, we deliver end-to-end IT solutions designed to support businesses of all scales with precision and innovation.
+                Our expertise spans across system administration, technical support, infrastructure setup, and data security.
+                From solving IT challenges to building custom software, we ensure your technology runs flawlessly.
+            </p>
+        </div>
+    </div>
+
+    <div class="homefour-cards-container">
+        <div class="homefour-card" data-aos="fade-up">
+            <img src="https://img.icons8.com/ios-filled/50/4faaff/idea.png" alt="Branding" />
+            <h3>Branding &<br>Direction</h3>
+            <p>Crafting strong brand identities and creative strategies to elevate your presence.</p>
+        </div>
+
+        <div class="homefour-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://img.icons8.com/ios-filled/50/4faaff/shield.png" alt="Product" />
+            <h3>Product Design &<br>Development</h3>
+            <p>We turn your product ideas into intuitive and functional user experiences.</p>
+        </div>
+
+        <div class="homefour-card homefour-highlight-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://img.icons8.com/ios-filled/50/FFFFFF/laptop.png" alt="Video Editing" />
+            <h3>Video Editing &<br>Grading</h3>
+            <p>Professional-level video editing and color grading for premium content delivery.</p>
+        </div>
+
+        <div class="homefour-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="https://img.icons8.com/ios-filled/50/4faaff/combo-chart.png" alt="UI/UX" />
+            <h3>UI/UX<br>Designing</h3>
+            <p>Designing seamless, beautiful interfaces that boost user engagement and flow.</p>
+        </div>
+
+        <div class="homefour-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="https://img.icons8.com/ios-filled/50/4faaff/pie-chart.png" alt="Data Analysis" />
+            <h3>Data<br>Analysis</h3>
+            <p>Delivering insightful reports and visual data strategies to accelerate decision-making.</p>
+        </div>
+    </div>
+</div>
+<!--  Testmonial Section -->
+
+<section class="testimonial-area">
+    <div class="testimonial-title">
+        <h2>What Our Clients Say</h2>
+        <p>Real feedback from our trusted clients around the globe.</p>
+    </div>
+
+    <div class="testimonial-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card" data-aos="fade-right">
+            <img src="https://i.pravatar.cc/100?img=11" alt="Client 1" class="avatar" />
+            <h4>Ravi Sharma</h4>
+            <p class="stars">★★★★★</p>
+            <p class="message">Amazing experience working with your team. Highly professional!</p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card" data-aos="fade-left">
+            <img src="https://i.pravatar.cc/100?img=12" alt="Client 2" class="avatar" />
+            <h4>Sneha Kapoor</h4>
+            <p class="stars">★★★★☆</p>
+            <p class="message">Great service and excellent communication. Would recommend!</p>
+        </div>
+
+        <!-- Add more cards like this up to 20 -->
+        <div class="testimonial-card" data-aos="fade-right">
+            <img src="https://i.pravatar.cc/100?img=13" alt="Client 3" class="avatar" />
+            <h4>Amit Patel</h4>
+            <p class="stars">★★★★★</p>
+            <p class="message">Fantastic support throughout the project lifecycle.</p>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-left">
+            <img src="https://i.pravatar.cc/100?img=14" alt="Client 4" class="avatar" />
+            <h4>Priya Nair</h4>
+            <p class="stars">★★★★★</p>
+            <p class="message">Very fast delivery and helpful team. Loved working with them!</p>
+        </div>
+
+        <!-- Continue adding more testimonials -->
+    </div>
+</section>
 
 <!-- Footer -->
-<div class="novarsis-container">
-    <!-- Quick Links -->
-    <div class="card animate-fade-in-up">
-        <h2>Quick Links</h2>
-        <div class="quick-links-grid">
-            <div class="quick-link-item">
-                <h3><a th:href="@{/about}">About Us</a></h3>
-                <p>Discover who we are</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/services}">Services</a></h3>
-                <p>Explore our offerings</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/gallery}">Gallery</a></h3>
-                <p>View our tech showcase</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/support}">Support</a></h3>
-                <p>Connect with our team</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/contact}">Contact</a></h3>
-                <p>Start a conversation</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/team}">Our Team</a></h3>
-                <p>Meet our experts</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/portfolio}">Portfolio</a></h3>
-                <p>See our recent projects</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/help}">Need Help</a></h3>
-                <p>FAQs & support</p>
-            </div>
-        </div>
-    </div>
+<div th:insert="~{fragments/footer :: footer}"></div>
 
-    <!-- Official Info -->
-    <div class="card animate-fade-in-up">
-        <h2>Official Info</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> 210 ALI KHALIFA BELAISHA BIN BELAISHA ALKETBI near ADCB Bank Karama, UAE</p>
-            <p><i class="fas fa-phone"></i> +971569886214</p>
-            <p><i class="fas fa-phone"></i> +971501480206</p>
-            <p><i class="fas fa-envelope"></i> info@torrentmedia.tech</p>
-            <h3>Open Hours:</h3>
-            <p>Mon-Fri: 9:00 am - 6:00 pm</p>
-            <p>Sat: 9:00 am - 6:00 pm</p>
-            <p>Sunday - CLOSED</p>
-        </div>
-    </div>
 
-    <!-- Newsletter -->
-    <div class="card newsletter animate-fade-in-up">
-        <h2>Subscribe to our Newsletter</h2>
-        <p>Stay ahead with the latest trends in digital marketing, website development, and business technology.</p>
-        <form th:action="@{/subscribe}" method="post" class="newsletter-form">
-            <input type="email" name="email" placeholder="Enter your email address" required>
-            <button type="submit">Subscribe</button>
-        </form>
-    </div>
 
-    <!-- Contact Form -->
-    <div class="card animate-fade-in-up">
-        <h2>Contact Us</h2>
-        <form th:action="@{/contact}" method="post">
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" required>
-            </div>
-            <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </div>
-</div>
+
 
 <!-- Font Awesome for Icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -163,6 +282,24 @@
             }
         });
     });
+</script>
+<!-- Third Page -->
+
+<script>
+    // Scroll reveal animation
+    window.addEventListener('scroll', () => {
+      const fadeInElem = document.querySelector('.homethree-fade-in');
+      const rect = fadeInElem.getBoundingClientRect();
+      if (rect.top <= window.innerHeight - 100) {
+        fadeInElem.classList.add('show');
+      }
+    });
+</script>
+
+<!-- Fourth page -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
 </script>
 </body>
 </html>

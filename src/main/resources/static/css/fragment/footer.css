@@ -1,0 +1,139 @@
+ .footer {
+   background-color: #0f172a;
+   padding: 40px 20px;
+   color: #e2e8f0;
+   font-family: 'Poppins', sans-serif;
+ }
+
+ .footer-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+   gap: 30px;
+ }
+
+ .footer-column h3 {
+   border-bottom: 2px solid #0ea5e9;
+   padding-bottom: 8px;
+   margin-bottom: 15px;
+   font-size: 20px;
+   color: #38bdf8;
+ }
+
+ .footer-column h4 {
+   margin-top: 20px;
+   font-size: 16px;
+   color: #94a3b8;
+ }
+
+ .footer-column p,
+ .footer-column li {
+   font-size: 14px;
+   color: #cbd5e1;
+   margin: 5px 0;
+ }
+
+ .quick-links {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+   gap: 12px;
+ }
+
+ .quick-card {
+   background-color: #1e293b;
+   padding: 10px;
+   border-radius: 10px;
+   color: #fff;
+   text-decoration: none;
+   font-size: 14px;
+   transition: 0.3s;
+ }
+
+ .quick-card:hover {
+   background-color: #334155;
+   transform: translateY(-3px);
+ }
+
+ .footer-column form {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+ }
+
+ .footer-column input,
+ .footer-column textarea {
+   padding: 10px;
+   border: none;
+   border-radius: 6px;
+   background-color: #1e293b;
+   color: #fff;
+ }
+
+ .footer-column button {
+   background-color: #0ea5e9;
+   color: #fff;
+   border: none;
+   padding: 10px;
+   border-radius: 6px;
+   cursor: pointer;
+   font-weight: bold;
+ }
+
+ .footer-column button:hover {
+   background-color: #0284c7;
+ }
+
+ .open-hours {
+   list-style: none;
+   padding-left: 0;
+ }
+
+ .map-frame {
+   margin-top: 10px;
+   border-radius: 8px;
+   width: 100%;
+   height: 150px;
+   border: none;
+ }
+
+ .footer-bottom {
+   text-align: center;
+   padding-top: 30px;
+   margin-top: 40px;
+   border-top: 1px solid #334155;
+ }
+
+ .footer-bottom p {
+   margin: 0;
+   font-size: 14px;
+   color: #94a3b8;
+ }
+
+ .footer-bottom .social-icons {
+   margin-top: 10px;
+ }
+
+ .footer-bottom .social-icons a {
+   color: #38bdf8;
+   margin: 0 8px;
+   text-decoration: none;
+   font-size: 14px;
+ }
+
+ .footer-bottom .social-icons a:hover {
+   text-decoration: underline;
+ }
+
+ /* Mobile Responsive */
+ @media (max-width: 768px) {
+   .footer-container {
+     grid-template-columns: 1fr;
+   }
+
+   .quick-links {
+     grid-template-columns: 1fr;
+   }
+
+   .footer-column h3 {
+     font-size: 18px;
+   }
+ }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Side Icons Fragment</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Your custom styles -->
+  <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}">
+</head>
+<body>
+
+<!-- Thymeleaf fragment definition -->
+<div th:fragment="sideIcons">
+  <div class="side-icons">
+    <a href="tel:+917050132882" class="animate-scale-in" title="Call Us">
+      <i class="fa-solid fa-phone-volume"></i>
+    </a>
+    <a href="#top" class="animate-scale-in" title="Go to Top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    <a href="mailto:ranjan.ravi1204@gmail.com" class="animate-scale-in" title="Mail Us">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

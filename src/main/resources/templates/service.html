@@ -5,32 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torrent Media</title>
     <link rel="stylesheet" href="css/service.css">
+    <link rel="stylesheet" href="css/contact-us.css">
+    <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
+    <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- third page -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- for fourth page -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 
 </head>
 <body>
-<!-- Header -->
-<div class="header">
-    <div class="logo">Torrent<span>Media</span><br><small>GROW DIGITALLY WITH US</small></div>
-    <div class="nav">
-        <a th:class="${activePage == 'home' ? 'active' : ''}" th:href="@{/}" th:text="'Home'"></a>
-        <a th:class="${activePage == 'about' ? 'active' : ''}" th:href="@{/about}" th:text="'About Us'"></a>
-        <a th:class="${activePage == 'services' ? 'active' : ''}" th:href="@{/services}" th:text="'Services'"></a>
-        <a th:href="@{/blog}" th:text="'Blog'"></a>
-        <a th:href="@{/faq}" th:text="'FAQ'"></a>
-        <a th:href="@{/contact}" th:text="'Contact Us'"></a>
-        <div class="search-container">
-            <form th:action="@{/search}" method="get">
-                <input type="text" name="query" placeholder="Search..." required>
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-        </div>
-    </div>
-    <div class="search-call">
-        <a th:href="'tel:+91-9919328475'" class="call-btn">Call Anytime: +91-9919328475</a>
-    </div>
-</div>
-
+<div th:insert="~{fragments/navbar :: mainNavbar}"></div>
+<div th:insert="~{fragments/sidebar-icons :: sideIcons}"></div>
+<div th:insert="~{fragments/hero-section :: hero}" th:with="pageName='SERVICE'"></div>
 <!-- Service Hero Section -->
 <div class="service-component">
     <div class="service-header">
@@ -51,7 +48,7 @@
     <div class="side-icons">
         <a th:href="'tel:+91-9919328475'" class="animate-scale-in">📞</a>
         <a href="#" class="animate-scale-in">⬆</a>
-        <a th:href="'mailto:patelaman2708@gmail.com'" class="animate-scale-in">📧</a>
+        <a th:href="'mailto:torrentmediaa@gmail.com'" class="animate-scale-in">📧</a>
     </div>
 </div>
 
@@ -131,96 +128,7 @@
 </div>
 
 <!-- Footer -->
-<div class="novarsis-container">
-    <!-- Quick Links -->
-    <div class="card animate-fade-in-up">
-        <h2>Quick Links</h2>
-        <div class="quick-links-grid">
-            <div class="quick-link-item">
-                <h3><a th:href="@{/about}">About Us</a></h3>
-                <p>Discover who we are</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/services}">Services</a></h3>
-                <p>Explore our offerings</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/gallery}">Gallery</a></h3>
-                <p>View our tech showcase</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/support}">Support</a></h3>
-                <p>Connect with our team</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/contact}">Contact</a></h3>
-                <p>Start a conversation</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/team}">Our Team</a></h3>
-                <p>Meet our experts</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/portfolio}">Portfolio</a></h3>
-                <p>See our recent projects</p>
-            </div>
-            <div class="quick-link-item">
-                <h3><a th:href="@{/help}">Need Help</a></h3>
-                <p>FAQs & support</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Official Info -->
-    <div class="card animate-fade-in-up">
-        <h2>Official Info</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> TorrentMedia, HSR Layout, Bengaluru, Karnataka, India</p>
-            <p><i class="fas fa-phone"></i> +91-9919328475</p>
-            <p><i class="fas fa-phone"></i> +91-6392994165</p>
-            <p><i class="fas fa-envelope"></i> patelaman2708@gmail.com</p>
-            <h3>Open Hours:</h3>
-            <p>Mon-Fri: 9:00 am - 6:00 pm</p>
-            <p>Sat: 9:00 am - 6:00 pm</p>
-            <p>Sunday - CLOSED</p>
-        </div>
-    </div>
-
-    <!-- Newsletter -->
-    <div class="card newsletter animate-fade-in-up">
-        <h2>Subscribe to our Newsletter</h2>
-        <p>Stay ahead with the latest trends in digital marketing, website development, and business technology.</p>
-        <form th:action="@{/subscribe}" method="post" class="newsletter-form">
-            <input type="email" name="email" placeholder="Enter your email address" required>
-            <button type="submit">Subscribe</button>
-        </form>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="card animate-fade-in-up">
-        <h2>Contact Us</h2>
-        <form th:action="@{/contact}" method="post">
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" required>
-            </div>
-            <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </div>
-</div>
-
+<div th:insert="~{fragments/footer :: footer}"></div>
 <!-- Font Awesome for Icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <!-- JavaScript for Search Bar Interaction -->

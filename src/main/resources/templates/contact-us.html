@@ -5,47 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torrent Media</title>
     <link rel="stylesheet" href="css/contact-us.css">
+
+    <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
+    <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- third page -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- for fourth page -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- Header -->
-<div class="header">
-    <div class="logo">Torrent<span>Media</span><br><small>GROW DIGITALLY WITH US</small></div>
-    <div class="nav">
-        <a th:class="${activePage == 'home' ? 'active' : ''}" th:href="@{/}" th:text="'Home'"></a>
-        <a th:class="${activePage == 'about' ? 'active' : ''}" th:href="@{/about}" th:text="'About Us'"></a>
-        <a th:class="${activePage == 'services' ? 'active' : ''}" th:href="@{/services}" th:text="'Services'"></a>
-        <a th:href="@{/blog}" th:text="'Blog'"></a>
-        <a th:href="@{/faq}" th:text="'FAQ'"></a>
-        <a th:href="@{/contact}" th:text="'Contact Us'"></a>
-        <div class="search-container">
-            <form th:action="@{/search}" method="get">
-                <input type="text" name="query" placeholder="Search..." required>
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-        </div>
-    </div>
-    <div class="search-call">
-        <a th:href="'tel:+91-9919328475'" class="call-btn">Call Anytime: +91-9919328475</a>
-    </div>
-</div>
+<div th:insert="~{fragments/navbar :: mainNavbar}"></div>
+<div th:insert="~{fragments/sidebar-icons :: sideIcons}"></div>
+<div th:insert="~{fragments/hero-section :: hero}" th:with="pageName='CONTACT US'"></div>
 
-<!-- Service Hero Section -->
-<div class="service-component">
-    <div class="service-header">
-        <div class="overlay"></div>
-        <div class="content animate-fade-in-up">
-            <h1>CONTACT US</h1>
-            <p>Transform your business with cutting-edge IT, SEO, digital marketing, and design solutions at Torrent Media.</p>
-        </div>
-    </div>
-    <div class="side-icons">
-        <a th:href="'tel:+91-9919328475'" class="animate-scale-in">📞</a>
-        <a href="#" class="animate-scale-in">⬆</a>
-        <a th:href="'mailto:patelaman2708@gmail.com'" class="animate-scale-in">📧</a>
-    </div>
-</div>
 
 <!-- Contact Section -->
 <div class ="con-html">
@@ -74,7 +59,7 @@
 <!--  Map Section -->
 
 <div id="conmap-container">
-    <header class="conmap-header">
+    <header class="conmap-header typing-animation" >
         <div class="conmap-logo">Torrent Media</div>
         <h1 class="conmap-title">Our Coworking Spaces</h1>
         <p class="conmap-subtitle">Innovative Workspaces Across India</p>
@@ -82,21 +67,20 @@
     </header>
 
     <div class="conmap-location-card">
-        <h2 class="conmap-location-title">Our Locations in India</h2>
-        <p class="conmap-address">Find your perfect workspace in our strategically located centers across the country.</p>
+        <h2 class="conmap-location-title">Map of Our Locations</h2>
+        <p class="conmap-address">Explore our coworking spaces on the map below.</p>
         <div class="conmap-map-container">
-            <div class="conmap-map" id="conmap-indiaMap">
-                <div class="conmap-marker" style="top: 72%; left: 68%;">
-                    <div class="conmap-tooltip">Bengaluru</div>
-                </div>
-                <div class="conmap-marker" style="top: 38%; left: 70%;">
-                    <div class="conmap-tooltip">Haridwar</div>
-                </div>
-                <div class="conmap-marker" style="top: 42%; left: 73%;">
-                    <div class="conmap-tooltip">Uttar Pradesh</div>
-                </div>
-            </div>
+            <iframe
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62202.22070869614!2d77.6271404!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13c5c7d4f21f%3A0x71f1775e4a005d7e!2sWhitefield%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1721708923749!5m2!1sen!2sin">
+            </iframe>
         </div>
+
     </div>
 
     <div class="conmap-location-list">
@@ -107,92 +91,28 @@
                 <p>Tech Park, Whitefield</p>
                 <p>Bengaluru, Karnataka 560066</p>
                 <p>Open: Mon-Fri, 8AM-10PM</p>
-                <p class="conmap-contact">contact.patelaman2708@gmail.com</p>
+                <p class="conmap-contact">contact.torrentmediaa@gmail.com</p>
             </div>
-            <div class="conmap-location-item" style="animation-delay: 0.2s;">
+            <div class="conmap-location-item">
                 <h4>Haridwar Center</h4>
                 <p>Industrial Area, Sidcul</p>
                 <p>Haridwar, Uttarakhand 249403</p>
                 <p>Open: Mon-Sat, 9AM-8PM</p>
-                <p class="conmap-contact">contact.patelaman2708@gmail.com</p>
+                <p class="conmap-contact">contact.torrentmediaa@gmail.com</p>
             </div>
-            <div class="conmap-location-item" style="animation-delay: 0.4s;">
+            <div class="conmap-location-item">
                 <h4>Uttar Pradesh Center</h4>
                 <p>Sector 62, Noida</p>
                 <p>Uttar Pradesh 201309</p>
                 <p>Open: Mon-Sun, 7AM-11PM</p>
-                <p class="conmap-contact">contact.patelaman2708@gmail.com</p>
+                <p class="conmap-contact">contact.torrentmediaa@gmail.com</p>
             </div>
         </div>
     </div>
 </div>
 
-    <!-- Footer -->
-<div class="novarsis-container">
-    <!-- Quick Links -->
-    <div class="card animate-fade-in-up">
-        <h2>Quick Links</h2>
-        <div class="quick-links-grid">
-            <div class="quick-link-item"><h3><a th:href="@{/about}">About Us</a></h3><p>Discover who we are</p></div>
-            <div class="quick-link-item"><h3><a th:href="@{/services}">Services</a></h3><p>Explore our offerings</p></div>
-            <div class="quick-link-item"><h3><a th:href="@{/gallery}">Gallery</a></h3><p>View our tech showcase</p></div>
-            <div class="quick-link-item"><h3><a th:href="@{/support}">Support</a></h3><p>Connect with our team</p></div>
-            <div class="quick-link-item"><h3><a th:href="@{/contact}">Contact</a></h3><p>Start a conversation</p></div>
-            <div class="quick-link-item"><h3><a th:href="@{/team}">Our Team</a></h3><p>Meet our experts</p></div>
-            <div class="quick-link-item"><h3><a th:href="@{/portfolio}">Portfolio</a></h3><p>See our recent projects</p></div>
-            <div class="quick-link-item"><h3><a th:href="@{/help}">Need Help</a></h3><p>FAQs & support</p></div>
-        </div>
-    </div>
-
-    <!-- Official Info -->
-    <div class="card animate-fade-in-up">
-        <h2>Official Info</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> TorrentMedia, HSR Layout, Bengaluru, Karnataka, India</p>
-            <p><i class="fas fa-phone"></i>+91-9919328475</p>
-            <p><i class="fas fa-phone"></i> +91-6392994165</p>
-            <p><i class="fas fa-envelope"></i> patelaman2708@gmail.com</p>
-            <h3>Open Hours:</h3>
-            <p>Mon-Fri: 9:00 am - 6:00 pm</p>
-            <p>Sat: 9:00 am - 6:00 pm</p>
-            <p>Sunday - CLOSED</p>
-        </div>
-    </div>
-
-    <!-- Newsletter -->
-    <div class="card newsletter animate-fade-in-up">
-        <h2>Subscribe to our Newsletter</h2>
-        <p>Stay ahead with the latest trends in digital marketing, website development, and business technology.</p>
-        <form th:action="@{/subscribe}" method="post" class="newsletter-form">
-            <input type="email" name="email" placeholder="Enter your email address" required>
-            <button type="submit">Subscribe</button>
-        </form>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="card animate-fade-in-up">
-        <h2>Contact Us</h2>
-        <form th:action="@{/contact}" method="post">
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" required>
-            </div>
-            <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </div>
-</div>
+<!-- Footer -->
+<div th:insert="~{fragments/footer :: footer}"></div>
 
 <!-- Font Awesome for Icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -258,5 +178,12 @@
             });
         });
     </script>
+
+<script>
+    window.addEventListener('load', () => {
+      document.querySelector('.conmap-header').classList.add('typing-start');
+    });
+</script>
+
 </body>
 </html>

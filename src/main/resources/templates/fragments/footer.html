@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- fragments/footer.html -->
+<div th:fragment="footer">
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <div class="quick-links">
+                    <a th:href="@{/about-us}" class="quick-card"><i>ℹ️</i> About Us<br><small>Know who we are</small></a>
+                    <a th:href="@{/about-us}" class="quick-card"><i>👨‍💼</i> Our Team<br><small>Meet our professionals</small></a>
+                    <a th:href="@{/services}" class="quick-card"><i>🛠️</i> Services<br><small>What we offer</small></a>
+                    <a th:href="@{/about-us}" class="quick-card"><i>📷</i> Portfolio<br><small>Our recent projects</small></a>
+                    <a th:href="@{/}" class="quick-card"><i>🖼️</i> Gallery<br><small>Latest Tech Glimpse</small></a>
+                    <a th:href="@{/faq}" class="quick-card"><i>❓</i> Need Help<br><small>FAQs & guidance</small></a>
+                    <a th:href="@{/contact}" class="quick-card"><i>🎧</i> Support<br><small>Get in touch with us</small></a>
+                    <a th:href="@{/blog}" class="quick-card"><i>🤝</i> Clients<br><small>Who we've worked with</small></a>
+                    <a th:href="@{/}" class="quick-card"><i>✉️</i> Contact<br><small>Start a conversation</small></a>
+                </div>
+            </div>
+
+            <!-- Official Info -->
+            <div class="footer-column">
+                <h3>Official Info</h3>
+                <p><i>📍</i> TorrentMedia, HSR Layout, Bengaluru, Karnataka, India</p>
+                <p><i>📞</i> +91-9919328475</p>
+                <p><i>📞</i> +91-6392994165</p>
+                <p><i>✉️</i> torrentmediaa@gmail.com</p>
+                <h4>Open Hours:</h4>
+                <ul class="open-hours">
+                    <li>Mon - Sat: 9:00 am – 6:00 pm</li>
+                    <li>Sunday: CLOSED</li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-column newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <p>
+                    Stay informed with the latest trends in digital marketing, website development,
+                    and business technology. Get exclusive insights, tips, and offers directly in your inbox.
+                </p>
+                <form th:action="@{/subscribe}" th:method="post">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit">📧 Subscribe</button>
+                </form>
+            </div>
+
+            <!-- Map + Contact -->
+            <div class="footer-column map-contact">
+                <iframe
+                        class="map-frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d622206.4449744201!2d77.0193584!3d12.9539453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b3aaad%3A0x6457fc6ba14c8f0b!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1623070248139!5m2!1sen!2sin"
+                        width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                ></iframe>
+
+                <h3>Contact Us</h3>
+                <form class="contact-form" th:action="@{/submitContactUs}" th:method="post">
+                    <input type="text" name="fullName" placeholder="Full Name" required>
+                    <input type="tel" name="phoneNumber" placeholder="Phone Number" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <textarea name="message" rows="3" placeholder="Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 <strong>Torrent Media</strong>. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/torrent-media-8726a7376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">🔗 LinkedIn</a>
+                <a href="https://www.instagram.com/torrentmedia?igsh=MnpxdzV3ODY5OGlu" target="_blank">📸 Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61578723058870&mibextid=ZbWKwL" target="_blank">📘 Facebook</a>
+                <a href="https://x.com/TorrentMediaa?t=IddfcjHaVhpfm6yi5TbXWA&s=09" target="_blank">🐦 Twitter</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

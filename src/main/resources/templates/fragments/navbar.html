@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div th:fragment="mainNavbar">
+    <!-- Sticky Wrapper -->
+    <div class="sticky-wrapper">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <span><strong>Now Hiring:</strong> Hiring is closed.</span>
+            <div class="top-right">
+                <span><i class="fa-solid fa-envelope"></i> torrentmediaa@gmail.com</span>
+                <span><i class="fa-solid fa-location-dot"></i> TorrentMedia, HSR Layout, Bengaluru, Karnataka, India.</span>
+                <span class="social-icons">
+                  <a href="https://www.facebook.com/profile.php?id=61578723058870&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://youtube.com/@torrentmedia-n2f?si=qqww809AE1BeKlq9" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/torrent-media-8726a7376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://www.instagram.com/torrentmedia?igsh=MnpxdzV3ODY5OGlu" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </span>
+            </div>
+        </div>
+
+        <!-- Main Navbar -->
+        <header class="navbar">
+            <div class="logo-text">
+                <div class="brand-name">torrent<span>Media</span></div>
+                <div class="tagline">GROW DIGITALLY WITH US</div>
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+
+                <nav class="nav-links" id="navMenu">
+                    <a th:href="@{/}" th:classappend="${currentURI == '/'} ? 'active' : ''">Home</a>
+                    <a th:href="@{/about-us}" th:classappend="${currentURI == '/about'} ? 'active' : ''">About Us</a>
+                    <a th:href="@{/services}" th:classappend="${currentURI == '/services'} ? 'active' : ''">Services</a>
+                    <a th:href="@{/influencer}" th:classappend="${currentURI == '/influencer'} ? 'active' : ''">Influencer</a>
+                    <a th:href="@{/faq}" th:classappend="${currentURI == '/faq'} ? 'active' : ''">FAQ</a>
+                    <a th:href="@{/contact}" th:classappend="${currentURI == '/contact'} ? 'active' : ''">Contact Us</a>
+                </nav>
+
+
+
+            <div class="icons">
+                <!--<i class="fa-solid fa-magnifying-glass search-icon"></i> -->
+
+                <i class="fa-solid fa-magnifying-glass search-icon" onclick="toggleSearch()"></i>
+
+                <div class="search-box" id="searchBox" style="display: none;">
+                    <input type="text" placeholder="Search..." id="searchInput">
+                </div>
+
+                <i class="fa-solid fa-border-all grid-icon"></i>
+                <div class="call">
+                    <i class="fa-solid fa-phone-volume call-icon"></i>
+                    <div>
+                        <span>Call Anytime</span><br>
+                        <a href="tel:+91-9919328475"><strong>+91-9919328475</strong></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('show');
+        }
+    </script>
+    <script>
+        function toggleSearch() {
+            const searchBox = document.getElementById('searchBox');
+            searchBox.style.display = (searchBox.style.display === 'none' || searchBox.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</div>
+</body>
+</html>

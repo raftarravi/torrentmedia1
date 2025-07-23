@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  height: 100%;
+}
+
+/* Hero Section */
+.faq-hero {
+    position: relative;
+    height: 450px;
+    width: 100%;
+    background: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1950&q=80') center center/cover no-repeat;
+    display: flex;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Optional: dark overlay */
+.faq-hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Content centered and limited to half width */
+.faq-hero .content {
+    position: relative;
+    z-index: 2;
+    max-width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 120px;
+    color: white;
+}
+
+/* Text styling */
+.faq-hero .breadcrumb {
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+.faq-hero .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+/* Content */
+.content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  max-width: 90%;
+}
+
+.breadcrumb {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Fade-in */
+.fade-in {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Wavy SVG Line */
+.wavy-left {
+  position: absolute;
+  left: 20px;
+  top: 30%;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+  animation: waveMove 6s ease-in-out infinite;
+}
+
+@keyframes waveMove {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Blue Double Circle */
+.circle-wrapper {
+  position: absolute;
+  right: 30px;
+  top: 20%;
+  z-index: 2;
+  width: 70px;
+  height: 70px;
+}
+
+.circle-bg {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  z-index: 1;
+}
+
+.circle-border {
+  width: 55px;
+  height: 55px;
+  border: 5px solid #00AEEF;
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  z-index: 2;
+  background: transparent;
+  animation: ringPulse 4s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+
+/* Vertical Lines */
+.vline {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background: #00AEEF;
+  z-index: 1;
+  animation: glow 3s infinite ease-in-out;
+}
+
+.vline-left {
+  left: 0;
+}
+
+.vline-right {
+  right: 0;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Bottom Corner Circle */
+.corner-circle {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border: 8px solid #00AEEF;
+  border-radius: 50%;
+  z-index: 1;
+  animation: circleEntry 2s ease-out;
+}
+
+@keyframes circleEntry {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes bgMotion {
+  0% {
+    background-position: center center;
+    transform: scale(1);
+  }
+  50% {
+    background-position: center top;
+    transform: scale(1.02);
+  }
+  100% {
+    background-position: center bottom;
+    transform: scale(1);
+  }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .wavy-left {
+    left: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .circle-wrapper {
+    right: 20px;
+    top: 15%;
+    width: 50px;
+    height: 50px;
+  }
+
+  .corner-circle {
+    width: 70px;
+    height: 70px;
+    bottom: -30px;
+    right: -30px;
+  }
+
+  .circle-bg {
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .circle-border {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #00AEEF;
+    top: 5px;
+    left: 5px;
+  }
+}
+
