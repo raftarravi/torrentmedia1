@@ -29,6 +29,8 @@ public class HomeController {
     public String handleSubscription(@RequestParam("email") String email, RedirectAttributes redirectAttributes) {
 
         System.out.println("Subscribed Email: " + email);
+        System.out.println("Password from env: " + System.getenv("MAIL_PASSWORD"));
+
         redirectAttributes.addFlashAttribute("message", "Thank you for subscribing!");
         mailService.newsletterMail(email);
 

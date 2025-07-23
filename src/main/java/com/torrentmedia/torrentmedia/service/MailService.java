@@ -18,12 +18,12 @@ public class MailService {
 
 
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo("torrentmediaa@gmail.com"); // Your inbox
+        message.setTo("doctoappointment14@gmail.com"); // Your inbox
         message.setSubject("New Subscription of Newsletter");
         message.setText("New user subscribed with email: " + userEmail);
-        message.setFrom("torrentmediaa@gmail.com"); // Optional but recommended
+       // message.setFrom("torrentmediaa@gmail.com"); // Optional but recommended
 
-        // to the subcribar
+        // to the subcribe
 
         SimpleMailMessage userMessage = new SimpleMailMessage();
         userMessage.setTo(userEmail);
@@ -48,7 +48,7 @@ public class MailService {
         mailSender.send(userMessage);
 
         SimpleMailMessage adminMessage = new SimpleMailMessage();
-        adminMessage.setTo("torrentmediaa@gmail.com");
+        adminMessage.setTo("doctoappointment14@gmail.com");
         adminMessage.setSubject("New User Want to Talk.");
         adminMessage.setText("Details of The User \n" + "UserName : " + contactUs.getFullName() + "\n Email : "+ contactUs.getEmail() + "\n Contact : " + contactUs.getPhoneNumber()+ "\n Message : " + contactUs.getMessage() + "\n"  + " . \n Thank You ");
 
@@ -65,7 +65,7 @@ public class MailService {
         mailSender.send(userMessage);
 
         SimpleMailMessage adminMessage = new SimpleMailMessage();
-        adminMessage.setTo("torrentmediaa@gmail.com");
+        adminMessage.setTo("doctoappointment14@gmail.com");
         adminMessage.setSubject("New User Want to Talk.");
         adminMessage.setText("Details of The User \n" + "UserName : " + contactUsForm.getName() + "\n Email : "+ contactUsForm.getEmail() + "\n Contact : " + contactUsForm.getPhone()+ "\n Message : " + contactUsForm.getSubject() +"\n" + contactUsForm.getMessage() + " . \n Thank You ");
 
