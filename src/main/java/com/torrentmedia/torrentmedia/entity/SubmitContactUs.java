@@ -7,7 +7,7 @@ public class SubmitContactUs {
         private String email;
         private String message;
 
-        // Getters and Setters
+
 
 
     public SubmitContactUs() {
