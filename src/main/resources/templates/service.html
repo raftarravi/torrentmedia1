@@ -28,121 +28,302 @@
 <div th:insert="~{fragments/navbar :: mainNavbar}"></div>
 <div th:insert="~{fragments/sidebar-icons :: sideIcons}"></div>
 <div th:insert="~{fragments/hero-section :: hero}" th:with="pageName='SERVICE'"></div>
-<!-- Service Hero Section -->
-<div class="service-component">
-    <div class="service-header">
-        <div class="overlay"></div>
-        <div class="content animate-fade-in-up">
-            <h1>Services</h1>
-            <p>Transform your business with cutting-edge IT, SEO, digital marketing, and design solutions at Torrent Media.</p>
-        </div>
-    </div>
-    <div class="service-content">
-        <div class="overlay"></div>
-        <div class="content animate-scale-in">
-            <h2>Our Services</h2>
-            <h3>The Ultimate Solutions by Torrent Media</h3>
-            <p>We deliver a comprehensive suite of IT, SEO, digital marketing, design, development, and sales solutions crafted to propel your business to new heights.</p>
-        </div>
-    </div>
-    <div class="side-icons">
-        <a th:href="'tel:+91-9919328475'" class="animate-scale-in">📞</a>
-        <a href="#" class="animate-scale-in">⬆</a>
-        <a th:href="'mailto:torrentmediaa@gmail.com'" class="animate-scale-in">📧</a>
-    </div>
-</div>
 
-<!-- Service Cards -->
-<div class="content">
-    <a th:href="@{/services/web-design}" class="service-card animate-fade-in-up">
-        <img src="/images/web-design.jpeg" alt="Web Design">
-        <h3>Web Design & Development Services</h3>
-    </a>
-    <a th:href="@{/services/social-media}" class="service-card animate-fade-in-up">
-        <img src="/images/social-media.avif" alt="Social Media">
-        <h3>Social Media Marketing Services</h3>
-    </a>
-    <a th:href="@{/services/paid-ads}" class="service-card animate-fade-in-up">
-        <img src="/images/paid-ads.jpeg" alt="Paid Ads">
-        <h3>Paid Advertisement (Google & Meta Ads)</h3>
-    </a>
-    <a th:href="@{/services/branding}" class="service-card animate-fade-in-up">
-        <img src="/images/branding.jpeg" alt="Branding">
-        <h3>Branding & Logo Designing</h3>
-    </a>
-    <a th:href="@{/services/video-editing}" class="service-card animate-fade-in-up">
-        <img src="/images/video-editing.jpeg" alt="Video Editing">
-        <h3>Video Editing & Photoshoot Services</h3>
-    </a>
-    <a th:href="@{/services/content-marketing}" class="service-card animate-fade-in-up">
-        <img src="/images/contentmarketing.jpeg" alt="Content Marketing">
-        <h3>Content & Additional Marketing Services</h3>
-    </a>
-</div>
+
+<!-- Service Hero Section -->
+<section class="service-header">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+
+    <div class="content">
+        <h1 class="gradient-text">Transform Your Digital Presence</h1>
+        <h3 class="gradient-text">Best Solutions by Torrent Media</h3>
+        <p>Leverage cutting-edge technology and creative expertise to elevate your brand, engage your audience, and dominate your market with our comprehensive suite of digital services.</p>
+        <a href="#services" class="cta-button">
+            Explore Services <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+
+<!-- Core Services -->
+<section class="services-container" id="services">
+    <div class="section-title" data-aos="fade-up">
+        <h2>Our <span class="gradient-text">Core Services</span></h2>
+        <p>Comprehensive solutions designed to meet all your digital needs with precision and innovation</p>
+    </div>
+
+    <div class="services-grid">
+        <a href="#" class="service-card animate-fade-in-up" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Web Design" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Web Design & Development</h3>
+                <p class="card-description">Custom, responsive websites built with the latest technologies to ensure optimal performance and user experience.</p>
+                <span class="card-link">
+                    Learn more <i class="fas fa-arrow-right"></i>
+                </span>
+            </div>
+        </a>
+
+        <a href="#" class="service-card animate-fade-in-up" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-img">
+                <img src="/images/social-media.avif" alt="Social Media" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Social Media Marketing</h3>
+                <p class="card-description">Strategic campaigns to boost your online presence, engagement, and conversions across all platforms.</p>
+                <span class="card-link">
+                    Learn more <i class="fas fa-arrow-right"></i>
+                </span>
+            </div>
+        </a>
+
+        <a href="#" class="service-card animate-fade-in-up" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Paid Ads" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Paid Advertisement</h3>
+                <p class="card-description">Data-driven ad campaigns that maximize ROI through precise targeting and continuous optimization.</p>
+                <span class="card-link">
+                    Learn more <i class="fas fa-arrow-right"></i>
+                </span>
+            </div>
+        </a>
+
+        <a href="#" class="service-card animate-fade-in-up" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80" alt="Branding" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Branding & Logo Design</h3>
+                <p class="card-description">Memorable brand identities that communicate your values and resonate with your target audience.</p>
+                <span class="card-link">
+                    Learn more <i class="fas fa-arrow-right"></i>
+                </span>
+            </div>
+        </a>
+
+        <a href="#" class="service-card animate-fade-in-up" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Video Editing" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Brand Promotion</h3>
+                <p class="card-description">Professional Brand Promotion services from concept to final edit, crafted to tell your story and captivate viewers.</p>
+                <span class="card-link">
+                    Learn more <i class="fas fa-arrow-right"></i>
+                </span>
+            </div>
+        </a>
+
+        <a href="#" class="service-card animate-fade-in-up" data-aos="fade-up" data-aos-delay="500">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Content Marketing" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Content Strategy</h3>
+                <p class="card-description">Compelling content that engages your audience, improves SEO, and establishes thought leadership.</p>
+                <span class="card-link">
+                    Learn more <i class="fas fa-arrow-right"></i>
+                </span>
+            </div>
+        </a>
+    </div>
+</section>
 
 <!-- Premium Services -->
-<div class="flecontainer">
-    <div class="flebackground-pattern"></div>
-    <div class="flecontent">
-        <div class="fleheading animate-fade-in-up">What We're Offering</div>
-        <div class="flesubheading animate-fade-in-up">Premium IT Services by Torrent Media</div>
-        <p class="fledescription animate-fade-in-up">At Torrent Media, we provide end-to-end IT solutions designed to empower businesses with precision, innovation, and scalability. From system administration to custom software development, we ensure your technology drives growth.</p>
-        <div class="fleservices">
-            <div class="fleservice-card animate-scale-in">
-                <a th:href="@{/services/branding}">
-                    <img src="images/branding.png" alt="Branding Icon">
-                    <h3>Branding & Direction</h3>
-                    <p>Craft impactful brand identities to elevate your business presence.</p>
+<section class="premium-services">
+    <div class="background-pattern"></div>
+
+    <div class="premium-content">
+        <h2 class="premium-heading animate-fade-in-up">Advanced <span class="gradient-text">AI Solutions</span></h2>
+        <h3 class="premium-subheading animate-fade-in-up" data-aos-delay="100">Next-Generation Digital Services</h3>
+        <p class="premium-description animate-fade-in-up" data-aos-delay="200">Our premium offerings leverage artificial intelligence and machine learning to deliver unparalleled results, efficiency, and innovation for your business.</p>
+
+        <div class="premium-grid">
+            <div class="premium-card animate-scale-in" data-aos="fade-up" data-aos-delay="0">
+                <a th:href="@{/about-us}">
+                    <div class="premium-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Brand Strategy</h3>
+                    <p>AI-powered brand development that analyzes market trends and consumer behavior to create impactful identities.</p>
+                    <span class="premium-link">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </span>
                 </a>
             </div>
-            <div class="fleservice-card animate-scale-in">
-                <a th:href="@{/services/product-design}">
-                    <img src="images/branding.png" alt="Product Design Icon">
-                    <h3>Product Design & Development</h3>
-                    <p>Visually stunning and functional designs that bring ideas to life.</p>
+
+            <div class="premium-card animate-scale-in" data-aos="fade-up" data-aos-delay="100">
+                <a th:href="@{/about-us}">
+                    <div class="premium-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Product Design</h3>
+                    <p>Intelligent design solutions that combine user experience research with predictive analytics.</p>
+                    <span class="premium-link">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </span>
                 </a>
             </div>
-            <div class="fleservice-card animate-scale-in">
-                <a th:href="@{/services/video-editing}">
-                    <img src="/images/editing.png" alt="Video Editing Icon">
-                    <h3>Video Editing & Grading</h3>
-                    <p>Professional editing and grading for captivating visual content.</p>
+
+
+            <div class="premium-card animate-scale-in" data-aos="fade-up" data-aos-delay="300">
+                <a th:href="@{/about-us}">
+                    <div class="premium-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>UX Optimization</h3>
+                    <p>Machine learning-driven user experience improvements that increase conversions and satisfaction.</p>
+                    <span class="premium-link">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </span>
                 </a>
             </div>
-            <div class="fleservice-card animate-scale-in">
-                <a th:href="@{/services/ui-ux}">
-                    <img src="images/uiux.png" alt="UI/UX Icon">
-                    <h3>UI/UX Designing</h3>
-                    <p>User-centric and visually appealing designs for enhanced engagement.</p>
+
+            <div class="premium-card animate-scale-in" data-aos="fade-up" data-aos-delay="400">
+                <a th:href="@{/about-us}">
+                    <div class="premium-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Advanced data analysis that forecasts trends and identifies opportunities before your competitors.</p>
+                    <span class="premium-link">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </span>
                 </a>
             </div>
-            <div class="fleservice-card animate-scale-in">
-                <a th:href="@{/services/data-analysis}">
-                    <img src="images/anaylisis.png" alt="Data Analysis Icon">
-                    <h3>Data Analysis</h3>
-                    <p>Data-driven insights to fuel strategic growth and communication.</p>
-                </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <div class="testimonials-container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Client <span class="gradient-text">Success Stories</span></h2>
+            <p>Don't just take our word for it - hear what our clients have to say about working with us</p>
+        </div>
+
+        <div class="testimonial-cards">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">Torrent Media transformed our online presence completely. Their AI-driven marketing strategy increased our leads by 240% in just three months.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, TechSolutions Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">The website they built for us is not just beautiful - it's a conversion machine. Our bounce rate dropped by 65% and sales increased immediately.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Marketing Director, UrbanStyle</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">Their data analysis services uncovered opportunities we never knew existed. The insights have become invaluable to our strategic planning.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David Rodriguez">
+                        </div>
+                        <div class="author-info">
+                            <h4>David Rodriguez</h4>
+                            <p>COO, GreenFuture Energy</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="cta-container" data-aos="fade-up">
+        <h2 class="cta-title">Ready to Transform Your Business?</h2>
+        <p class="cta-description">Schedule a free consultation with our experts to discover how our AI-powered solutions can drive your success.</p>
+        <a href="/contact" class="cta-button-secondary">
+            Get Started <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
 
 <!-- Footer -->
 <div th:insert="~{fragments/footer :: footer}"></div>
-<!-- Font Awesome for Icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<!-- JavaScript for Search Bar Interaction -->
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
+    AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-out-quart'
+    });
+
+    // Animate service cards on scroll
     document.addEventListener('DOMContentLoaded', () => {
-        const searchInput = document.querySelector('.search-container input');
-        searchInput.addEventListener('focus', () => {
-            searchInput.classList.add('active');
-        });
-        searchInput.addEventListener('blur', () => {
-            if (!searchInput.value) {
-                searchInput.classList.remove('active');
-            }
-        });
+        const serviceCards = document.querySelectorAll('.service-card, .premium-card');
+
+        const animateOnScroll = () => {
+            serviceCards.forEach((card, index) => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (cardPosition < screenPosition) {
+                    card.style.opacity = '1';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+
+        // Floating particles
+        const particlesContainer = document.querySelector('.service-header');
+        for (let i = 0; i < 8; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+
+            // Random properties
+            const size = Math.random() * 10 + 5;
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            const delay = Math.random() * 5;
+            const duration = Math.random() * 10 + 10;
+            const colors = ['#3b82f6', '#22d3ee', '#06b6d4', '#6366f1'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${posX}%`;
+            particle.style.top = `${posY}%`;
+            particle.style.background = `radial-gradient(circle, ${color} 30%, transparent)`;
+            particle.style.animation = `float ${duration}s infinite ease-in-out ${delay}s`;
+            particle.style.opacity = Math.random() * 0.6 + 0.2;
+
+            particlesContainer.appendChild(particle);
+        }
     });
 </script>
 </body>

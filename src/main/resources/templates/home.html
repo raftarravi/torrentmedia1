@@ -28,144 +28,202 @@
 <div th:insert="~{fragments/navbar :: mainNavbar}"></div>
 <div th:insert="~{fragments/sidebar-icons :: sideIcons}"></div>
 
-<!-- Service Hero Section -->
-<div class="service-component" id="services">
-    <div class="service-combined">
-        <div class="bg-image"></div>
-        <div class="overlay"></div>
-        <div class="content animate-fade-in-up">
-            <h1>Services</h1>
-            <h3>The Ultimate Solutions by Torrent Media</h3>
-            <p class="subhead">Transform your business with cutting-edge IT, SEO, digital marketing, and design solutions at Torrent Media.</p>
-            <p class="description">We deliver a comprehensive suite of IT, SEO, digital marketing, design, development, and sales solutions crafted to propel your business to new heights.</p>
-        </div>
+<section class="service-hero">
+    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Team working" class="hero-bg">
+    <div class="hero-content">
+        <h1 class="hero-title">Innovative Solutions for Your Business</h1>
+        <p class="hero-subtitle">We deliver cutting-edge services tailored to your needs, helping you achieve your business goals with our expert team and proven methodologies.</p>
+        <a th:href="@{/contact}" class="cta-button">
+            Get Started
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
     </div>
-</div>
+
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="section-header">
+        <p class="section-subtitle">Our Services</p>
+        <h2 class="section-title">Comprehensive Solutions for Your Success</h2>
+        <p class="section-description">We offer a wide range of services designed to meet your business needs and help you achieve your goals efficiently.</p>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm16 16V5H5v14h14zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg>
+            </div>
+            <h3 class="feature-title">Quality Assurance</h3>
+            <p class="feature-description">Our rigorous quality control processes ensure that every product meets the highest standards before reaching your customers.</p>
+            <a th:href="@{/services}" class="feature-link">
+                Learn more
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+            </div>
+            <h3 class="feature-title">Expert Team</h3>
+            <p class="feature-description">Our team of certified professionals brings years of experience and specialized knowledge to every project.</p>
+            <a th:href="@{/about-us}" class="feature-link">
+                Learn more
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
+            </div>
+            <h3 class="feature-title">24/7 Support</h3>
+            <p class="feature-description">Round-the-clock assistance ensures your business operations continue smoothly without interruption.</p>
+            <a th:href="@{/contact}"class="feature-link">
+                Learn more
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
 
 
+    </div>
+</section>
 
-<!-- second page that having card  -->
-<div  class="body-homesec">
-<div class="homesec-services-container">
-    <div class="homesec-card homesec-quality">
-        <div class="homesec-icon homesec-quality">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-        </div>
-        <h3 class="homesec-title">Quality Service</h3>
-        <p class="homesec-description">We deliver tailored solutions with precision, ensuring top-notch quality in every project.</p>
-        <a href="#" class="homesec-link">Learn More</a>
-    </div>
-    <div class="homesec-card homesec-team">
-        <div class="homesec-icon homesec-team">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-        </div>
-        <h3 class="homesec-title">Expert Team</h3>
-        <p class="homesec-description">Our skilled professionals bring industry expertise to drive innovation and best results.</p>
-        <a href="#" class="homesec-link">Learn More</a>
-    </div>
-    <div class="homesec-card homesec-support">
-        <div class="homesec-icon homesec-support">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-        </div>
-        <h3 class="homesec-title">Excellent Support</h3>
-        <p class="homesec-description">We provide fast responsive, 24/7 support to keep your business running smoothly.</p>
-        <a href="#" class="homesec-link">Learn More</a>
-    </div>
-    <div class="homesec-card homesec-management">
-        <div class="homesec-icon homesec-management">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15v-2h2v2h-2zm4-4V9h-4v4h2v2h2v-2h-2zm-2-8v2h2v2h2v2h2v4h-2v-2h-2v-2h-2V7h-2z"/></svg>
-        </div>
-        <h3 class="homesec-title">Management</h3>
-        <p class="homesec-description">From planning to execution, we manage every detail with strategic efficiency.</p>
-        <a href="#" class="homesec-link">Learn More</a>
-    </div>
-</div>
-</div>
-<!-- third page which show about -->
-
-<div id="homethree-container" class="homethree-container">
-    <div class="homethree-about-content">
-
-        <!-- Left Image -->
-        <div class="homethree-image-box">
-            <img th:src="@{/images/experiance.webp}" alt="Team Working">
-            <div class="homethree-experience-box">
-                <h2><span>3</span> Years<br>Experience</h2>
+<!-- About Section -->
+<section class="about-section">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf" alt="Team meeting">
+            <div class="experience-badge">
+                <div class="experience-years">3+</div>
+                <div class="experience-text">Years Experience</div>
             </div>
         </div>
 
-        <!-- Right Text -->
-        <div class="homethree-text-box homethree-fade-in">
-            <p class="homethree-subtitle">About Torrent Media</p>
-            <h1 class="homethree-heading">We are Partner of Your <span class="homethree-highlight">Success</span></h1>
-            <p class="homethree-description">
-                Torrent Media is a dynamic digital powerhouse dedicated to elevating brands through advanced IT services and creative strategy.
-                From digital marketing to branding and product media, our expert team crafts custom digital solutions that drive impact and inspire growth.
-            </p>
+        <div class="about-content">
+            <p class="section-subtitle">About Us</p>
+            <h2 class="section-title">We Deliver <span class="homethree-highlight">Exceptional</span> Services</h2>
+            <p class="section-description">Our company has been at the forefront of industry innovation, helping businesses transform and grow through our comprehensive service offerings.</p>
 
-            <!-- Feature Cards -->
-            <div class="homethree-cards">
-                <div class="homethree-card">
-                    <img th:src="@{/images/brand-promotion.png}" alt="Consultant Icon">
-                    <h4>Brand Promotion</h4>
-                    <p>Smarter Solutions</p>
-                </div>
-                <div class="homethree-card">
-                    <img th:src="@{/images/itservice.png}" alt="Specialist Icon">
-                    <h4>IT Specialist</h4>
-                    <p>Faster Delivery</p>
-                </div>
-            </div>
-
-            <!-- Feature List -->
-            <ul class="homethree-points">
-                <li>We are a team of skilled IT specialists.</li>
-                <li>We provide reliable, efficient technology solutions & consultations.</li>
-                <li>Our expertise includes all services from Branding to Sales & Organic Growth.</li>
+            <ul class="about-points">
+                <li>Certified professionals with industry-recognized qualifications</li>
+                <li>Proven track record of successful project delivery</li>
+                <li>Client-focused approach with customized solutions</li>
+                <li>Continuous improvement through feedback and innovation</li>
+                <li>Transparent communication at every stage</li>
             </ul>
+
+            <a th:href="@{/about-us}" class="cta-button">
+                Our Story
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
         </div>
     </div>
-</div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-number">99+</div>
+            <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Team Members</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Satisfaction Rate</div>
+        </div>
+    </div>
+</section>
 <!-- home five section before 4 due to some reason -->
 
 <div id="homefive-body">
     <section id="homefive-services">
-        <p class="homefive-subtitle">What We're Offering</p>
-        <h2 class="homefive-title">Dealing in all Professional IT Services</h2>
+        <p class="homefive-subtitle">EXCELLENCE IN DIGITAL SOLUTIONS</p>
+        <h2 class="homefive-title">Comprehensive Professional IT Services</h2>
+        <div class="title-divider">
+            <span class="divider-line"></span>
+            <span class="divider-dot"></span>
+            <span class="divider-line"></span>
+        </div>
         <p class="homefive-description">
-            We offer a complete range of IT, SEO, digital marketing, design, development, and sales solutions tailored to grow your business.
+            We deliver end-to-end digital transformation services combining cutting-edge technology with strategic thinking to accelerate your business growth.
         </p>
 
         <div class="homefive-card-container">
+            <!-- Card 1 -->
             <div class="homefive-card">
-                <img src="/images/Website-Service.webp" alt="Web Design">
-                <h3>Brand Promotion.</h3>
-                <p>We craft user-friendly websites with premium design and dev. tailored to your brand.</p>
-                <a href="#">Read More →</a>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <h3>Brand Promotion</h3>
+                <p>Strategic brand development and digital presence optimization to establish market authority and recognition.</p>
+                <a th:href="@{/services}">
+                    <span>Explore Service</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
             </div>
 
+            <!-- Card 2 -->
             <div class="homefive-card">
-                <img src="/images/Social-Media-Marketing-Service.webp" alt="Social Marketing">
-                <h3>Social Marketing.</h3>
-                <p>We grow your brand online through targeted and engaging social media marketing.</p>
-                <a href="#">Read More →</a>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <h3>Social Marketing</h3>
+                <p>Data-driven social media strategies that engage audiences and convert followers into loyal customers.</p>
+                <a th:href="@{/services}">
+                    <span>Explore Service</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
             </div>
 
+            <!-- Card 3 -->
             <div class="homefive-card">
-                <img src="/images/Sales.webp" alt="Paid Ads">
-                <h3>Paid Advertisement.</h3>
-                <p>We drive results with strategic paid ads across Google, Meta, and other leading platforms.</p>
-                <a href="#">Read More →</a>
-            </div>
-
-            <div class="homefive-card">
-                <img src="/images/Shopify.webp" alt="eCommerce">
-                <h3>eCommerce Solution.</h3>
-                <p>We design high-converting eCommerce stores to boost online revenue.</p>
-                <a href="#">Read More →</a>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                </div>
+                <h3>Paid Advertisement</h3>
+                <p>Precision-targeted ad campaigns across digital platforms to maximize ROI and customer acquisition.</p>
+                <a th:href="@{/services}">
+                    <span>Explore Service</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
             </div>
         </div>
+        <div class="cta-container">
+            <a th:href="@{/services}" class="cta-button">
+                View All Services
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+
     </section>
+
 </div>
 
 

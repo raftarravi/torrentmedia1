@@ -1,14 +1,20 @@
-* {
+:root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gradient: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+        }
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-            color: #e5e7eb;
-            line-height: 1.7;
+            font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
         }
 
@@ -208,378 +214,364 @@
         }
 
         /* Combined Header + Content */
-        .service-combined {
-            position: relative;
-            text-align: center;
-            padding: 100px 20px;
-            color: #fff;
-            overflow: hidden;
-        }
-
-        .service-combined .bg-image {
-            background-color: lightblue; /* Update path */
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            inset: 0;
-            z-index: -3;
-            animation: zoomInMotion 20s ease-in-out infinite alternate;
-        }
-
-        .service-combined .overlay {
-            background: rgba(0, 0, 0, 0.5);
-            position: absolute;
-            inset: 0;
-            z-index: -2;
-        }
-
-        .service-combined .content {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .service-combined h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .service-combined .subhead {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: #ddd;
-        }
-
-        .service-combined h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .service-combined h3 {
-            font-size: 1.5rem;
-            color: #00b7ff;
-            margin-bottom: 10px;
-        }
-
-        .service-combined .description {
-            font-size: 1rem;
-            color: #ccc;
-            max-width: 700px;
-            margin: auto;
-        }
-
-        /* Side Icons */
-        .side-icons {
-            position: fixed;
-            top: 50%;
-            right: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            transform: translateY(-50%);
-            z-index: 1000;
-        }
-        .side-icons a {
-            font-size: 22px;
-            text-decoration: none;
-            color: #333;
-            transition: transform 0.3s ease;
-        }
-        .side-icons a:hover {
-            transform: scale(1.2);
-        }
-
-        /* Animations */
-        .animate-fade-in-up {
-            animation: fadeInUp 1s ease forwards;
-            opacity: 0;
-        }
-        .animate-scale-in {
-            animation: scaleIn 1s ease forwards;
-            opacity: 0;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Background Image Zoom Animation */
-        @keyframes zoomInMotion {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.1);
-            }
-        }
-
-
-        /* second page that includes card */
-
-        .body-homesec {
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    margin: 0;
-                    padding: 50px;
-                    background-color: #f7f9fc;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    min-height: 100vh;
-                    background-image: radial-gradient(circle at 1% 1%, #e0e0e0 1px, transparent 1px);
-                    background-size: 30px 30px;
-                }
-                .homesec-services-container {
-                    display: flex;
-                    gap: 30px;
-                    max-width: 1200px;
-                    justify-content: center;
-                    flex-wrap: nowrap;
-                }
-                .homesec-card {
-                    border-radius: 12px;
-                    padding: 25px;
-                    width: 240px;
-                    text-align: center;
-                    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    animation: homesec-fadeInUp 0.8s ease-out backwards;
+        .service-hero {
                     position: relative;
-                    overflow: hidden;
-                }
-                @keyframes homesec-fadeInUp {
-                    from {
-                        transform: translateY(20px);
-                        opacity: 0;
-                    }
-                    to {
-                        transform: translateY(0);
-                        opacity: 1;
-                    }
-                }
-                .homesec-card:nth-child(1) { animation-delay: 0s; }
-                .homesec-card:nth-child(2) { animation-delay: 0.2s; }
-                .homesec-card:nth-child(3) { animation-delay: 0.4s; }
-                .homesec-card:nth-child(4) { animation-delay: 0.6s; }
-                .homesec-card:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                }
-                .homesec-card.homesec-quality { background: linear-gradient(135deg, #e6f0fa, #b3d4fc); }
-                .homesec-card.homesec-team { background: linear-gradient(135deg, #fff3e6, #ffcc99); }
-                .homesec-card.homesec-support { background: linear-gradient(135deg, #e6fffa, #a3e4d7); }
-                .homesec-card.homesec-management { background: linear-gradient(135deg, #e6ffed, #a9dfbf); }
-                .homesec-icon {
-                    width: 60px;
-                    height: 60px;
-                    margin: 0 auto 20px;
-                    background-size: contain;
+                    height: 100vh;
+                    min-height: 700px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    transition: transform 0.3s ease;
-                    border-radius: 50%;
-                    background-color: rgba(255, 255, 255, 0.8);
+                    color: white;
+                    overflow: hidden;
+                    isolation: isolate;
                 }
-                .homesec-icon svg {
+
+                .service-hero::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+                    z-index: -1;
+                }
+
+                .hero-bg {
+                    position: absolute;
                     width: 100%;
                     height: 100%;
+                    object-fit: cover;
+                    z-index: -2;
+                    animation: kenburns 20s infinite alternate;
                 }
-                .homesec-icon:hover {
-                    transform: scale(1.1);
+
+                .hero-content {
+                    max-width: 1200px;
+                    padding: 2rem;
+                    text-align: center;
+                    animation: fadeInUp 1s ease-out;
                 }
-                .homesec-title {
-                    color: #2c3e50;
-                    font-size: 20px;
-                    margin-bottom: 12px;
+
+                .hero-title {
+                    /* Keep existing styles */
+                    overflow: hidden; /* Ensures text isn't visible before animation */
+                    border-right: 3px solid var(--accent); /* Cursor effect */
+                    white-space: nowrap; /* Keeps text on one line */
+                    margin: 0 auto; /* Centers the title */
+                    color: #0E86D4;
+                    animation:
+                        typing 30s steps(30, end),
+                        blink-caret 0.75s step-end infinite;
+                }
+
+                        .hero-subtitle {
+                            /* Keep existing styles */
+                            margin: 30px;
+                            opacity: 0;
+                            animation: fadeInUp 1s ease-out 3.5s forwards; /* Starts after title animation */
+                        }
+
+                        @keyframes typing {
+                            from { width: 0 }
+                            to { width: 100% }
+                        }
+
+                        @keyframes blink-caret {
+                            from, to { border-color: transparent }
+                            50% { border-color: var(--accent); }
+                        }
+
+                        @keyframes fadeInUp {
+                            from {
+                                opacity: 0;
+                                transform: translateY(20px);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                        }
+
+                .cta-button {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 1rem 2.5rem;
+                    background: var(--accent);
+                    color: white;
+                    border-radius: 50px;
                     font-weight: 600;
-                    transition: color 0.3s ease;
-                }
-                .homesec-card:hover .homesec-title {
-                    color: #1a252f;
-                }
-                .homesec-description {
-                    color: #666666;
-                    font-size: 15px;
-                    line-height: 1.6;
-                    margin-bottom: 20px;
-                }
-                .homesec-link {
-                    color: #3498db;
                     text-decoration: none;
-                    font-size: 15px;
-                    font-weight: 500;
-                    transition: color 0.3s ease;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
                 }
-                .homesec-link:hover {
-                    color: #2980b9;
-                    text-decoration: underline;
+
+                .cta-button:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+                    background: var(--primary);
                 }
-                .homesec-icon.homesec-quality svg { fill: #3498db; }
-                .homesec-icon.homesec-team svg { fill: #e67e22; }
-                .homesec-icon.homesec-support svg { fill: #2ecc71; }
-                .homesec-icon.homesec-management svg { fill: #27ae60; }
 
-        /*third page which updated after code update */
+                /* Features Section */
+                .features-section {
+                    padding: 6rem 2rem;
+                    background: var(--light);
+                }
 
-         #homethree-container {
-              padding: 60px 20px;
-              background: linear-gradient(to bottom right, #f5f8ff, #e9f0ff);
-            }
+                .section-header {
+                    text-align: center;
+                    max-width: 800px;
+                    margin: 0 auto 4rem;
+                }
 
-            .homethree-container {
-              max-width: 1450px;
-              margin: auto;
-              animation: fadeIn 1s ease-in;
-            }
+                .section-subtitle {
+                    color: var(--accent);
+                    font-weight: 600;
+                    letter-spacing: 2px;
+                    margin-bottom: 1rem;
+                    text-transform: uppercase;
+                }
 
-            @keyframes fadeIn {
-              from {opacity: 0; transform: translateY(30px);}
-              to {opacity: 1; transform: translateY(0);}
-            }
+                .section-title {
+                    font-size: clamp(1.8rem, 3vw, 3rem);
+                    color: var(--dark);
+                    margin-bottom: 1.5rem;
+                    line-height: 1.3;
+                }
 
-            .homethree-about-content {
-              display: flex;
-              flex-wrap: wrap;
-              gap: 40px;
-              align-items: center;
-            }
+                .section-description {
+                    color: #666;
+                    line-height: 1.7;
+                    font-size: 1.1rem;
+                }
 
-            .homethree-image-box {
-              flex: 1;
-              position: relative;
-            }
+                .features-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 2rem;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
 
-            .homethree-image-box img {
-              width: 100%;
-              border-radius: 10px;
-              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            }
+                .feature-card {
+                    background: white;
+                    border-radius: 16px;
+                    padding: 2.5rem 2rem;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 1;
+                }
 
-            .homethree-experience-box {
-              position: absolute;
-              bottom: 20px;
-              left: 20px;
-              background: #006eff;
-              color: #fff;
-              padding: 20px 30px;
-              border-radius: 10px;
-              font-size: 18px;
-              box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
-            }
+                .feature-card::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 4px;
+                    height: 0;
+                    background: var(--gradient);
+                    transition: height 0.3s ease;
+                    z-index: -1;
+                }
 
-            .homethree-experience-box span {
-              font-size: 36px;
-              font-weight: bold;
+                .feature-card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+                }
 
-            }
+                .feature-card:hover::before {
+                    height: 100%;
+                }
 
-            .homethree-text-box {
-              flex: 1.2;
-              gap: 20px;
-              align-items: center;
+                .feature-icon {
+                    width: 70px;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgba(67, 97, 238, 0.1);
+                    border-radius: 50%;
+                    margin-bottom: 1.5rem;
+                }
 
-            }
+                .feature-icon svg {
+                    width: 32px;
+                    height: 32px;
+                    color: var(--primary);
+                }
 
-            .homethree-subtitle {
-              color: #006eff;
-              letter-spacing: 1px;
-              font-weight: 500;
-              margin-bottom: 10px;
-            }
+                .feature-title {
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                    color: var(--dark);
+                }
 
-            .homethree-heading {
-              font-size: 32px;
-              font-weight: 700;
-              margin-bottom: 20px;
-              color: #1a1a1a;
-            }
+                .feature-description {
+                    color: #666;
+                    line-height: 1.7;
+                    margin-bottom: 1.5rem;
+                }
 
-            .homethree-heading .homethree-highlight {
-              color: #006eff;
-              border-bottom: 3px solid #006eff;
-            }
+                .feature-link {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    color: var(--primary);
+                    font-weight: 600;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                }
 
-            .homethree-description {
-              font-size: 16px;
-              line-height: 1.7;
-              margin-bottom: 25px;
-              color: #555;
-            }
+                .feature-link:hover {
+                    gap: 1rem;
+                }
 
-            .homethree-cards {
-              display: flex;
-              gap: 20px;
-              margin-bottom: 20px;
-            }
+                /* About Section */
+                .about-section {
+                    padding: 6rem 2rem;
+                    background: white;
+                }
 
-            .homethree-card {
-              flex: 1;
-              background: #e0ecff;
-              padding: 20px;
-              border-radius: 12px;
-              text-align: center;
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-              transition: 0.3s ease-in-out;
-            }
+                .about-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 4rem;
+                    align-items: center;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
 
-            .homethree-card:hover {
-              background: #c5dbff;
-              transform: translateY(-5px);
-            }
+                .about-image {
+                    flex: 1;
+                    min-width: 300px;
+                    position: relative;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                }
 
-            .homethree-card img {
-              width: 40px;
-              margin-bottom: 10px;
-            }
+                .about-image img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
 
-            .homethree-card h4 {
-              font-size: 18px;
-              color: #002366;
-              margin-bottom: 5px;
-            }
+                .experience-badge {
+                    position: absolute;
+                    bottom: -20px;
+                    left: -20px;
+                    background: var(--gradient);
+                    color: white;
+                    padding: 1.5rem;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 30px rgba(67, 97, 238, 0.3);
+                }
 
-            .homethree-card p {
-              font-size: 14px;
-              color: #555;
-            }
+                .experience-years {
+                    font-size: 3rem;
+                    font-weight: 800;
+                    line-height: 1;
+                }
 
-            .homethree-points {
-              list-style: none;
-              font-size: 15px;
-              line-height: 2;
-              color: #333;
-            }
+                .experience-text {
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
 
-            .homethree-points li::before {
-              content: "✅ ";
-            }
+                .about-content {
+                    flex: 1;
+                    min-width: 300px;
+                }
 
-            /* Optional scroll reveal */
-            .homethree-fade-in {
-              opacity: 0;
-              transform: translateY(40px);
-              transition: all 0.8s ease-out;
-            }
+                .about-points {
+                    margin: 2rem 0;
+                    list-style: none;
+                }
 
-            .homethree-fade-in.show {
-              opacity: 1;
-              transform: translateY(0);
-            }
+                .about-points li {
+                    margin-bottom: 1rem;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 0.75rem;
+                    color: #555;
+                    line-height: 1.6;
+                }
+
+                .about-points li::before {
+                    content: '✓';
+                    color: var(--accent);
+                    font-weight: bold;
+                }
+
+                /* Stats Section */
+                .stats-section {
+                    padding: 4rem 2rem;
+                    background: var(--gradient);
+                    color: white;
+                }
+
+                .stats-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 2rem;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+
+                .stat-item {
+                    text-align: center;
+                    padding: 2rem;
+                }
+
+                .stat-number {
+                    font-size: 3rem;
+                    font-weight: 800;
+                    margin-bottom: 0.5rem;
+                }
+
+                .stat-label {
+                    font-size: 1.1rem;
+                    opacity: 0.9;
+                }
+
+                /* Animations */
+                @keyframes kenburns {
+                    0% {
+                        transform: scale(1) translate(0, 0);
+                    }
+                    100% {
+                        transform: scale(1.1) translate(20px, 20px);
+                    }
+                }
+
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(40px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                /* Responsive Adjustments */
+                @media (max-width: 768px) {
+                    .hero-title {
+                        font-size: 2.5rem;
+                    }
+
+                    .about-container {
+                        flex-direction: column;
+                    }
+
+                    .experience-badge {
+                        bottom: -10px;
+                        left: -10px;
+                    }
+                }
+
+
 
         /* fourth page which having what we offer section */
 
@@ -713,118 +705,280 @@
         /* home five section */
 
         #homefive-body {
-          padding: 50px 30px;
-          background: linear-gradient(to bottom right, #f5f8ff, #e9f0ff);
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #f8faff 0%, #eef4ff 100%);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         /* Headings */
         #homefive-services {
-          text-align: center;
-          margin-bottom: 40px;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 1200px;
         }
 
         .homefive-subtitle {
-          color: #007bff;
-          font-weight: 600;
-          margin-bottom: 10px;
+            color: #4a6cf7;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            letter-spacing: 1px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
         }
 
         .homefive-title {
-          font-size: 2.5rem;
-          font-weight: bold;
-          color: #1c2373;
-          margin-bottom: 15px;
+            font-size: clamp(1.75rem, 5vw, 2.8rem);
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 1.25rem;
+            line-height: 1.2;
+            padding: 0 1rem;
+        }
+
+        .title-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .divider-line {
+            width: 3rem;
+            height: 2px;
+            background: #4a6cf7;
+            display: inline-block;
+        }
+
+        .divider-dot {
+            width: 6px;
+            height: 6px;
+            background: #4a6cf7;
+            border-radius: 50%;
+            margin: 0 0.75rem;
+            display: inline-block;
         }
 
         .homefive-description {
-          max-width: 800px;
-          margin: 0 auto 40px;
-          color: #555;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: #555;
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            line-height: 1.6;
+            padding: 0 1rem;
         }
 
         /* Card Layout */
         .homefive-card-container {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            padding: 0 1rem;
         }
 
         .homefive-card {
-          width: 250px;
-          height: 320px;
-          background: linear-gradient(to bottom, #ffffff, #f1f1f1);
-          border-radius: 15px;
-          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-          padding: 20px;
-          text-align: left;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          position: relative;
-          overflow: hidden;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(74, 108, 247, 0.08);
+            border: 1px solid rgba(74, 108, 247, 0.1);
+            z-index: 1;
         }
 
-        /* Top-to-bottom hover animation */
         .homefive-card::before {
-          content: '';
-          position: absolute;
-          top: -100%;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(to bottom, #007bff, #1c2373);
-          z-index: 0;
-          transition: top 0.4s ease-in-out;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #4a6cf7 0%, #2541b2 100%);
+            transition: height 0.3s ease;
+            z-index: -1;
         }
 
         .homefive-card:hover::before {
-          top: 0;
+            height: 100%;
         }
 
-        .homefive-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(74, 108, 247, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
         }
 
-        .homefive-card img {
-          width: 100%;
-          height: 120px;
-          object-fit: cover;
-          border-radius: 10px;
-          margin-bottom: 15px;
-          position: relative;
-          z-index: 1;
+        .homefive-card:hover .card-icon {
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        .homefive-card h3,
-        .homefive-card p,
-        .homefive-card a {
-          position: relative;
-          z-index: 1;
-          color: #222;
+        .card-icon svg {
+            width: 30px;
+            height: 30px;
+            color: #4a6cf7;
+            transition: all 0.3s ease;
+        }
+
+        .homefive-card:hover .card-icon svg {
+            color: white;
+            transform: scale(1.1);
         }
 
         .homefive-card h3 {
-          font-size: 1.1rem;
-          margin-bottom: 10px;
-          font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #1a237e;
+            transition: all 0.3s ease;
+        }
+
+        .homefive-card:hover h3 {
+            color: white;
         }
 
         .homefive-card p {
-          font-size: 0.9rem;
-          margin-bottom: 15px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        .homefive-card:hover p {
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .homefive-card a {
-          font-size: 0.9rem;
-          color: #007bff;
-          font-weight: bold;
-          text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #4a6cf7;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .homefive-card:hover h3,
-        .homefive-card:hover p,
         .homefive-card:hover a {
-          color: #fff;
+            color: white;
+        }
+
+        .homefive-card a svg {
+            width: 18px;
+            height: 18px;
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .homefive-card a:hover svg {
+            transform: translateX(5px);
+        }
+
+        /* CTA Button */
+        .cta-container {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 0 1rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.875rem 1.75rem;
+            background: linear-gradient(90deg, #4a6cf7 0%, #2541b2 100%);
+            color: white;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(74, 108, 247, 0.3);
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(74, 108, 247, 0.4);
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(5px);
+        }
+
+        /* Mobile-Specific Adjustments */
+        @media (max-width: 480px) {
+            #homefive-body {
+                padding: 2rem 0.5rem;
+            }
+
+            .homefive-title {
+                font-size: 1.5rem;
+                padding: 0 0.5rem;
+            }
+
+            .homefive-description {
+                margin-bottom: 2rem;
+                padding: 0 0.5rem;
+            }
+
+            .homefive-card-container {
+                gap: 1rem;
+                padding: 0 0.5rem;
+            }
+
+            .homefive-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .card-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 1rem;
+            }
+
+            .card-icon svg {
+                width: 25px;
+                height: 25px;
+            }
+
+            .homefive-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .homefive-card p {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta-button {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Tablet Adjustments */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .homefive-card-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .homefive-card {
+                padding: 1.75rem 1.25rem;
+            }
         }
 
         /* home testimonial section */
