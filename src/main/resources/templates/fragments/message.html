@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Success message </title>
+</head>
+<body>
+<!-- message-fragment.html -->
+<div th:fragment="message">
+  <div th:if="${successMessage}" id="successMessage" class="message-box">
+    <span class="icon">✅</span>
+    <span th:text="${successMessage}">Operation successful</span>
+  </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+          const msg = document.getElementById('successMessage');
+          if (msg) {
+            setTimeout(() => {
+              msg.classList.add('fade-out');
+            }, 2000);
+          }
+        });
+    </script>
+</div>
+</body>
+</html>

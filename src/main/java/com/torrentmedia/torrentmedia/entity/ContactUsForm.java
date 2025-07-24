@@ -1,7 +1,13 @@
 package com.torrentmedia.torrentmedia.entity;
 
-public class ContactUsForm {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "ContactUs")
+public class ContactUsForm {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long Id;
     String name;
     String email;
     String Subject;
@@ -18,6 +24,14 @@ public class ContactUsForm {
         Subject = subject;
         this.phone = phone;
         this.message = message;
+    }
+
+    public ContactUsForm(String fullName, String email, String message, String phoneNumber) {
+        this.name=fullName;
+        this.email=email;
+        this.message = message;
+        this.phone=phoneNumber;
+        this.Subject = " Contacted ..";
     }
 
     public String getName() {

@@ -4,11 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class BlogController {
+public class ServicesController {
 
-    @GetMapping("/influencer")
-    public String showBlogPage(){
-        return "blog";
+    @GetMapping("/services")
+    public String showServicePage(){
+        return "service";
     }
-
 }
