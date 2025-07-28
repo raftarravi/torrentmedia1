@@ -66,8 +66,8 @@ public class HomeService {
 
     public boolean save(Image image) {
         String email = image.getRegisterEmailId();
-        Image imagef = imageRepository.findByRegisterEmailId(email);
-        if(imagef == null){
+        Image image1 = imageRepository.findByRegisterEmailId(email);
+        if(image1 == null){
             imageRepository.save(image);
         }else{
             System.out.println("email Already Registered.");

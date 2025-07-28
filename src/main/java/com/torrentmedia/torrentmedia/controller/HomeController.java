@@ -87,7 +87,7 @@ public class HomeController {
     @GetMapping("/login")
     public String showLoginPage(Model model){
         model.addAttribute("isLoggedIn" , false);
-        return "/fragments/authentication/login";
+        return "fragments/authentication/login";
 
     }
 
@@ -221,14 +221,15 @@ public class HomeController {
     }
 
     @PostMapping("/upload")
-    public String uploadImage(@RequestParam("image") MultipartFile file,@RequestParam("email") String email) throws IOException {
-        Image image = new Image();
-        image.setName(file.getOriginalFilename());
-        image.setType(file.getContentType());
-        image.setImage(file.getBytes());
-        image.setRegisterEmailId(email);
+    public String uploadImage(@RequestParam("image") MultipartFile file, @RequestParam("email") String email) throws IOException {
+        Image image1 = new Image();
+        image1.setName(file.getOriginalFilename());
+        image1.setType(file.getContentType());
+        image1.setImage(file.getBytes());
+        System.out.println(file.getBytes());
+        image1.setRegisterEmailId(email);
 
-        boolean home = homeService.save(image);
+        boolean home = homeService.save(image1);
         return "redirect:/influencer";
     }
 
