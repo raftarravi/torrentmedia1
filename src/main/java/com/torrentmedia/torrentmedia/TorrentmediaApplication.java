@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TorrentmediaApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(TorrentmediaApplication.class, args);
 	}
 

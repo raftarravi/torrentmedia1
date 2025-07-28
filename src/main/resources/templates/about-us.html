@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torrent Media</title>
-    <link rel="stylesheet" href="css/about-us.css">
+
     <link rel="stylesheet" href="css/contact-us.css">
     <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
     <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
     <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
     <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/aboutUS/about-our-company.css}"/>
+
+    <link rel="stylesheet" href="css/about-us.css">
+
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
@@ -33,6 +38,79 @@
 <div th:insert="~{fragments/hero-section :: hero}" th:with="pageName='ABOUT US'"></div>
 
 <!-- Service Hero Section -->
+
+<div class="container">
+    <div class="image-section">
+        <img th:src="@{/images/About-Section-img.webp}" alt="Team Working">
+        <div class="experience-container">
+            <div class="connection-line"></div>
+            <div class="experience">3+ Years Experience</div>
+        </div>
+    </div>
+    <div class="text-section">
+        <h2>About Our Company</h2>
+        <h1>We are Partner of Your Success</h1>
+        <p>Novarsis Technology is a dynamic digital solutions company committed to empowering businesses through innovative IT services and creative strategy. We specialize in web development, digital marketing, branding, eCommerce, and product media solutions tailored to elevate your online presence. With a results-driven approach and a skilled team, we turn ideas into impactful digital experiences. At Novarsis, we merge technology with creativity to help brands grow, engage, and lead in the digital age.</p>
+        <div class="services">
+            <div class="service-card">
+                <h3>IT Consultant</h3>
+                <p>Smarter Solutions</p>
+            </div>
+            <div class="service-card">
+                <h3>IT Specialist</h3>
+                <p>Faster Solutions</p>
+            </div>
+        </div>
+        <ul>
+            <li>We are a team of skilled IT specialists.</li>
+            <li>We provide reliable, efficient technology solutions & Consultations.</li>
+            <li>Our expertise includes all services from Branding to Sales & organic Traffic.</li>
+        </ul>
+    </div>
+</div>
+
+
+<section class="service-section">
+    <div class="content">
+        <p class="subtitle">About Our IT Company</p>
+        <h1 class="title">We Are The Best IT Solution<br>& <span class="highlight">Services</span> provider</h1>
+        <p class="description">
+            Over 50+ professionals work for us in more than 2 countries. This breadth of global coverage, combined with specialists.
+        </p>
+
+        <div class="progress-bar">
+            <p>UI/UX & Graphic Designing <span>100%</span></p>
+            <div class="bar">
+                <div class="fill fill-ui"></div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <p>SEO & Paid Advertisement <span>95%</span></p>
+            <div class="bar">
+                <div class="fill fill-seo"></div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <p>Web Design & Development <span>100%</span></p>
+            <div class="bar">
+                <div class="fill fill-web"></div>
+            </div>
+        </div>
+
+        <a href="https://youtu.be/l5sgIqzlPXc?si=9CTmAiM_zsbD4waC" class="video-btn"><i class="fas fa-play"></i> WATCH VIDEO</a>
+    </div>
+
+    <div class="image-box">
+        <img src="images/About-Us-Ui-Section-Pic-2.webp" alt="Service Image" />
+        <div class="assist-box">
+            <i class="fas fa-trophy"></i>
+            <span>We are ready to assist you</span>
+        </div>
+    </div>
+</section>
+
 
 
 <!-- Footer -->

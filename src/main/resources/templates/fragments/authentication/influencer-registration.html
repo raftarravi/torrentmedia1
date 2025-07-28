@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Influencer Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/fragment/authentication/influencer-registration.css}" />
+</head>
+<body>
+<div class="container">
+  <div class="registration-header">
+    <h1>Join Our Influencer Network</h1>
+    <p>Connect with brands and grow your audience</p>
+  </div>
+
+  <div class="registration-form">
+    <div th:if="${message}" class="alert" th:classappend="${success} ? 'alert-success' : 'alert-error'">
+      <p th:text="${message}"></p>
+    </div>
+
+    <form id="registrationForm" th:action="@{/register-as-influencer}" method="post">
+      <!-- Name and Email -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required
+                 th:value="${influencer?.name}">
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required
+                 th:value="${influencer?.email}">
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="password">Password *</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password *</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+      </div>
+
+      <!-- Gender and Category -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="gender">Gender *</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male" th:selected="${influencer?.gender == 'Male'}">Male</option>
+            <option value="Female" th:selected="${influencer?.gender == 'Female'}">Female</option>
+            <option value="Other" th:selected="${influencer?.gender == 'Other'}">Other</option>
+            <option value="Prefer not to say" th:selected="${influencer?.gender == 'Prefer not to say'}">Prefer not to say</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="category">Primary Category *</label>
+          <select id="category" name="category" required>
+            <option value="">Select Category</option>
+            <option th:each="cat : ${T(java.util.List).of('Lifestyle','Fashion','Tech','Food','Travel','Fitness','Beauty','Gaming','Parenting')}"
+                    th:value="${cat}" th:text="${cat}"
+                    th:selected="${influencer?.category == cat}"></option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Socials -->
+      <div class="social-media-group">
+        <h3>Social Media Links</h3>
+        <div class="social-input"><input type="text" name="instagram" placeholder="Instagram" th:value="${influencer?.instagram}"></div>
+        <div class="social-input"><input type="text" name="youtube" placeholder="YouTube" th:value="${influencer?.youtube}"></div>
+        <div class="social-input"><input type="text" name="tiktok" placeholder="TikTok" th:value="${influencer?.tiktok}"></div>
+        <div class="social-input"><input type="text" name="twitter" placeholder="Twitter" th:value="${influencer?.twitter}"></div>
+        <div class="social-input"><input type="text" name="facebook" placeholder="Facebook" th:value="${influencer?.facebook}"></div>
+      </div>
+
+      <!-- Other Info -->
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" placeholder="City, Country" th:value="${influencer?.location}">
+      </div>
+
+      <div class="form-group">
+        <label for="bio">Bio</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself" th:text="${influencer?.bio}"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="followerCount">Follower Count</label>
+        <input type="number" id="followerCount" name="followerCount" placeholder="e.g. 10000" th:value="${influencer?.followerCount}">
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="topRated" name="topRated" th:checked="${influencer?.topRated}">
+        <label for="topRated">I'm a top-rated influencer</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Register Now</button>
+    </form>
+
+    <div class="login-link">
+      Already have an account? <a th:href="@{/login}">Log in here</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

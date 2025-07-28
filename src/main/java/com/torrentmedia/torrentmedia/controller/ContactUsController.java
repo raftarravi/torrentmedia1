@@ -23,6 +23,7 @@ public class ContactUsController {
     @GetMapping("/contact")
     public String showContactForm(Model model) {
         model.addAttribute("contactForm", new ContactUsForm()); // Replace with your actual class
+        model.addAttribute("isLoggedIn" , false);
         return "contact-us"; // Your Thymeleaf view name
     }
 
@@ -31,6 +32,7 @@ public class ContactUsController {
     public String submitContact(ContactUsForm contactUsForm, Model model , RedirectAttributes redirectAttributes){
         contactUsService.saveContactUs(contactUsForm);
         redirectAttributes.addFlashAttribute("successMessage", "Thank you for contacting we will get back soon!");
+        model.addAttribute("isLoggedIn" , false);
         //System.out.println(contact);
         return "redirect:/contact";
     }

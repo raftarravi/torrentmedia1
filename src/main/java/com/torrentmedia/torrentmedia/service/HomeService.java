@@ -1,11 +1,17 @@
 package com.torrentmedia.torrentmedia.service;
 
-import com.torrentmedia.torrentmedia.entity.ContactUsForm;
-import com.torrentmedia.torrentmedia.entity.NewsLetter;
-import com.torrentmedia.torrentmedia.repository.ContactUs;
-import com.torrentmedia.torrentmedia.repository.NewsLetterRepo;
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
+import com.torrentmedia.torrentmedia.entity.*;
+import com.torrentmedia.torrentmedia.repository.*;
+import org.antlr.v4.runtime.misc.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class HomeService {
@@ -14,7 +20,18 @@ public class HomeService {
     private NewsLetterRepo newsLetterRepo;
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private InfluencerRepository influencerRepository;
+
+    @Autowired
+    private ImageRepository imageRepository;
+
+    @Autowired
     private ContactUs contactUs;
+
+
 
     public void saveNewsLetter(NewsLetter newsLetter){
         newsLetterRepo.save(newsLetter);
@@ -25,6 +42,39 @@ public class HomeService {
     }
 
 
+    public void saveNewUser(User user) {
+        System.out.println(user.getUserName() + " " + user.getEmail() + "" + user.getPassword());
+        userRepository.save(user);
+    }
+
+    public String loginAuthentication(String email, String password) {
+        Optional<User> user = Optional.ofNullable(userRepository.findByEmail(email));
+        User user1 = user.get();
+
+        if(user1.getPassword().equals(password)) return "valid";
+        else return "invalid";
+    }
+
+    public Long saveInfluencer(Influencer influencer)  {
+            Long Id = influencer.getId();
+            influencerRepository.save(influencer);
+            System.out.println(influencer);
+
+        return Id;
+    }
+
+    public boolean save(Image image) {
+        imageRepository.save(image);
+        return true;
+    }
+
+    public Image getImageByRegisterEmailId(String email) {
+        Optional<Image> image = Optional.ofNullable(imageRepository.findByRegisterEmailId(email));
+        System.out.println(email);
+        System.out.println(image);
+        Image image1= image.orElseThrow();
 
 
+        return image1;
+    }
 }

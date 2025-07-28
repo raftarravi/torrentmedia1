@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+<!-- fragments/user-menu.html -->
+<div class="avatar-container" th:fragment="userMenuFragment(isLoggedIn)">
+    <div class="avatar-container">
+        <div class="avatar-icon" onclick="toggleDropdown()">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <!-- Show these when user is NOT logged in -->
+            <div th:if="${not isLoggedIn}">
+                <a th:href="@{/login}">Login</a>
+                <a th:href="@{/signup}">Signup</a>
+                <a th:href="@{/signup-as-influencer}">Signup As Influencer </a>
+            </div>
+
+            <!-- Show these when user is logged in -->
+            <div th:if="${isLoggedIn}">
+                <a th:href="@{/profile}">View Profile</a>
+                <a th:href="@{/settings}">Settings</a>
+                <a th:href="@{/logout}">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdownMenu");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+
+        // Hide menu if clicked outside
+        window.addEventListener("click", function (e) {
+            const avatar = document.querySelector(".avatar-container");
+            const dropdown = document.getElementById("dropdownMenu");
+            if (!avatar.contains(e.target)) {
+                dropdown.style.display = "none";
+            }
+        });
+    </script>
+</div>
+
+</body>
+</html>

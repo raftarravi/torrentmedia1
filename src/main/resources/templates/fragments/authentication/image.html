@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Upload Image</title>
+  <link rel="stylesheet" th:href="@{/css/fragment/authentication/image.css}" />
+</head>
+<body>
+
+<!--<h1>Upload Image</h1>-->
+
+<!--<form method="POST" action="/upload" enctype="multipart/form-data">-->
+
+<!--  &lt;!&ndash; Email input &ndash;&gt;-->
+<!--  <div class="form-group">-->
+<!--    <label for="email">Email:</label>-->
+<!--    <input type="email" id="email" name="email" placeholder="Enter your register email" required />-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Image input &ndash;&gt;-->
+<!--  <div class="form-group">-->
+<!--    <label for="image">Select Image:</label>-->
+<!--    <input type="file" id="image" name="image" required />-->
+<!--  </div>-->
+
+<!--  <button type="submit">Upload</button>-->
+<!--</form>-->
+
+<div class="upload-container">
+  <h1>Upload Your Image</h1>
+
+  <form method="POST" action="/upload" enctype="multipart/form-data" id="uploadForm">
+
+    <!-- Email input -->
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+    </div>
+
+    <!-- Image input with drag and drop -->
+    <div class="form-group">
+      <label for="image">Select Image</label>
+      <div class="file-input-container">
+        <label class="file-input-label" id="fileInputLabel" for="image">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+          </svg>
+          <span>Drag & drop your image here or <strong>click to browse</strong></span>
+          <span id="fileName" style="display:none; margin-top:0.5rem; font-size:0.85rem;"></span>
+        </label>
+        <input type="file" id="image" name="image" accept="image/*" required />
+      </div>
+      <div class="preview-container" id="previewContainer">
+        <img id="previewImage" class="preview-image" alt="Image preview">
+      </div>
+    </div>
+
+    <button type="submit">Upload Image</button>
+  </form>
+</div>
+
+<script>
+  // File input handling with preview
+  const fileInput = document.getElementById('image');
+  const fileInputLabel = document.getElementById('fileInputLabel');
+  const fileName = document.getElementById('fileName');
+  const previewContainer = document.getElementById('previewContainer');
+  const previewImage = document.getElementById('previewImage');
+
+  // Handle drag and drop
+  fileInputLabel.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    fileInputLabel.classList.add('drag-over');
+  });
+
+  fileInputLabel.addEventListener('dragleave', () => {
+    fileInputLabel.classList.remove('drag-over');
+  });
+
+  fileInputLabel.addEventListener('drop', (e) => {
+    e.preventDefault();
+    fileInputLabel.classList.remove('drag-over');
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      handleFileSelect();
+    }
+  });
+
+  // Handle file selection
+  fileInput.addEventListener('change', handleFileSelect);
+
+  function handleFileSelect() {
+    if (fileInput.files && fileInput.files[0]) {
+      const file = fileInput.files[0];
+
+      // Show file name
+      fileName.textContent = file.name;
+      fileName.style.display = 'block';
+
+      // Show preview if it's an image
+      if (file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          previewImage.src = e.target.result;
+          previewContainer.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      } else {
+        previewContainer.style.display = 'none';
+      }
+    }
+  }
+
+  // Form submission feedback
+  const form = document.getElementById('uploadForm');
+  form.addEventListener('submit', () => {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Uploading...';
+  });
+</script>
+
+</body>
+</html>
+

@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+
 <div th:fragment="mainNavbar">
     <!-- Sticky Wrapper -->
     <div class="sticky-wrapper">
@@ -63,7 +65,10 @@
                     <input type="text" placeholder="Search..." id="searchInput">
                 </div>
 
-                <i class="fa-solid fa-border-all grid-icon"></i>
+                <!-- <i class="fa-solid fa-border-all grid-icon"></i> -->
+                <div th:insert="~{fragments/authentication/icon :: userMenuFragment(isLoggedIn=${isLoggedIn})}"></div>
+
+
                 <div class="call">
                     <i class="fa-solid fa-phone-volume call-icon"></i>
                     <div>
