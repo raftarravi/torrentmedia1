@@ -13,9 +13,9 @@ public class Image {
     private String name;
 
     private String type;
-
     @Lob
-    @Column(name = "image") //, columnDefinition = "LONGBLOB" for mysql .
+    @Basic(fetch = FetchType.EAGER)
+    @Column(name = "image", columnDefinition = "BYTEA") //, columnDefinition = "LONGBLOB" for mysql .
     private byte[] image;
 
 
