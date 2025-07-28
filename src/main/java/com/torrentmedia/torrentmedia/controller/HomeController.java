@@ -110,7 +110,7 @@ public class HomeController {
     @GetMapping("/signup")
     public String showSignUpForm(Model model) {
         model.addAttribute("isLoggedIn" , false);
-        return "/fragments/authentication/sign-up";
+        return "fragments/authentication/sign-up";
     }
 
     @PostMapping("/signup")
@@ -125,7 +125,7 @@ public class HomeController {
         homeService.saveNewUser(user);
         model.addAttribute("isLoggedIn" , false);
 
-        return "/fragments/authentication/login";
+        return "fragments/authentication/login";
     }
 
 
