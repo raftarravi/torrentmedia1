@@ -72,7 +72,7 @@ public class HomeService {
         Optional<Image> image = Optional.ofNullable(imageRepository.findByRegisterEmailId(email));
         System.out.println(email);
         System.out.println(image);
-        Image image1= image.orElseThrow();
+        Image image1= image.get();
 
 
         return image1;
