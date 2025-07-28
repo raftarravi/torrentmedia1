@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Base64;
 import java.util.Map;
 import java.util.Optional;
 
@@ -83,5 +84,12 @@ public class HomeService {
 
 
         return image1;
+    }
+    public String getBase64ImageByEmail(String email) {
+        Image image = getImageByRegisterEmailId(email);
+        if (image != null && image.getImage() != null) {
+            return Base64.getEncoder().encodeToString(image.getImage());
+        }
+        return null;
     }
 }

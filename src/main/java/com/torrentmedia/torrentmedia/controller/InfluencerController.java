@@ -52,7 +52,7 @@ public class InfluencerController {
             data.put("category",inf.getCategory());
             data.put("location" , inf.getLocation());
             data.put("id",String.valueOf(inf.getId()));
-            data.put("image", Base64.getEncoder().encodeToString(image.getImage()));
+            data.put("image", homeService.getBase64ImageByEmail(inf.getEmail()));
             influencerData.add(data);
         }
 
