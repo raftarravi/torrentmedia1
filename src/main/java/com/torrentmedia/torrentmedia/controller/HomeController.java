@@ -217,7 +217,7 @@ public class HomeController {
         session.setAttribute("influencerId" ,Id);
 
         // You can use RedirectAttributes to pass success/failure message
-        return "/fragments/authentication/image"; // or return to a success page
+        return "fragments/authentication/image"; // or return to a success page
     }
 
     @PostMapping("/upload")
