@@ -62,7 +62,8 @@
 
             <div class="card-img-container">
                 <!-- Load image using email if available, else default -->
-                <img th:src="@{'/image/' + ${influencer.email}}"
+                <img
+                 th:src="'data:image/jpeg;base64,' + ${influencer.image}"
                      th:alt="'Photo of ' + ${influencer.name}"
                      onerror="this.onerror=null;this.src='/images/default-profile.jpg';" />
             </div>

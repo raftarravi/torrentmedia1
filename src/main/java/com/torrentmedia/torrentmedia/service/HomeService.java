@@ -55,16 +55,23 @@ public class HomeService {
         else return "invalid";
     }
 
-    public Long saveInfluencer(Influencer influencer)  {
+    public boolean saveInfluencer(Influencer influencer)  {
             Long Id = influencer.getId();
             influencerRepository.save(influencer);
             System.out.println(influencer);
 
-        return Id;
+        return true;
     }
 
     public boolean save(Image image) {
-        imageRepository.save(image);
+        String email = image.getRegisterEmailId();
+        Image imagef = imageRepository.findByRegisterEmailId(email);
+        if(imagef == null){
+            imageRepository.save(image);
+        }else{
+            System.out.println("email Already Registered.");
+        }
+
         return true;
     }
 

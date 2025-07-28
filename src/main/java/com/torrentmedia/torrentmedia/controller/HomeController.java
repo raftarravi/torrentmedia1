@@ -213,8 +213,8 @@ public class HomeController {
         homeService.saveNewUser(user);
 
         // Save to database
-        Long Id = homeService.saveInfluencer(influencer);
-        session.setAttribute("influencerId" ,Id);
+        boolean status = homeService.saveInfluencer(influencer);
+        session.setAttribute("influencerId" ,status);
 
         // You can use RedirectAttributes to pass success/failure message
         return "fragments/authentication/image"; // or return to a success page
@@ -251,6 +251,14 @@ public class HomeController {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
     }
+
+
+    @GetMapping("/error")
+    public String showCustomError(@RequestParam("message") String message, Model model) {
+        model.addAttribute("message", message);
+        return "error"; // will load error.html from templates
+    }
+
 
 
 }
