@@ -2,6 +2,7 @@ package com.torrentmedia.torrentmedia.controller;
 
 import com.torrentmedia.torrentmedia.entity.Image;
 import com.torrentmedia.torrentmedia.entity.Influencer;
+import com.torrentmedia.torrentmedia.repository.ImageRepository;
 import com.torrentmedia.torrentmedia.service.HomeService;
 import com.torrentmedia.torrentmedia.service.InfluencerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,12 @@ public class InfluencerController {
     InfluencerService influencerService;
 
     @Autowired
-    HomeService homeService;
+    private HomeService homeService;
+
+    @Autowired
+    private ImageRepository imageRepository;
+
+
 
     @GetMapping("/influencer")
     public String showInfluencerPage(Model model) {
@@ -36,7 +42,7 @@ public class InfluencerController {
         List<Map<String, String>> influencerData = new ArrayList<>();
 
         for (Influencer inf : influencers) {
-            Image image = homeService.getImageByRegisterEmailId(inf.getEmail());
+            Image image = imageRepository.findByRegisterEmailId(inf.getEmail());
 
             Map<String, String> data = new HashMap<>();
             data.put("name", inf.getName());

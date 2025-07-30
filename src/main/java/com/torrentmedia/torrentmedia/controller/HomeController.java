@@ -3,6 +3,7 @@ package com.torrentmedia.torrentmedia.controller;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.torrentmedia.torrentmedia.entity.*;
+import com.torrentmedia.torrentmedia.repository.ImageRepository;
 import com.torrentmedia.torrentmedia.service.HomeService;
 import com.torrentmedia.torrentmedia.service.MailService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -26,6 +27,9 @@ public class HomeController {
     private MailService mailService;
     @Autowired
     private HomeService homeService;
+
+    @Autowired
+    private ImageRepository imageRepository;
 
 
 
@@ -222,20 +226,14 @@ public class HomeController {
 
     @PostMapping("/upload")
     public String uploadImage(@RequestParam("image") MultipartFile file, @RequestParam("email") String email) throws IOException {
-        Image image1 = new Image();
-        image1.setName(file.getOriginalFilename());
-        image1.setType(file.getContentType());
-        image1.setImage(file.getBytes());
-        System.out.println(file.getBytes());
-        image1.setRegisterEmailId(email);
 
-        boolean home = homeService.save(image1);
+        boolean home = homeService.save(file,email);
         return "redirect:/influencer";
     }
 
     @GetMapping("/image/{email}")
     public void serveImageByEmail(@PathVariable String email, HttpServletResponse response) {
-        Image image = homeService.getImageByRegisterEmailId(email);
+        Image image = imageRepository.findByRegisterEmailId(email);
 
         if (image != null && image.getImage() != null) {
             try {

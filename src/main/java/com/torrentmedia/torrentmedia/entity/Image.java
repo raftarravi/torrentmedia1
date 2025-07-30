@@ -1,21 +1,21 @@
 package com.torrentmedia.torrentmedia.entity;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
 
-@Entity
-@Table(name = "images")
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "images")
 public class Image {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     private String name;
 
     private String type;
-    @Lob
-    @Basic(fetch = FetchType.EAGER)
-    @Column(name = "image", columnDefinition = "BYTEA") //, columnDefinition = "LONGBLOB" for mysql .
+    //    @Lob
+//    @Basic(fetch = FetchType.EAGER)
+//    @Column(name = "image", columnDefinition = "BYTEA") //, columnDefinition = "BYTEA" for mysql .
     private byte[] image;
 
 
@@ -29,13 +29,6 @@ public class Image {
         this.registerEmailId = registerEmailId;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -61,4 +54,3 @@ public class Image {
         this.image = image;
     }
 }
-

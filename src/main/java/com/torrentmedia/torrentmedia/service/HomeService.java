@@ -64,11 +64,23 @@ public class HomeService {
         return true;
     }
 
-    public boolean save(Image image) {
-        String email = image.getRegisterEmailId();
-        Image image1 = imageRepository.findByRegisterEmailId(email);
-        if(image1 == null){
-            imageRepository.save(image);
+    public boolean save(MultipartFile file, String email) throws IOException {
+        Image image1 = new Image();
+        image1.setName(file.getOriginalFilename());
+        image1.setType(file.getContentType());
+        image1.setImage(file.getBytes());
+        System.out.println(file.getBytes());
+        image1.setRegisterEmailId(email);
+
+        String email1 = image1.getRegisterEmailId();
+        Image image = imageRepository.findByRegisterEmailId(email);
+
+        boolean status = getImageByRegisterEmailId(email1);
+
+        if(!status){
+            System.out.println(image1.getImage());
+
+            imageRepository.save(image1);
         }else{
             System.out.println("email Already Registered.");
         }
@@ -76,17 +88,18 @@ public class HomeService {
         return true;
     }
 
-    public Image getImageByRegisterEmailId(String email) {
+    public boolean getImageByRegisterEmailId(String email) {
         Optional<Image> image = Optional.ofNullable(imageRepository.findByRegisterEmailId(email));
         System.out.println(email);
         System.out.println(image);
-        Image image1= image.get();
+        if (image.isPresent()) {
+            return true;
 
-
-        return image1;
+        }
+        return false;
     }
     public String getBase64ImageByEmail(String email) {
-        Image image = getImageByRegisterEmailId(email);
+        Image image = imageRepository.findByRegisterEmailId(email);
         if (image != null && image.getImage() != null) {
             return Base64.getEncoder().encodeToString(image.getImage());
         }
