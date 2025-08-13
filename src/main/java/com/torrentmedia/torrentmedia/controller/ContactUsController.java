@@ -3,6 +3,7 @@ package com.torrentmedia.torrentmedia.controller;
 import com.torrentmedia.torrentmedia.entity.ContactUsForm;
 import com.torrentmedia.torrentmedia.service.ContactUsService;
 import com.torrentmedia.torrentmedia.service.MailService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +22,9 @@ public class ContactUsController {
 
 
     @GetMapping("/contact")
-    public String showContactForm(Model model) {
+    public String showContactForm(HttpServletRequest request, Model model) {
         model.addAttribute("contactForm", new ContactUsForm()); // Replace with your actual class
+        model.addAttribute("currentURI", request.getRequestURI());
         model.addAttribute("isLoggedIn" , false);
         return "contact-us"; // Your Thymeleaf view name
     }

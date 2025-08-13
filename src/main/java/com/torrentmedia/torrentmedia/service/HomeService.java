@@ -6,6 +6,8 @@ import com.torrentmedia.torrentmedia.entity.*;
 import com.torrentmedia.torrentmedia.repository.*;
 import org.antlr.v4.runtime.misc.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -31,6 +33,9 @@ public class HomeService {
 
     @Autowired
     private ContactUs contactUs;
+
+    @Autowired
+    InfluencerService influencerService;
 
 
 
@@ -98,11 +103,19 @@ public class HomeService {
         }
         return false;
     }
-    public String getBase64ImageByEmail(String email) {
-        Image image = imageRepository.findByRegisterEmailId(email);
-        if (image != null && image.getImage() != null) {
-            return Base64.getEncoder().encodeToString(image.getImage());
-        }
-        return null;
+//    public String getBase64ImageByEmail(String email) {
+//        Image image = imageRepository.findByRegisterEmailId(email);
+//        if (image != null && image.getImage() != null) {
+//            return Base64.getEncoder().encodeToString(image.getImage());
+//        }
+//        return null;
+//    }
+
+    public Map<String ,String> getInfluencerDetail(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email = authentication.getName();
+        Influencer influencer = influencerService.getInfluencerByEmail(email);
+        Map<String,String> influencerDetail = influencerService.getInfluencerDetail(influencer.getId());
+        return influencerDetail;
     }
 }

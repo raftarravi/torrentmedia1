@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Torrent Media | Content Strategy Services </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
+    <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}"/>
+
+    <link rel="stylesheet" th:href="@{../css/our-services/content-strategy.css}">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- third page -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- for fourth page -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+</head>
+<body>
+
+
+<div th:insert="~{fragments/navbar :: mainNavbar}"></div>
+<div th:insert="~{fragments/sidebar-icons :: sideIcons}"></div>
+
+
+<!-- Hero Section -->
+<section class="hero" data-aos="fade">
+    <h1>Content Strategy Services</h1>
+    <p>Compelling content that engages your audience, improves SEO, and establishes thought leadership.</p>
+    <a href="/contact" class="btn">Get Started</a>
+</section>
+
+<!-- Service Details -->
+<section id="services" class="service-details">
+    <div class="section-title" data-aos="fade-up">
+        <h2>Our Content Strategy Solutions</h2>
+        <p>We create data-driven content that connects with your audience and drives meaningful business results.</p>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-blog"></i>
+            <h3>Blog Writing</h3>
+            <p>Strategic blog content that establishes authority, educates your audience, and drives organic traffic.</p>
+            <ul class="service-features">
+                <li><i class="fas fa-check"></i> SEO-optimized articles</li>
+                <li><i class="fas fa-check"></i> Topic research & planning</li>
+                <li><i class="fas fa-check"></i> Expert-level writing</li>
+                <li><i class="fas fa-check"></i> Content clusters</li>
+                <li><i class="fas fa-check"></i> Performance tracking</li>
+            </ul>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-search"></i>
+            <h3>SEO Content</h3>
+            <p>High-performing content designed to rank in search engines and convert visitors.</p>
+            <ul class="service-features">
+                <li><i class="fas fa-check"></i> Keyword strategy</li>
+                <li><i class="fas fa-check"></i> Pillar pages</li>
+                <li><i class="fas fa-check"></i> On-page optimization</li>
+                <li><i class="fas fa-check"></i> Content gap analysis</li>
+                <li><i class="fas fa-check"></i> Technical SEO audits</li>
+            </ul>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-envelope"></i>
+            <h3>Email Campaigns</h3>
+            <p>Targeted email content that nurtures leads and drives conversions.</p>
+            <ul class="service-features">
+                <li><i class="fas fa-check"></i> Drip campaign strategy</li>
+                <li><i class="fas fa-check"></i> Lead nurturing sequences</li>
+                <li><i class="fas fa-check"></i> Personalization</li>
+                <li><i class="fas fa-check"></i> A/B testing</li>
+                <li><i class="fas fa-check"></i> Performance analytics</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section class="projects">
+    <div class="project-container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Content Strategy Success Stories</h2>
+            <p>See how we've helped businesses grow through strategic content marketing.</p>
+        </div>
+
+        <div class="project-grid">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Tech Blog">
+                </div>
+                <div class="project-info">
+                    <h3>SaaS Company Blog</h3>
+                    <p>Increased organic traffic by 320% and generated 450 leads in 6 months through strategic blog content.</p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <h4>320%</h4>
+                            <p>Traffic Growth</p>
+                        </div>
+                        <div class="stat">
+                            <h4>450</h4>
+                            <p>Leads Generated</p>
+                        </div>
+                        <div class="stat">
+                            <h4>15</h4>
+                            <p>Top 3 Rankings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="E-commerce SEO">
+                </div>
+                <div class="project-info">
+                    <h3>E-commerce SEO Strategy</h3>
+                    <p>Boosted product page conversions by 45% and increased revenue by 28% through optimized content.</p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <h4>45%</h4>
+                            <p>Conversion Lift</p>
+                        </div>
+                        <div class="stat">
+                            <h4>28%</h4>
+                            <p>Revenue Growth</p>
+                        </div>
+                        <div class="stat">
+                            <h4>2.5x</h4>
+                            <p>ROI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1545231027-637d2f6210f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Email Campaign">
+                </div>
+                <div class="project-info">
+                    <h3>Email Nurture Campaign</h3>
+                    <p>Drove 38% more sales-qualified leads with a targeted email content strategy and automation.</p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <h4>38%</h4>
+                            <p>More SQLs</p>
+                        </div>
+                        <div class="stat">
+                            <h4>22%</h4>
+                            <p>Open Rate</p>
+                        </div>
+                        <div class="stat">
+                            <h4>8%</h4>
+                            <p>CTR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <div class="testimonial-container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Client Success Stories</h2>
+            <p>Don't just take our word for it - hear from businesses we've helped transform through content.</p>
+        </div>
+
+        <div class="testimonial-grid">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-quote-right"></i>
+                <div class="testimonial-content">
+                    <p>"The content strategy they developed for our SaaS company was transformative. Our organic traffic grew by 320% in just six months, and we've established ourselves as thought leaders in our space. Their ability to translate complex technical concepts into engaging, accessible content is unmatched."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>Marketing Director, TechSolutions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-quote-right"></i>
+                <div class="testimonial-content">
+                    <p>"Our e-commerce site was struggling with conversions until we implemented their content strategy. The optimized product descriptions and educational blog content increased our conversion rate by 45% and significantly reduced our customer acquisition costs. Their data-driven approach made all the difference."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                    </div>
+                    <div class="author-info">
+                        <h4>Michael Chen</h4>
+                        <p>CEO, StyleHaus</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-quote-right"></i>
+                <div class="testimonial-content">
+                    <p>"The email nurture campaign they created helped us qualify leads more effectively and increased our sales pipeline by 38%. Their understanding of buyer journeys and ability to craft compelling, action-oriented content has been invaluable to our growth."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
+                    </div>
+                    <div class="author-info">
+                        <h4>Emma Rodriguez</h4>
+                        <p>VP Sales, NexaTech</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+    <div class="process-container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Our Content Strategy Process</h2>
+            <p>A proven methodology for creating content that delivers measurable results.</p>
+        </div>
+
+        <div class="process-steps">
+            <div class="step" data-aos="fade-up" data-aos-delay="100">
+                <h3>Research</h3>
+                <p>Audience analysis, keyword research, and competitive benchmarking.</p>
+            </div>
+
+            <div class="step" data-aos="fade-up" data-aos-delay="200">
+                <h3>Strategy</h3>
+                <p>Content pillars, editorial calendar, and performance KPIs.</p>
+            </div>
+
+            <div class="step" data-aos="fade-up" data-aos-delay="300">
+                <h3>Creation</h3>
+                <p>High-quality content production tailored to each stage of the buyer's journey.</p>
+            </div>
+
+            <div class="step" data-aos="fade-up" data-aos-delay="400">
+                <h3>Optimization</h3>
+                <p>SEO enhancements, readability improvements, and conversion elements.</p>
+            </div>
+
+            <div class="step" data-aos="fade-up" data-aos-delay="500">
+                <h3>Distribution</h3>
+                <p>Strategic promotion across channels to maximize reach and engagement.</p>
+            </div>
+
+            <div class="step" data-aos="fade-up" data-aos-delay="600">
+                <h3>Analysis</h3>
+                <p>Performance tracking, insights, and continuous improvement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+    <div class="cta-container" data-aos="fade-up">
+        <h2>Ready to Transform Your Content Strategy?</h2>
+        <p>Whether you need blog content, SEO optimization, or email campaigns, we'll create content that resonates with your audience and drives results.</p>
+        <a href="/contact" class="btn btn-secondary">Get Your Free Content Audit</a>
+    </div>
+</section>
+
+
+<div th:insert="~{fragments/footer :: footer}"></div>
+
+
+<!-- AOS Animation -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+</script>
+</body>
+</html>

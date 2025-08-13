@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torrent Media</title>
 
-    <link rel="stylesheet" href="css/contact-us.css">
+<!--    <link rel="stylesheet" href="css/contact-us.css">-->
     <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
     <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
     <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
     <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
     <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/aboutUS/about-our-team.css}"/>
     <link rel="stylesheet" th:href="@{/css/fragment/aboutUS/about-our-company.css}"/>
 
     <link rel="stylesheet" href="css/about-us.css">
@@ -24,6 +25,7 @@
     <!-- for fourth page -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
@@ -111,7 +113,7 @@
     </div>
 </section>
 
-
+<div th:insert="~{fragments/about-us/our-team :: teamSectionFragment}"></div>
 
 <!-- Footer -->
 <div th:insert="~{fragments/footer :: footer}"></div>

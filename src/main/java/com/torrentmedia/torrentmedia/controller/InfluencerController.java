@@ -5,10 +5,12 @@ import com.torrentmedia.torrentmedia.entity.Influencer;
 import com.torrentmedia.torrentmedia.repository.ImageRepository;
 import com.torrentmedia.torrentmedia.service.HomeService;
 import com.torrentmedia.torrentmedia.service.InfluencerService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -30,7 +32,8 @@ public class InfluencerController {
 
 
     @GetMapping("/influencer")
-    public String showInfluencerPage(Model model) {
+    public String showInfluencerPage(HttpServletRequest request ,Model model) {
+        model.addAttribute("currentURI", request.getRequestURI());
         model.addAttribute("isLoggedIn", true);
 
 //        List<Influencer> influencers = influencerService.getAllInfluencers(); // ✅ Service layer call
@@ -58,7 +61,7 @@ public class InfluencerController {
             data.put("category",inf.getCategory());
             data.put("location" , inf.getLocation());
             data.put("id",String.valueOf(inf.getId()));
-            data.put("image", homeService.getBase64ImageByEmail(inf.getEmail()));
+            data.put("image", influencerService.getBase64ImageByEmail(inf.getEmail()));
             influencerData.add(data);
         }
 
@@ -70,6 +73,25 @@ public class InfluencerController {
     @PostMapping("/connect")
     public String connect(RedirectAttributes redirectAttributes){
         redirectAttributes.addFlashAttribute("successMessage", "Your Connection is shared Successfully!");
+        return "redirect:/influencer";
+    }
+
+    @GetMapping("/influencer/{id}")
+    public String getInfluencerById(@PathVariable Long id, Model model) {
+        Map<String,String> influencer = influencerService.getInfluencerDetail(id);
+
+        if (influencer == null) {
+            // Handle "not found" case
+            return "error/404"; // or redirect to a not found page
+        }
+
+        model.addAttribute("influencer", influencer);
+        return "fragments/authentication/profile"; // Thymeleaf template name
+    }
+
+    @GetMapping("/influencers/edit/{id}")
+    public String showEditForm(@PathVariable Long id, Model model) {
+
         return "redirect:/influencer";
     }
 

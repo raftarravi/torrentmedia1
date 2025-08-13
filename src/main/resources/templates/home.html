@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torrent Media</title>
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/contact-us.css">
+<!--    <link rel="stylesheet" href="css/contact-us.css">-->
     <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
     <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
     <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
     <link rel="stylesheet" th:href="@{/css/fragment/message.css}" />
+    <link rel="stylesheet" th:href="@{/css/fragment/home/home-hero.css}" />
     <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}" />
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -24,25 +25,34 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- home hero -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
 
 </head>
 <body>
 
 <div th:insert="~{fragments/navbar :: mainNavbar}"></div>
 <div th:insert="~{fragments/sidebar-icons :: sideIcons}"></div>
+<div th:insert="~{fragments/home/side-bar-video :: companyVideo}"></div>
+<div th:insert="~{fragments/home/home-hero :: serviceHero}"></div>
 
-<section class="service-hero">
-    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Team working" class="hero-bg">
-    <div class="hero-content">
-        <h1 class="hero-title">Innovative Solutions for Your Business</h1>
-        <p class="hero-subtitle">We deliver cutting-edge services tailored to your needs, helping you achieve your business goals with our expert team and proven methodologies.</p>
-        <a th:href="@{/contact}" class="cta-button">
-            Get Started
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-    </div>
+<div th:insert="~{fragments/home/our-work-video :: videoGrid}"></div>
+<!--<section class="service-hero">-->
+<!--    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Team working" class="hero-bg">-->
+<!--    <div class="hero-content">-->
+<!--        <h1 class="hero-title">Innovative Solutions for Your Business</h1>-->
+<!--        <p class="hero-subtitle">We deliver cutting-edge services tailored to your needs, helping you achieve your business goals with our expert team and proven methodologies.</p>-->
+<!--        <a th:href="@{/contact}" class="cta-button">-->
+<!--            Get Started-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>-->
+<!--        </a>-->
+<!--    </div>-->
 
-</section>
+<!--</section>-->
 
 <!-- Features Section -->
 <section class="features-section">

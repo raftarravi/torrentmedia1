@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${influencer.name + ' | Influencer Profile'}">Influencer Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/fragment/authentication/profile.css}" />
+</head>
+<body>
+<div class="container animate-fade">
+  <div class="header">
+    <h1>Influencer Profile</h1>
+    <div class="action-buttons">
+      <a th:href="@{/influencer}" class="btn btn-outline">
+        <i class="fas fa-arrow-left"></i> Back to List
+      </a>
+      <a th:href="@{'/influencers/edit/' + ${influencer.id}}" class="btn btn-primary">
+        <i class="fas fa-edit"></i> Edit Profile
+      </a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <!-- Left Column -->
+    <div class="profile-left">
+<!--      <img th:src="@{'data:' + ${image.type} + ';base64,' + ${imageData}}" alt="Profile Image" class="profile-image">-->
+      <img th:src="'data:image/jpeg;base64,' + ${influencer.image}"
+           alt="Profile Image"
+           class="profile-image"
+           onerror="this.onerror=null;this.src='/images/default-profile.jpg';" />
+
+      <h2 class="profile-name" th:text="${influencer.name}">Influencer Name</h2>
+      <span class="profile-category" th:text="${influencer.category}">Category</span>
+      <p class="profile-bio" th:text="${influencer.bio}">Short bio about the influencer goes here. This should be a brief introduction.</p>
+
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-value" th:text="${influencer.followerCount}">100K</div>
+          <div class="stat-label">Followers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">4.8</div>
+          <div class="stat-label">Rating</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">85%</div>
+          <div class="stat-label">Engagement</div>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a th:if="${influencer.facebook}" th:href="${influencer.facebook}" target="_blank" class="social-link">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a th:if="${influencer.instagram}" th:href="${influencer.instagram}" target="_blank" class="social-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a th:if="${influencer.youtube}" th:href="${influencer.youtube}" target="_blank" class="social-link">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a th:if="${influencer.twitter}" th:href="${influencer.twitter}" target="_blank" class="social-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a th:if="${influencer.tiktok}" th:href="${influencer.tiktok}" target="_blank" class="social-link">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="profile-right">
+      <div class="section-title">Personal Information</div>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">Email</div>
+          <div class="info-value" th:text="${influencer.email}">email@example.com</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Gender</div>
+          <div class="info-value" th:text="${influencer.gender}">Gender</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Location</div>
+          <div class="info-value" th:text="${influencer.location}">City, Country</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Status</div>
+          <div class="info-value">
+            <span th:if="${influencer.topRated}" class="badge badge-success">Top Rated</span>
+            <span th:unless="${influencer.topRated}" class="badge badge-warning">Standard</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">Engagement Metrics</div>
+      <div class="engagement-stats">
+        <div class="engagement-item">
+          <div class="engagement-value">3.2%</div>
+          <div class="engagement-label">Average Engagement Rate</div>
+        </div>
+        <div class="engagement-item">
+          <div class="engagement-value">12K</div>
+          <div class="engagement-label">Avg. Likes per Post</div>
+        </div>
+        <div class="engagement-item">
+          <div class="engagement-value">850</div>
+          <div class="engagement-label">Avg. Comments per Post</div>
+        </div>
+      </div>
+
+      <div class="section-title">About</div>
+      <div class="info-item">
+        <p>This influencer specializes in creating engaging content in their niche. With a strong follower base and high engagement rates, they are a valuable partner for brands looking to reach their target audience.</p>
+        <p class="mt-2" th:if="${influencer.additionalInfo}" th:text="${influencer.additionalInfo}">
+          Additional information about the influencer's content style, collaborations, and special skills.
+        </p>
+      </div>
+
+      <div class="action-buttons">
+        <a href="#" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i> Contact Influencer
+        </a>
+        <a href="#" class="btn btn-outline">
+          <i class="fas fa-chart-line"></i> View Analytics
+        </a>
+        <a href="#" class="btn btn-danger">
+          <i class="fas fa-ban"></i> Report Profile
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torrent Media | Web Design & Development Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+  <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
+  <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}"/>
+
+  <link rel="stylesheet" th:href="@{../css/our-services/web-devlopment.css}">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <!-- third page -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- for fourth page -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body>
+
+<div th:insert="~{fragments/navbar :: mainNavbar}"></div>
+<div th:insert="~{fragments/sidebar-icons :: sideIcons}"></div>
+
+<section class="hero">
+  <div class="container">
+    <h1>Web Design & Development Services</h1>
+    <p>We create custom, responsive websites that drive results. Our solutions combine stunning design with cutting-edge technology to deliver exceptional user experiences.</p>
+    <a href="/contact" class="btn btn-primary">Get Started</a>
+  </div>
+</section>
+
+<section id="services" class="container">
+  <div class="section-title">
+    <h2>Our Web Development Services</h2>
+    <p>We offer comprehensive web solutions tailored to your business needs, from simple brochure sites to complex web applications.</p>
+  </div>
+
+  <div class="service-details">
+    <div class="service-features">
+      <h3>Core Features</h3>
+      <div class="feature-item">
+        <i class="fas fa-check"></i>
+        <div>
+          <h4>Custom CMS Solutions</h4>
+          <p>Tailored content management systems that give you full control over your website content without technical knowledge.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-check"></i>
+        <div>
+          <h4>E-commerce Integration</h4>
+          <p>Secure online stores with payment gateways, inventory management, and customer account systems.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-check"></i>
+        <div>
+          <h4>SEO Optimization</h4>
+          <p>Built-in search engine optimization to help your site rank higher and attract more visitors.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-check"></i>
+        <div>
+          <h4>Responsive Design</h4>
+          <p>Flawless performance on all devices from desktop to mobile with our mobile-first approach.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-check"></i>
+        <div>
+          <h4>Performance Optimization</h4>
+          <p>Lightning-fast load times through code optimization, caching, and CDN integration.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-benefits">
+      <h3>Key Benefits</h3>
+      <div class="benefit-item">
+        <i class="fas fa-star"></i>
+        <div>
+          <h4>Increased Conversions</h4>
+          <p>User-focused designs that guide visitors to take action, boosting your conversion rates.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <i class="fas fa-star"></i>
+        <div>
+          <h4>Future-Proof Technology</h4>
+          <p>Built with scalable architecture that grows with your business needs.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <i class="fas fa-star"></i>
+        <div>
+          <h4>Ongoing Support</h4>
+          <p>Comprehensive maintenance and support packages to keep your site running smoothly.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <i class="fas fa-star"></i>
+        <div>
+          <h4>Security Protection</h4>
+          <p>Enterprise-grade security measures to protect your data and your customers.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <i class="fas fa-star"></i>
+        <div>
+          <h4>Analytics Integration</h4>
+          <p>Comprehensive tracking to measure performance and identify opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Recent Web Projects</h2>
+      <p>Explore some of our successful web design and development projects across various industries.</p>
+    </div>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="E-commerce Project">
+        </div>
+        <div class="project-info">
+          <h3>Bella Boutique</h3>
+          <p>A luxury fashion e-commerce platform with custom product configurator and AR try-on features.</p>
+          <div class="project-tags">
+            <span class="project-tag">E-commerce</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">Node.js</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Corporate Website">
+        </div>
+        <div class="project-info">
+          <h3>Global Finance Corp</h3>
+          <p>Corporate website with investor portal, secure document sharing, and multilingual support.</p>
+          <div class="project-tags">
+            <span class="project-tag">Corporate</span>
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Security</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Healthcare Portal">
+        </div>
+        <div class="project-info">
+          <h3>MediCare Connect</h3>
+          <p>Healthcare provider portal with appointment scheduling, telemedicine integration, and HIPAA compliance.</p>
+          <div class="project-tags">
+            <span class="project-tag">Healthcare</span>
+            <span class="project-tag">Vue.js</span>
+            <span class="project-tag">Compliance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="testimonials container">
+  <div class="section-title">
+    <h2>What Our Clients Say</h2>
+    <p>Don't just take our word for it - hear from businesses we've helped transform through our web solutions.</p>
+  </div>
+
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <i class="fas fa-quote-right"></i>
+      <div class="testimonial-content">
+        <p>"TorrentMedia completely transformed our online presence. Our new website increased leads by 150% in the first three months, with much better user engagement metrics across the board."</p>
+      </div>
+      <div class="testimonial-author">
+        <div class="author-img">
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+        </div>
+        <div class="author-info">
+          <h4>Sarah Johnson</h4>
+          <p>CEO, TechSolutions Inc.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <i class="fas fa-quote-right"></i>
+      <div class="testimonial-content">
+        <p>"The custom CMS they built for us has saved our team countless hours. It's intuitive yet powerful, exactly what we needed to manage our complex product catalog efficiently."</p>
+      </div>
+      <div class="testimonial-author">
+        <div class="author-img">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+        </div>
+        <div class="author-info">
+          <h4>Michael Chen</h4>
+          <p>Operations Director, RetailPro</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <i class="fas fa-quote-right"></i>
+      <div class="testimonial-content">
+        <p>"From initial concept to final delivery, the TorrentMedia team was professional, creative, and attentive to our specific needs. The site performs beautifully on all devices."</p>
+      </div>
+      <div class="testimonial-author">
+        <div class="author-img">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
+        </div>
+        <div class="author-info">
+          <h4>Emma Rodriguez</h4>
+          <p>Marketing Manager, GreenLife</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Web Development Process</h2>
+      <p>We follow a proven methodology to deliver exceptional results on time and within budget.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="step">
+        <h3>Discovery</h3>
+        <p>We start by understanding your business goals, target audience, and technical requirements through detailed consultations.</p>
+      </div>
+
+      <div class="step">
+        <h3>Planning</h3>
+        <p>Our team creates sitemaps, wireframes, and a comprehensive project plan aligned with your objectives.</p>
+      </div>
+
+      <div class="step">
+        <h3>Design</h3>
+        <p>We develop visually stunning UI designs that reflect your brand while prioritizing user experience.</p>
+      </div>
+
+      <div class="step">
+        <h3>Development</h3>
+        <p>Our developers bring the designs to life using clean, efficient code and the latest technologies.</p>
+      </div>
+
+      <div class="step">
+        <h3>Testing</h3>
+        <p>Rigorous quality assurance ensures your site works perfectly across all devices and browsers.</p>
+      </div>
+
+      <div class="step">
+        <h3>Launch</h3>
+        <p>We deploy your website and provide training to ensure you can manage it effectively.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta">
+  <div class="container">
+    <h2>Ready to Transform Your Online Presence?</h2>
+    <p>Whether you need a simple website refresh or a complex web application, our team has the expertise to deliver exceptional results. Let's discuss how we can help your business grow.</p>
+    <a href="/contact" class="btn">Get a Free Consultation</a>
+  </div>
+</section>
+
+<div th:insert="~{fragments/footer :: footer}"></div>
+
+
+</body>
+</html>

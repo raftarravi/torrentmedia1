@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Torrent Media | Branding & Logo Design Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
+  <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}"/>
+
+  <link rel="stylesheet" th:href="@{../css/our-services/branding.css}">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <!-- third page -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- for fourth page -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+</head>
+<body>
+
+<div th:insert="~{fragments/navbar :: mainNavbar}"></div>
+<div th:insert="~{fragments/sidebar-icons :: sideIcons}"></div>
+
+
+<!-- Hero Section -->
+<section class="hero" data-aos="fade">
+  <h1>Branding & Logo Design</h1>
+  <p>Memorable brand identities that communicate your values and resonate with your target audience.</p>
+  <a href="/contact" class="btn">Start Your Brand Journey</a>
+</section>
+
+<!-- Service Details -->
+<section id="services" class="service-details">
+  <div class="section-title" data-aos="fade-up">
+    <h2>Our Branding Services</h2>
+    <p>We craft distinctive brand identities that tell your unique story and create lasting impressions.</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+      <i class="fas fa-pencil-ruler"></i>
+      <h3>Logo Design</h3>
+      <p>Custom logo creation that captures your brand essence and stands the test of time.</p>
+      <ul class="service-features">
+        <li><i class="fas fa-check"></i> Initial concept sketches</li>
+        <li><i class="fas fa-check"></i> Multiple design directions</li>
+        <li><i class="fas fa-check"></i> Color psychology analysis</li>
+        <li><i class="fas fa-check"></i> Typography pairing</li>
+        <li><i class="fas fa-check"></i> Final logo package</li>
+      </ul>
+    </div>
+
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+      <i class="fas fa-book"></i>
+      <h3>Brand Guidelines</h3>
+      <p>Comprehensive brand manuals that ensure consistent application across all touchpoints.</p>
+      <ul class="service-features">
+        <li><i class="fas fa-check"></i> Color palette system</li>
+        <li><i class="fas fa-check"></i> Typography hierarchy</li>
+        <li><i class="fas fa-check"></i> Logo usage rules</li>
+        <li><i class="fas fa-check"></i> Brand voice guidelines</li>
+        <li><i class="fas fa-check"></i> Application examples</li>
+      </ul>
+    </div>
+
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+      <i class="fas fa-paint-brush"></i>
+      <h3>Visual Identity</h3>
+      <p>Complete visual systems that bring your brand to life across all platforms.</p>
+      <ul class="service-features">
+        <li><i class="fas fa-check"></i> Custom illustrations</li>
+        <li><i class="fas fa-check"></i> Photography style</li>
+        <li><i class="fas fa-check"></i> Graphic elements</li>
+        <li><i class="fas fa-check"></i> Iconography system</li>
+        <li><i class="fas fa-check"></i> Pattern designs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="projects">
+  <div class="project-container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Branding Success Stories</h2>
+      <p>See how we've transformed businesses through strategic brand identity design.</p>
+    </div>
+
+    <div class="project-grid">
+      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Organic Food Brand">
+        </div>
+        <div class="project-info">
+          <h3>GreenSprout Organics</h3>
+          <p>Complete brand overhaul for an organic food company, resulting in 40% increased brand recognition and 25% sales growth.</p>
+          <div class="project-tags">
+            <span class="project-tag">Logo Design</span>
+            <span class="project-tag">Packaging</span>
+            <span class="project-tag">Brand Strategy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Tech Startup">
+        </div>
+        <div class="project-info">
+          <h3>Nexus Technologies</h3>
+          <p>Modern tech branding for a SaaS startup that helped secure $2M in funding and establish industry authority.</p>
+          <div class="project-tags">
+            <span class="project-tag">Visual Identity</span>
+            <span class="project-tag">Web Design</span>
+            <span class="project-tag">Brand Guidelines</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Boutique Hotel">
+        </div>
+        <div class="project-info">
+          <h3>The Azure Hotel</h3>
+          <p>Luxury hospitality branding that elevated guest experience and increased direct bookings by 60%.</p>
+          <div class="project-tags">
+            <span class="project-tag">Logo Design</span>
+            <span class="project-tag">Interior Signage</span>
+            <span class="project-tag">Collateral</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="testimonial-container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Client Experiences</h2>
+      <p>Don't just take our word for it - hear from brands we've helped transform.</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-quote-right"></i>
+        <div class="testimonial-content">
+          <p>"The branding work completely transformed our company's image. We went from being just another organic brand to having a distinctive, recognizable identity that customers connect with emotionally. Our packaging now stands out on shelves, and we've seen a measurable increase in customer loyalty."</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-img">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+          </div>
+          <div class="author-info">
+            <h4>Sarah Johnson</h4>
+            <p>CEO, GreenSprout Organics</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-quote-right"></i>
+        <div class="testimonial-content">
+          <p>"As a tech startup, we needed branding that would communicate innovation while establishing trust. The team delivered beyond our expectations. Our new visual identity played a crucial role in our successful funding round and continues to impress potential clients in enterprise sales."</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-img">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+          </div>
+          <div class="author-info">
+            <h4>Michael Chen</h4>
+            <p>Founder, Nexus Technologies</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-quote-right"></i>
+        <div class="testimonial-content">
+          <p>"The Azure Hotel's rebranding has been transformative. From the elegant logo to the cohesive visual language applied across all touchpoints, every detail reflects the luxury experience we offer. Our guests consistently compliment the design aesthetic, and we've seen a significant increase in social media engagement."</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-img">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
+          </div>
+          <div class="author-info">
+            <h4>Emma Rodriguez</h4>
+            <p>Marketing Director, The Azure Hotel</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+  <div class="process-container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Our Branding Process</h2>
+      <p>A structured approach to creating meaningful, effective brand identities.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="step" data-aos="fade-up" data-aos-delay="100">
+        <h3>Discovery</h3>
+        <p>In-depth research into your business, audience, and competitive landscape.</p>
+      </div>
+
+      <div class="step" data-aos="fade-up" data-aos-delay="200">
+        <h3>Strategy</h3>
+        <p>Defining your brand positioning, personality, and messaging framework.</p>
+      </div>
+
+      <div class="step" data-aos="fade-up" data-aos-delay="300">
+        <h3>Concept Development</h3>
+        <p>Creating multiple design directions for your visual identity.</p>
+      </div>
+
+      <div class="step" data-aos="fade-up" data-aos-delay="400">
+        <h3>Refinement</h3>
+        <p>Iterating on selected concepts based on your feedback.</p>
+      </div>
+
+      <div class="step" data-aos="fade-up" data-aos-delay="500">
+        <h3>Application</h3>
+        <p>Extending the identity across various touchpoints and mediums.</p>
+      </div>
+
+      <div class="step" data-aos="fade-up" data-aos-delay="600">
+        <h3>Delivery</h3>
+        <p>Providing all final files and comprehensive brand guidelines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+  <div class="cta-container" data-aos="fade-up">
+    <h2>Ready to Build Your Brand?</h2>
+    <p>Whether you're launching a new business or refreshing an existing brand, we'll create an identity that makes you stand out.</p>
+    <a href="/contact" class="btn btn-secondary">Start Your Project</a>
+  </div>
+</section>
+
+<div th:insert="~{fragments/footer :: footer}"></div>
+
+
+<!-- AOS Animation -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+  });
+</script>
+</body>
+</html>

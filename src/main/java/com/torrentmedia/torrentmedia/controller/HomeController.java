@@ -108,7 +108,16 @@ public class HomeController {
             return "home";
         }
         model.addAttribute("isLoggedIn" , false);
-        return "error";
+        Map<String,String> influencer = homeService.getInfluencerDetail();
+
+        if (influencer == null) {
+            // Handle "not found" case
+            return "error/404"; // or redirect to a not found page
+        }
+
+        model.addAttribute("influencer", influencer);
+
+        return "fragments/authentication/profile";
     }
 
     @GetMapping("/signup")
