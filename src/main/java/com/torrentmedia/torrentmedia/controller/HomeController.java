@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -89,26 +91,32 @@ public class HomeController {
     }
 
     @GetMapping("/login")
-    public String showLoginPage(Model model){
+    public String showLoginPage(Model model ,Authentication authentication){
+
+        if (authentication != null && authentication.isAuthenticated()) {
+            return "redirect:/profile";
+        }
         model.addAttribute("isLoggedIn" , false);
         return "fragments/authentication/login";
 
     }
 
 
-    @PostMapping("/login")
+    @PostMapping("/process-login")
     public String loginAuthentication( @RequestParam String email,
                                        @RequestParam String password
 
     ,Model model ){
+
+        System.out.println(email + " " + password);
         String status =homeService.loginAuthentication(email,password);
 
+        Map<String,String> influencer = new HashMap<>();
         if(status.equals("valid")){
             model.addAttribute("isLoggedIn",true);
-            return "home";
+            influencer = homeService.getInfluencerDetailByEmail(email);
         }
-        model.addAttribute("isLoggedIn" , false);
-        Map<String,String> influencer = homeService.getInfluencerDetail();
+
 
         if (influencer == null) {
             // Handle "not found" case
@@ -131,6 +139,11 @@ public class HomeController {
                                     @RequestParam String email,
                                     @RequestParam String password,Model model) {
         System.out.println(name + " " + email + "" + password);
+        User users = homeService.getUserByEmail(email);
+        if(users != null){
+            model.addAttribute("message" , "email is already in use so use other email");
+            return "error";
+        }
         User user = new User();
         user.setUserName(name);
         user.setEmail(email);
@@ -159,9 +172,26 @@ public class HomeController {
     }
 
     @GetMapping("/profile")
-    public String profile(Model model){
-        model.addAttribute("isLoggedIn" , true);
-        return"home";
+    public String profile(Model model , Authentication authentication){
+
+        if (authentication != null && authentication.isAuthenticated()) {
+            model.addAttribute("isLoggedIn", true);
+            Map<String,String> influencer = homeService.getInfluencerDetail();
+
+            if (influencer == null) {
+                // Handle "not found" case
+                return "error/404"; // or redirect to a not found page
+            }
+
+            model.addAttribute("influencer", influencer);
+
+
+        } else {
+            return "redirect:/login";
+        }
+
+
+        return "fragments/authentication/profile";
     }
     @GetMapping("/settings")
     public String setting(Model model){
@@ -193,8 +223,15 @@ public class HomeController {
             @RequestParam("youtube") String youtube,
             @RequestParam("twitter") String twitter,
             @RequestParam("tiktok") String tiktok,
-            HttpSession session
+            HttpSession session,
+            Model model
     ) {
+        Map<String, String> exitinfluencer = homeService.getInfluencerDetailByEmail(email);
+        if(!(exitinfluencer.isEmpty())){
+            model.addAttribute("message" ,"your email is already in use");
+            return "error";
+        }
+
         // Validate password confirmation
         if (!password.equals(confirmPassword)) {
             // Redirect with error message (optional)

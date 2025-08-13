@@ -7,10 +7,7 @@ import com.torrentmedia.torrentmedia.repository.InfluencerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class InfluencerService {
@@ -25,6 +22,10 @@ public class InfluencerService {
     public List<Influencer> getAllInfluencers() {
         return influencerRepository.findAll();
 
+    }
+
+    public List<Image> getAllImage(){
+        return imageRepository.findAll();
     }
 
     public Influencer getInfluencerById(Long Id){
@@ -60,8 +61,11 @@ public class InfluencerService {
         return influencerRepository.findByEmail(email);
     }
 
-    public String getBase64ImageByEmail(String email) {
+    public String getBase64ImageByEmail(String email ) {
         Image image = imageRepository.findByRegisterEmailId(email);
+//        Optional<Image> foundImage = images.stream()
+//                .filter(img -> img.getRegisterEmailId().equalsIgnoreCase(email))
+//                .findFirst();
         if (image != null && image.getImage() != null) {
             return Base64.getEncoder().encodeToString(image.getImage());
         }

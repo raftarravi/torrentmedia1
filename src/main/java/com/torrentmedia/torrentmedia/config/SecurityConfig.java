@@ -17,15 +17,14 @@ public class SecurityConfig {
                         .requestMatchers("/", "/about", "/services", "/register", "/login").permitAll()
 
                         // Protected URLs (only after login)
-                        .requestMatchers("/profile/**").authenticated()
+                        .requestMatchers("/profile","/profile/**").authenticated()
 
                         // Any other requests are also public
                         .anyRequest().permitAll()
                 )
                 // Enable login form
                 .formLogin(form -> form
-                        .loginPage("/login")          // Your custom login page
-                        .defaultSuccessUrl("/profile", true) // Redirect after login
+                        .loginPage("/login")// Your custom login page
                         .permitAll()
                 )
                 // Enable logout
@@ -33,7 +32,12 @@ public class SecurityConfig {
                         .logoutUrl("/logout")
                         .logoutSuccessUrl("/")
                         .permitAll()
+                )
+                .sessionManagement(session -> session
+                .maximumSessions(1) // only one session per user
+                .maxSessionsPreventsLogin(false)
                 );
+
 
         return http.build();
     }

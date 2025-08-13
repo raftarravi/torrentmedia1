@@ -40,12 +40,13 @@ public class InfluencerController {
 //        model.addAttribute("influencers", influencers);
 
         List<Influencer> influencers = influencerService.getAllInfluencers();
+        List<Image> image = influencerService.getAllImage();
 
         // Convert to DTOs with base64 image
         List<Map<String, String>> influencerData = new ArrayList<>();
 
         for (Influencer inf : influencers) {
-            Image image = imageRepository.findByRegisterEmailId(inf.getEmail());
+
 
             Map<String, String> data = new HashMap<>();
             data.put("name", inf.getName());

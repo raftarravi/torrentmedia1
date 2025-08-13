@@ -118,4 +118,15 @@ public class HomeService {
         Map<String,String> influencerDetail = influencerService.getInfluencerDetail(influencer.getId());
         return influencerDetail;
     }
+    public Map<String ,String> getInfluencerDetailByEmail(String email){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        String email = authentication.getName();
+        Influencer influencer = influencerService.getInfluencerByEmail(email);
+        Map<String,String> influencerDetail = influencerService.getInfluencerDetail(influencer.getId());
+        return influencerDetail;
+    }
+
+    public User getUserByEmail(String email){
+        return userRepository.findByEmail(email);
+    }
 }
