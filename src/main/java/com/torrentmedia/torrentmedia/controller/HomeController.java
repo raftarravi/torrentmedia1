@@ -3,6 +3,7 @@ package com.torrentmedia.torrentmedia.controller;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.torrentmedia.torrentmedia.entity.*;
+import com.torrentmedia.torrentmedia.repository.FeedbackRepository;
 import com.torrentmedia.torrentmedia.repository.ImageRepository;
 import com.torrentmedia.torrentmedia.service.HomeService;
 import com.torrentmedia.torrentmedia.service.MailService;
@@ -20,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -33,12 +35,21 @@ public class HomeController {
     @Autowired
     private ImageRepository imageRepository;
 
+    @Autowired
+    private FeedbackRepository feedbackRepository;
+
 
 
     @GetMapping("/")
     public String home(HttpServletRequest request, Model model) {
         model.addAttribute("currentURI", request.getRequestURI());
         model.addAttribute("isLoggedIn" , false);
+        model.addAttribute("feedback", new Feedback());
+
+        List<Feedback> reviews = feedbackRepository.findAllByServiceType("Digital Marketing");
+        model.addAttribute("reviews", reviews);
+        model.addAttribute("serviceType", "Digital Marketing");
+
         return "home";
     }
 
@@ -77,7 +88,7 @@ public class HomeController {
         System.out.println("Message: " + message);
 
         model.addAttribute("isLoggedIn" , false);
-
+        model.addAttribute("feedback", new Feedback());
         // Optionally send email or store in DB
         redirectAttributes.addFlashAttribute("successMessage", "Thank you for contacting us!");
         return "redirect:/"; // Redirect with success param
@@ -87,6 +98,12 @@ public class HomeController {
     public String showHomePage(Model model) {
         boolean isLoggedIn = false; // or get it from session, manually
         model.addAttribute("isLoggedIn", isLoggedIn);
+        model.addAttribute("feedback", new Feedback());
+
+        List<Feedback> reviews = feedbackRepository.findAllByServiceType("Web Development");
+        model.addAttribute("reviews", reviews);
+        model.addAttribute("serviceType", "Web Development");
+
         return "home";
     }
 
@@ -112,15 +129,25 @@ public class HomeController {
         String status =homeService.loginAuthentication(email,password);
 
         Map<String,String> influencer = new HashMap<>();
+        User user = homeService.getUserByEmail(email);
         if(status.equals("valid")){
             model.addAttribute("isLoggedIn",true);
             influencer = homeService.getInfluencerDetailByEmail(email);
         }
 
 
-        if (influencer == null) {
+        if (influencer == null && user != null) {
             // Handle "not found" case
-            return "error/404"; // or redirect to a not found page
+            model.addAttribute("feedback", new Feedback());
+
+            List<Feedback> reviews = feedbackRepository.findAllByServiceType("Graphic Design And UI/UX Design");
+            model.addAttribute("reviews", reviews);
+            model.addAttribute("serviceType", "Graphic Design And UI/UX Design");
+
+            return "home"; // or redirect to a not found page
+        }else if(user == null){
+            model.addAttribute("message" , "you are not registered yet");
+            return "error";
         }
 
         model.addAttribute("influencer", influencer);
@@ -168,6 +195,13 @@ public class HomeController {
     @GetMapping("logout")
     public String logOut(Model model){
         model.addAttribute("isLoggedIn" , false);
+        model.addAttribute("feedback", new Feedback());
+
+        List<Feedback> reviews = feedbackRepository.findAllByServiceType("Digital Marketing");
+        model.addAttribute("reviews", reviews);
+        model.addAttribute("serviceType", "Digital Marketing");
+
+
         return "home";
     }
 
@@ -196,7 +230,13 @@ public class HomeController {
     @GetMapping("/settings")
     public String setting(Model model){
         model.addAttribute("isLoggedIn" , true);
-      return "home";
+        model.addAttribute("feedback", new Feedback());
+
+        List<Feedback> reviews = feedbackRepository.findAllByServiceType("Digital Marketing");
+        model.addAttribute("reviews", reviews);
+        model.addAttribute("serviceType", "Digital Marketing");
+
+        return "home";
     }
 
 
@@ -299,9 +339,26 @@ public class HomeController {
 
 
     @GetMapping("/error")
-    public String showCustomError(@RequestParam("message") String message, Model model) {
+    public String showCustomError(@RequestParam(value = "message", required = false) String message, Model model) {
         model.addAttribute("message", message);
         return "error"; // will load error.html from templates
+    }
+
+
+    @PostMapping("/submit-feedback")
+    public String submitFeedback(@ModelAttribute Feedback feedback, Model model) {
+        System.out.println(feedback.getCompanyName() + " " + feedback.getMessage());
+        feedbackRepository.save(feedback);
+        model.addAttribute("Message", "Thank you for your feedback!");
+        model.addAttribute("feedback", new Feedback());
+        model.addAttribute("isLoggedIn" , true);
+
+        List<Feedback> reviews = feedbackRepository.findAllByServiceType(feedback.getServiceType());
+        model.addAttribute("reviews", reviews);
+        model.addAttribute("serviceType", feedback.getServiceType());
+
+
+        return "home"; // redirect to home or any page
     }
 
 

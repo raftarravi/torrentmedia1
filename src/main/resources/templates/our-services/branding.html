@@ -10,6 +10,7 @@
   <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
   <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/feedback-details.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}"/>
 
@@ -155,64 +156,68 @@
 </section>
 
 <!-- Testimonials -->
-<section class="testimonials">
-  <div class="testimonial-container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Client Experiences</h2>
-      <p>Don't just take our word for it - hear from brands we've helped transform.</p>
-    </div>
+<!--<section class="testimonials">-->
+<!--  <div class="testimonial-container">-->
+<!--    <div class="section-title" data-aos="fade-up">-->
+<!--      <h2>Client Experiences</h2>-->
+<!--      <p>Don't just take our word for it - hear from brands we've helped transform.</p>-->
+<!--    </div>-->
 
-    <div class="testimonial-grid">
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"The branding work completely transformed our company's image. We went from being just another organic brand to having a distinctive, recognizable identity that customers connect with emotionally. Our packaging now stands out on shelves, and we've seen a measurable increase in customer loyalty."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
-          </div>
-          <div class="author-info">
-            <h4>Sarah Johnson</h4>
-            <p>CEO, GreenSprout Organics</p>
-          </div>
-        </div>
-      </div>
+<!--    <div class="testimonial-grid">-->
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"The branding work completely transformed our company's image. We went from being just another organic brand to having a distinctive, recognizable identity that customers connect with emotionally. Our packaging now stands out on shelves, and we've seen a measurable increase in customer loyalty."</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Sarah Johnson</h4>-->
+<!--            <p>CEO, GreenSprout Organics</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"As a tech startup, we needed branding that would communicate innovation while establishing trust. The team delivered beyond our expectations. Our new visual identity played a crucial role in our successful funding round and continues to impress potential clients in enterprise sales."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
-          </div>
-          <div class="author-info">
-            <h4>Michael Chen</h4>
-            <p>Founder, Nexus Technologies</p>
-          </div>
-        </div>
-      </div>
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"As a tech startup, we needed branding that would communicate innovation while establishing trust. The team delivered beyond our expectations. Our new visual identity played a crucial role in our successful funding round and continues to impress potential clients in enterprise sales."</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Michael Chen</h4>-->
+<!--            <p>Founder, Nexus Technologies</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"The Azure Hotel's rebranding has been transformative. From the elegant logo to the cohesive visual language applied across all touchpoints, every detail reflects the luxury experience we offer. Our guests consistently compliment the design aesthetic, and we've seen a significant increase in social media engagement."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
-          </div>
-          <div class="author-info">
-            <h4>Emma Rodriguez</h4>
-            <p>Marketing Director, The Azure Hotel</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"The Azure Hotel's rebranding has been transformative. From the elegant logo to the cohesive visual language applied across all touchpoints, every detail reflects the luxury experience we offer. Our guests consistently compliment the design aesthetic, and we've seen a significant increase in social media engagement."</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Emma Rodriguez</h4>-->
+<!--            <p>Marketing Director, The Azure Hotel</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<div th:insert="~{fragments/feedback-details :: reviewsCarousel(${reviews}, ${serviceType})}"></div>
+
+
 
 <!-- Process -->
 <section class="process">

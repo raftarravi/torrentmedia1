@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>hello </title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div th:fragment="reviewsCarousel (reviews, serviceType)">
+  <section class="reviews-section" aria-labelledby="reviews-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">CLIENT REVIEWS</span>
+        <h2 id="reviews-heading" class="section-title">
+          What Our <span class="gradient-text" th:text="${serviceType}">Clients Say</span>
+        </h2>
+        <p class="section-description">
+          Don't just take our word for it - hear what our clients have to say about working with us
+        </p>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-track" role="list">
+          <div th:each="review, reviewStat : ${reviews}"
+               class="carousel-slide"
+               role="listitem"
+               th:attr="aria-label=${'Review ' + (reviewStat.index + 1) + ' of ' + #lists.size(reviews)}">
+            <div class="review-card">
+              <p class="review-text" th:text="${review.message}"></p>
+              <div class="review-author">
+                <img src="/images/human-avatar.jpg" th:alt="${review.yourName}">
+                <div class="author-info">
+                  <h4 th:text="${review.yourName}"></h4>
+                  <p th:text="${review.yourPosition + ', ' + review.companyName}"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-nav">
+          <button class="carousel-button carousel-prev" aria-label="Previous review">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="carousel-button carousel-next" aria-label="Next review">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="carousel-pagination" role="tablist">
+          <button th:each="review, stat : ${reviews}"
+                  class="pagination-dot"
+                  th:classappend="${stat.index == 0} ? 'active'"
+                  th:attr="aria-label=${'Go to review ' + (stat.index + 1)}"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all carousel containers (support multiple carousels on one page)
+        const carousels = document.querySelectorAll('.carousel-container');
+
+        carousels.forEach(carousel => {
+            const track = carousel.querySelector('.carousel-track');
+            const prevButton = carousel.querySelector('.carousel-prev');
+            const nextButton = carousel.querySelector('.carousel-next');
+            const pagination = carousel.querySelector('.carousel-pagination');
+
+            // Get slides from DOM (Thymeleaf-generated)
+            const slides = Array.from(track.children);
+            const totalSlides = slides.length;
+            let currentIndex = 0;
+            const slidesToShow = 3;
+
+            // Create pagination dynamically
+            pagination.innerHTML = '';
+            slides.forEach((slide, index) => {
+                const dot = document.createElement('button');
+                dot.className = 'pagination-dot';
+                if(index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+                pagination.appendChild(dot);
+            });
+
+            // Update carousel position & pagination
+            function updateCarousel() {
+                const slideWidth = slides[0].offsetWidth;
+                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+                // Update dots
+                const dots = pagination.querySelectorAll('.pagination-dot');
+                dots.forEach((dot, index) => dot.classList.toggle('active', index === currentIndex));
+
+                // Enable/disable buttons
+                prevButton.disabled = currentIndex === 0;
+                nextButton.disabled = currentIndex >= totalSlides - slidesToShow;
+            }
+
+            // Button events
+            prevButton.addEventListener('click', () => {
+                if(currentIndex > 0) { currentIndex--; updateCarousel(); }
+            });
+
+            nextButton.addEventListener('click', () => {
+                if(currentIndex < totalSlides - slidesToShow) { currentIndex++; updateCarousel(); }
+            });
+
+            // Adjust carousel on window resize
+            window.addEventListener('resize', updateCarousel);
+
+            // Initial update
+            updateCarousel();
+        });
+    });
+  </script>
+
+</div>
+
+</body>
+</html>

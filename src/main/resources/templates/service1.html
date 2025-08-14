@@ -13,6 +13,7 @@
   <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
   <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/feedback-details.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}"/>
   <link rel="stylesheet" th:href="@{/css/service1.css}">
@@ -82,7 +83,7 @@
         <i class="fas fa-medal"></i>
       </div>
       <div class="trust-content">
-        <h3>5+ Years</h3>
+        <h3>1+ Years</h3>
         <p>Industry Experience</p>
       </div>
     </div>
@@ -92,7 +93,7 @@
         <i class="fas fa-project-diagram"></i>
       </div>
       <div class="trust-content">
-        <h3>200+</h3>
+        <h3>50+</h3>
         <p>Successful Projects</p>
       </div>
     </div>
@@ -133,7 +134,7 @@
     <!-- Service Card 1 -->
     <div class="service-card" data-aos="fade-up" data-aos-delay="0">
       <div class="card-icon">
-        <i class="fas fa-code"></i>
+        <img src="images/service-image/web-devlopment.png" alt="Web Development" class="service-icon" loading="lazy">
       </div>
       <div class="card-content">
         <h3>Web Design & Development</h3>
@@ -152,10 +153,10 @@
     <!-- Service Card 2 -->
     <div class="service-card" data-aos="fade-up" data-aos-delay="100">
       <div class="card-icon">
-        <i class="fas fa-hashtag"></i>
+        <img src="images/service-image/digital-marketing.png" alt="Digital Marketing" class="service-icon" loading="lazy">
       </div>
       <div class="card-content">
-        <h3>Social Media Marketing</h3>
+        <h3>Digital Marketing</h3>
         <p>Strategic campaigns to boost your online presence, engagement, and conversions across all platforms.</p>
         <ul class="service-features">
           <li><i class="fas fa-check"></i> Content Strategy</li>
@@ -171,7 +172,7 @@
     <!-- Service Card 3 -->
     <div class="service-card" data-aos="fade-up" data-aos-delay="200">
       <div class="card-icon">
-        <i class="fas fa-ad"></i>
+        <img src="images/service-image/ads.png" alt="Paid Advertisement" class="service-icon" loading="lazy">
       </div>
       <div class="card-content">
         <h3>Paid Advertisement</h3>
@@ -190,10 +191,10 @@
     <!-- Service Card 4 -->
     <div class="service-card" data-aos="fade-up" data-aos-delay="300">
       <div class="card-icon">
-        <i class="fas fa-palette"></i>
+        <img src="images/service-image/graphic-design.png" alt="Graphic Design" class="service-icon" loading="lazy">
       </div>
       <div class="card-content">
-        <h3>Branding & Logo Design</h3>
+        <h3>Graphic Design And UI/UX Design</h3>
         <p>Memorable brand identities that communicate your values and resonate with your target audience.</p>
         <ul class="service-features">
           <li><i class="fas fa-check"></i> Logo Design</li>
@@ -209,11 +210,11 @@
     <!-- Service Card 5 -->
     <div class="service-card" data-aos="fade-up" data-aos-delay="400">
       <div class="card-icon">
-        <i class="fas fa-video"></i>
+        <img src="images/service-image/video-editing.png" alt="Video Editing" class="service-icon" loading="lazy">
       </div>
       <div class="card-content">
-        <h3>Brand Promotion</h3>
-        <p>Professional brand promotion services from concept to final execution, crafted to tell your story.</p>
+        <h3>Video Editing And Content Shoot</h3>
+        <p>Professional Video Editing and  Video Shoot services from concept to final execution, crafted to tell your story.</p>
         <ul class="service-features">
           <li><i class="fas fa-check"></i> Commercial Production</li>
           <li><i class="fas fa-check"></i> Social Media Content</li>
@@ -228,15 +229,15 @@
     <!-- Service Card 6 -->
     <div class="service-card" data-aos="fade-up" data-aos-delay="500">
       <div class="card-icon">
-        <i class="fas fa-pen-fancy"></i>
+        <img src="images/service-image/social-media.png" alt="Content Strategy" class="service-icon" loading="lazy">
       </div>
       <div class="card-content">
         <h3>Content Strategy</h3>
         <p>Compelling content that engages your audience, improves SEO, and establishes thought leadership.</p>
         <ul class="service-features">
           <li><i class="fas fa-check"></i> Blog Writing</li>
-          <li><i class="fas fa-check"></i> SEO Content</li>
-          <li><i class="fas fa-check"></i> Email Campaigns</li>
+          <li><i class="fas fa-check"></i> POST Content</li>
+          <li><i class="fas fa-check"></i> Engagement</li>
         </ul>
       </div>
       <a href="services/content-strategy" class="card-link">
@@ -370,90 +371,93 @@
   </div>
 </section>
 
-<!-- Testimonials -->
-<section class="testimonials-section">
-  <div class="container">
-    <div class="section-header" data-aos="fade-up">
-      <span class="section-label">CLIENT TESTIMONIALS</span>
-      <h2 class="section-title">What Our <span class="gradient-text">Clients Say</span></h2>
-      <p class="section-description">
-        Don't just take our word for it - hear what our clients have to say about working with us
-      </p>
-    </div>
+<!--&lt;!&ndash; Testimonials &ndash;&gt;-->
+<!--<section class="testimonials-section">-->
+<!--  <div class="container">-->
+<!--    <div class="section-header" data-aos="fade-up">-->
+<!--      <span class="section-label">CLIENT TESTIMONIALS</span>-->
+<!--      <h2 class="section-title">What Our <span class="gradient-text">Clients Say</span></h2>-->
+<!--      <p class="section-description">-->
+<!--        Don't just take our word for it - hear what our clients have to say about working with us-->
+<!--      </p>-->
+<!--    </div>-->
 
-    <div class="testimonials-grid">
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="testimonial-rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <p class="testimonial-text">
-          "Torrent Media transformed our online presence completely. Their AI-driven marketing strategy
-          increased our leads by 240% in just three months. The team's expertise and attention to detail
-          are unmatched in the industry."
-        </p>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
-          <div class="author-info">
-            <h4>Sarah Johnson</h4>
-            <p>CEO, TechSolutions Inc.</p>
-          </div>
-        </div>
-      </div>
+<!--    <div class="testimonials-grid">-->
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">-->
+<!--        <div class="testimonial-rating">-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--        </div>-->
+<!--        <p class="testimonial-text">-->
+<!--          "Torrent Media transformed our online presence completely. Their AI-driven marketing strategy-->
+<!--          increased our leads by 240% in just three months. The team's expertise and attention to detail-->
+<!--          are unmatched in the industry."-->
+<!--        </p>-->
+<!--        <div class="testimonial-author">-->
+<!--          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">-->
+<!--          <div class="author-info">-->
+<!--            <h4>Sarah Johnson</h4>-->
+<!--            <p>CEO, TechSolutions Inc.</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="testimonial-rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <p class="testimonial-text">
-          "The website they built for us is not just beautiful - it's a conversion machine. Our bounce rate
-          dropped by 65% and sales increased immediately. Their ongoing support and optimization have been invaluable."
-        </p>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
-          <div class="author-info">
-            <h4>Michael Chen</h4>
-            <p>Marketing Director, UrbanStyle</p>
-          </div>
-        </div>
-      </div>
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">-->
+<!--        <div class="testimonial-rating">-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--        </div>-->
+<!--        <p class="testimonial-text">-->
+<!--          "The website they built for us is not just beautiful - it's a conversion machine. Our bounce rate-->
+<!--          dropped by 65% and sales increased immediately. Their ongoing support and optimization have been invaluable."-->
+<!--        </p>-->
+<!--        <div class="testimonial-author">-->
+<!--          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">-->
+<!--          <div class="author-info">-->
+<!--            <h4>Michael Chen</h4>-->
+<!--            <p>Marketing Director, UrbanStyle</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="testimonial-rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <p class="testimonial-text">
-          "Their data analysis services uncovered opportunities we never knew existed. The insights have
-          become invaluable to our strategic planning. Torrent Media is now an integral part of our marketing team."
-        </p>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David Rodriguez">
-          <div class="author-info">
-            <h4>David Rodriguez</h4>
-            <p>COO, GreenFuture Energy</p>
-          </div>
-        </div>
-      </div>
-    </div>
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">-->
+<!--        <div class="testimonial-rating">-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--          <i class="fas fa-star"></i>-->
+<!--        </div>-->
+<!--        <p class="testimonial-text">-->
+<!--          "Their data analysis services uncovered opportunities we never knew existed. The insights have-->
+<!--          become invaluable to our strategic planning. Torrent Media is now an integral part of our marketing team."-->
+<!--        </p>-->
+<!--        <div class="testimonial-author">-->
+<!--          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David Rodriguez">-->
+<!--          <div class="author-info">-->
+<!--            <h4>David Rodriguez</h4>-->
+<!--            <p>COO, GreenFuture Energy</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <div class="testimonials-cta" data-aos="fade-up">
-      <a href="/case-studies" class="cta-button secondary">
-        View Case Studies <i class="fas fa-book-open"></i>
-      </a>
-    </div>
-  </div>
-</section>
+<!--    <div class="testimonials-cta" data-aos="fade-up">-->
+<!--      <a href="/case-studies" class="cta-button secondary">-->
+<!--        View Case Studies <i class="fas fa-book-open"></i>-->
+<!--      </a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<div th:insert="~{fragments/feedback-details :: reviewsCarousel(${reviews}, ${serviceType})}"></div>
+
 
 <!-- CTA Section -->
 <section class="cta-section">
@@ -467,7 +471,7 @@
         <a href="/contact" class="cta-button primary">
           Get Started <i class="fas fa-arrow-right"></i>
         </a>
-        <a href="tel:+1234567890" class="cta-button secondary">
+        <a href="tel:+91-9919328475" class="cta-button secondary">
           <i class="fas fa-phone-alt"></i> Call Us Now
         </a>
       </div>

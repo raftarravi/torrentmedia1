@@ -10,6 +10,7 @@
   <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
   <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/feedback-details.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}"/>
 
@@ -180,65 +181,69 @@
   </div>
 </section>
 
-<!-- Testimonials -->
-<section class="testimonials">
-  <div class="testimonial-container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Client Success Stories</h2>
-      <p>Don't just take our word for it - hear from businesses we've helped transform through paid advertising.</p>
-    </div>
+<!--&lt;!&ndash; Testimonials &ndash;&gt;-->
+<!--<section class="testimonials">-->
+<!--  <div class="testimonial-container">-->
+<!--    <div class="section-title" data-aos="fade-up">-->
+<!--      <h2>Client Success Stories</h2>-->
+<!--      <p>Don't just take our word for it - hear from businesses we've helped transform through paid advertising.</p>-->
+<!--    </div>-->
 
-    <div class="testimonial-grid">
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"Working with this team transformed our Google Ads performance. They took our account from a 2.5x to a consistent 6.8x ROAS while increasing our monthly ad spend by 300%. Their strategic approach to bid adjustments and audience targeting was game-changing."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
-          </div>
-          <div class="author-info">
-            <h4>Sarah Johnson</h4>
-            <p>Director of Marketing, EcoGoods</p>
-          </div>
-        </div>
-      </div>
+<!--    <div class="testimonial-grid">-->
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"Working with this team transformed our Google Ads performance. They took our account from a 2.5x to a consistent 6.8x ROAS while increasing our monthly ad spend by 300%. Their strategic approach to bid adjustments and audience targeting was game-changing."</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Sarah Johnson</h4>-->
+<!--            <p>Director of Marketing, EcoGoods</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"The LinkedIn advertising strategy they implemented helped us break into three new verticals we'd been trying to penetrate for years. In six months, we generated $1.2M in new pipeline from their campaigns alone. Their understanding of B2B buyer journeys is exceptional."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
-          </div>
-          <div class="author-info">
-            <h4>Michael Chen</h4>
-            <p>VP Sales, TechSolutions</p>
-          </div>
-        </div>
-      </div>
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"The LinkedIn advertising strategy they implemented helped us break into three new verticals we'd been trying to penetrate for years. In six months, we generated $1.2M in new pipeline from their campaigns alone. Their understanding of B2B buyer journeys is exceptional."</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Michael Chen</h4>-->
+<!--            <p>VP Sales, TechSolutions</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"Our Facebook ad campaigns were stagnant before we started working with them. They completely revamped our creative strategy and audience targeting, resulting in a 140% increase in conversion rate while lowering our CPA by 35%. Their creative testing framework alone was worth the investment."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
-          </div>
-          <div class="author-info">
-            <h4>Emma Rodriguez</h4>
-            <p>Marketing Manager, StyleHaus</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"Our Facebook ad campaigns were stagnant before we started working with them. They completely revamped our creative strategy and audience targeting, resulting in a 140% increase in conversion rate while lowering our CPA by 35%. Their creative testing framework alone was worth the investment."</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Emma Rodriguez</h4>-->
+<!--            <p>Marketing Manager, StyleHaus</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<div th:insert="~{fragments/feedback-details :: reviewsCarousel(${reviews}, ${serviceType})}"></div>
+
+
 
 <!-- Process -->
 <section class="process">

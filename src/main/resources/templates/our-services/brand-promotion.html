@@ -10,6 +10,7 @@
   <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
   <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/feedback-details.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}"/>
 
@@ -193,64 +194,68 @@
 </section>
 
 <!-- Testimonials -->
-<section class="testimonials">
-  <div class="testimonial-container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Client Success Stories</h2>
-      <p>Don't just take our word for it - hear from brands we've helped elevate through video.</p>
-    </div>
+<!--<section class="testimonials">-->
+<!--  <div class="testimonial-container">-->
+<!--    <div class="section-title" data-aos="fade-up">-->
+<!--      <h2>Client Success Stories</h2>-->
+<!--      <p>Don't just take our word for it - hear from brands we've helped elevate through video.</p>-->
+<!--    </div>-->
 
-    <div class="testimonial-grid">
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"The commercial they produced for our beverage brand exceeded all expectations. It perfectly captured our brand personality while driving measurable results. The campaign generated a 35% sales lift and won an industry award for creative excellence. Their attention to detail from concept through post-production was exceptional."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
-          </div>
-          <div class="author-info">
-            <h4>Sarah Johnson</h4>
-            <p>CMO, Refresh Beverages</p>
-          </div>
-        </div>
-      </div>
+<!--    <div class="testimonial-grid">-->
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"The commercial they produced for our beverage brand exceeded all expectations. It perfectly captured our brand personality while driving measurable results. The campaign generated a 35% sales lift and won an industry award for creative excellence. Their attention to detail from concept through post-production was exceptional."</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Sarah Johnson</h4>-->
+<!--            <p>CMO, Refresh Beverages</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"Our social media content strategy was transformed by their creative approach. The viral video series they produced helped us break into new demographics and achieve record engagement rates. The team's understanding of platform-specific best practices and their ability to craft authentic, shareable content was invaluable to our growth."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
-          </div>
-          <div class="author-info">
-            <h4>Michael Chen</h4>
-            <p>Brand Director, Urban Threads</p>
-          </div>
-        </div>
-      </div>
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"Our social media content strategy was transformed by their creative approach. The viral video series they produced helped us break into new demographics and achieve record engagement rates. The team's understanding of platform-specific best practices and their ability to craft authentic, shareable content was invaluable to our growth."</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Michael Chen</h4>-->
+<!--            <p>Brand Director, Urban Threads</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"The animated explainer video they created for our tech product was a game-changer. It simplified our complex offering into an engaging, easy-to-understand story that resonated with our target audience. Our sales team reports it's their most effective tool for explaining the product, and it's reduced onboarding time for new customers by 40%."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
-          </div>
-          <div class="author-info">
-            <h4>Emma Rodriguez</h4>
-            <p>Product Manager, NexaTech</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"The animated explainer video they created for our tech product was a game-changer. It simplified our complex offering into an engaging, easy-to-understand story that resonated with our target audience. Our sales team reports it's their most effective tool for explaining the product, and it's reduced onboarding time for new customers by 40%."</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Emma Rodriguez</h4>-->
+<!--            <p>Product Manager, NexaTech</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<div th:insert="~{fragments/feedback-details :: reviewsCarousel(${reviews}, ${serviceType})}"></div>
+
+
 
 <!-- Process -->
 <section class="process">

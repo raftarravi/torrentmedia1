@@ -40,78 +40,127 @@
 <div th:insert="~{fragments/hero-section :: hero}" th:with="pageName='ABOUT US'"></div>
 
 <!-- Service Hero Section -->
+<div class="about-company">
+    <div class="container">
+        <div class="image-section">
+            <div class="image-wrapper">
+                <img th:src="@{/images/About-Section-img.webp}" alt="Torrent Media Team" class="parallax-img">
+                <div class="experience-container">
+                    <div class="connection-line"></div>
+                    <div class="experience">
+                        <span class="counter" data-target="3">1</span>+ Years Experience
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-section">
+            <h2 class="section-subtitle">About Our Company</h2>
+            <h1 class="section-title">We Power Your Digital Success</h1>
+            <p class="section-description">Torrent Media is a premier digital marketing agency based in India, delivering cutting-edge solutions to help businesses thrive online. We specialize in comprehensive digital strategies including SEO, paid advertising, social media marketing, and content creation. Our data-driven approach combined with creative excellence ensures measurable results for our clients.</p>
 
-<div class="container">
-    <div class="image-section">
-        <img th:src="@{/images/About-Section-img.webp}" alt="Team Working">
-        <div class="experience-container">
-            <div class="connection-line"></div>
-            <div class="experience">3+ Years Experience</div>
-        </div>
-    </div>
-    <div class="text-section">
-        <h2>About Our Company</h2>
-        <h1>We are Partner of Your Success</h1>
-        <p>Novarsis Technology is a dynamic digital solutions company committed to empowering businesses through innovative IT services and creative strategy. We specialize in web development, digital marketing, branding, eCommerce, and product media solutions tailored to elevate your online presence. With a results-driven approach and a skilled team, we turn ideas into impactful digital experiences. At Novarsis, we merge technology with creativity to help brands grow, engage, and lead in the digital age.</p>
-        <div class="services">
-            <div class="service-card">
-                <h3>IT Consultant</h3>
-                <p>Smarter Solutions</p>
+            <div class="services">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>Data-Driven Strategies</p>
+                    <div class="wave-hover"></div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Solutions</h3>
+                    <p>High-Performance Sites</p>
+                    <div class="wave-hover"></div>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>IT Specialist</h3>
-                <p>Faster Solutions</p>
-            </div>
+
+            <ul class="benefits-list">
+                <li data-aos="fade-right">
+                    <i class="fas fa-check-circle"></i> India's top-rated digital marketing specialists
+                </li>
+                <li data-aos="fade-right" data-aos-delay="100">
+                    <i class="fas fa-check-circle"></i> Proven strategies that deliver real ROI
+                </li>
+                <li data-aos="fade-right" data-aos-delay="200">
+                    <i class="fas fa-check-circle"></i> End-to-end services from branding to conversion
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li>We are a team of skilled IT specialists.</li>
-            <li>We provide reliable, efficient technology solutions & Consultations.</li>
-            <li>Our expertise includes all services from Branding to Sales & organic Traffic.</li>
-        </ul>
     </div>
 </div>
 
 
 <section class="service-section">
     <div class="content">
-        <p class="subtitle">About Our IT Company</p>
-        <h1 class="title">We Are The Best IT Solution<br>& <span class="highlight">Services</span> provider</h1>
+        <p class="subtitle">Torrent Media Expertise</p>
+        <h1 class="title">India's Premier Digital<br>Marketing <span class="highlight">Agency</span></h1>
         <p class="description">
-            Over 50+ professionals work for us in more than 2 countries. This breadth of global coverage, combined with specialists.
+            Our team of 15+ digital experts delivers exceptional results for clients across India. We combine global best practices with local market expertise.
         </p>
 
-        <div class="progress-bar">
-            <p>UI/UX & Graphic Designing <span>100%</span></p>
-            <div class="bar">
-                <div class="fill fill-ui"></div>
+        <div class="progress-container">
+            <div class="progress-bar" data-aos="fade-right">
+                <div class="progress-info">
+                    <span>SEO & SEM</span>
+                    <span class="percent">100%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill fill-seo" data-width="100"></div>
+                </div>
+            </div>
+
+            <div class="progress-bar" data-aos="fade-right" data-aos-delay="100">
+                <div class="progress-info">
+                    <span>Social Media Marketing</span>
+                    <span class="percent">95%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill fill-social" data-width="95"></div>
+                </div>
+            </div>
+
+            <div class="progress-bar" data-aos="fade-right" data-aos-delay="200">
+                <div class="progress-info">
+                    <span>Content Marketing</span>
+                    <span class="percent">90%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill fill-content" data-width="90"></div>
+                </div>
             </div>
         </div>
 
-        <div class="progress-bar">
-            <p>SEO & Paid Advertisement <span>95%</span></p>
-            <div class="bar">
-                <div class="fill fill-seo"></div>
+        <div class="video-container" data-aos="zoom-in">
+            <div class="video-btn" id="videoTrigger">
+                <div class="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <span>WATCH OUR STORY</span>
             </div>
+<!--            <div class="video-modal" id="videoModal">-->
+<!--                <div class="modal-content">-->
+<!--                    <span class="close-modal">&times;</span>-->
+<!--                    <iframe id="companyVideo" width="100%" height="100%" src="video/torrentmediamainvideo.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
-
-        <div class="progress-bar">
-            <p>Web Design & Development <span>100%</span></p>
-            <div class="bar">
-                <div class="fill fill-web"></div>
-            </div>
-        </div>
-
-        <a href="https://youtu.be/l5sgIqzlPXc?si=9CTmAiM_zsbD4waC" class="video-btn"><i class="fas fa-play"></i> WATCH VIDEO</a>
     </div>
 
-    <div class="image-box">
-        <img src="images/About-Us-Ui-Section-Pic-2.webp" alt="Service Image" />
-        <div class="assist-box">
-            <i class="fas fa-trophy"></i>
-            <span>We are ready to assist you</span>
+    <div class="image-box" data-aos="fade-left">
+        <img src="images/About-Us-Ui-Section-Pic-2.webp" alt="Torrent Media Team Working" class="feature-img">
+        <div class="assist-box" data-aos="zoom-in" data-aos-delay="400">
+            <div class="trophy-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <span>India's Trusted Digital Partner</span>
+            <div class="pulse-effect"></div>
         </div>
     </div>
 </section>
+
 
 <div th:insert="~{fragments/about-us/our-team :: teamSectionFragment}"></div>
 
@@ -132,6 +181,100 @@
             }
         });
     });
+
+    // Animation on scroll functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS (Animate On Scroll)
+        function initAOS() {
+            const aosElements = document.querySelectorAll('[data-aos]');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('aos-animate');
+
+                        // Animate progress bars
+                        if (entry.target.classList.contains('progress-bar')) {
+                            const fill = entry.target.querySelector('.progress-fill');
+                            const width = fill.getAttribute('data-width');
+                            fill.style.width = width + '%';
+                        }
+
+                        // Animate counter
+                        if (entry.target.classList.contains('experience')) {
+                            animateCounter();
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            aosElements.forEach(el => observer.observe(el));
+        }
+
+        // Counter animation
+        function animateCounter() {
+            const counter = document.querySelector('.counter');
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 1500;
+            const start = 0;
+            const increment = target / (duration / 16);
+
+            let current = start;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    clearInterval(timer);
+                    current = target;
+                }
+                counter.textContent = Math.floor(current);
+            }, 16);
+        }
+
+        // Video modal functionality
+        function initVideoModal() {
+            const videoBtn = document.getElementById('videoTrigger');
+            const videoModal = document.getElementById('videoModal');
+            const closeModal = videoModal.querySelector('.close-modal');
+            const iframe = document.getElementById('companyVideo');
+
+            videoBtn.addEventListener('click', () => {
+                videoModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeModal.addEventListener('click', () => {
+                videoModal.classList.remove('active');
+                document.body.style.overflow = '';
+                // Reset video when closing
+                iframe.src = iframe.src;
+            });
+
+            // Close when clicking outside
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) {
+                    videoModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    iframe.src = iframe.src;
+                }
+            });
+        }
+
+        // Initialize all functions
+        initAOS();
+        initVideoModal();
+
+        // Parallax effect for the image
+        window.addEventListener('scroll', function() {
+            const parallaxImg = document.querySelector('.parallax-img');
+            if (parallaxImg) {
+                const scrollPosition = window.pageYOffset;
+                parallaxImg.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+            }
+        });
+    });
+
 </script>
 </body>
 </html>

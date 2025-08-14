@@ -8,7 +8,9 @@
 <!--    <link rel="stylesheet" href="css/contact-us.css">-->
     <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
     <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/rate-us.css}" />
     <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fragment/feedback-details.css}"/>
     <link rel="stylesheet" th:href="@{/css/fragment/message.css}" />
     <link rel="stylesheet" th:href="@{/css/fragment/home/home-hero.css}" />
     <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}" />
@@ -41,6 +43,7 @@
 <div th:insert="~{fragments/home/home-hero :: serviceHero}"></div>
 
 <div th:insert="~{fragments/home/our-work-video :: videoGrid}"></div>
+<div th:insert="~{fragments/rate-us :: feedback-widget}"></div>
 <!--<section class="service-hero">-->
 <!--    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Team working" class="hero-bg">-->
 <!--    <div class="hero-content">-->
@@ -288,49 +291,53 @@
         </div>
     </div>
 </div>
-<!--  Testmonial Section -->
+<!--&lt;!&ndash;  Testmonial Section &ndash;&gt;-->
 
-<section class="testimonial-area">
-    <div class="testimonial-title">
-        <h2>What Our Clients Say</h2>
-        <p>Real feedback from our trusted clients around the globe.</p>
-    </div>
+<!--<section class="testimonial-area">-->
+<!--    <div class="testimonial-title">-->
+<!--        <h2>What Our Clients Say</h2>-->
+<!--        <p>Real feedback from our trusted clients around the globe.</p>-->
+<!--    </div>-->
 
-    <div class="testimonial-grid">
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card" data-aos="fade-right">
-            <img src="https://i.pravatar.cc/100?img=11" alt="Client 1" class="avatar" />
-            <h4>Ravi Sharma</h4>
-            <p class="stars">★★★★★</p>
-            <p class="message">Amazing experience working with your team. Highly professional!</p>
-        </div>
+<!--    <div class="testimonial-grid">-->
+<!--        &lt;!&ndash; Testimonial 1 &ndash;&gt;-->
+<!--        <div class="testimonial-card" data-aos="fade-right">-->
+<!--            <img src="https://i.pravatar.cc/100?img=11" alt="Client 1" class="avatar" />-->
+<!--            <h4>Ravi Sharma</h4>-->
+<!--            <p class="stars">★★★★★</p>-->
+<!--            <p class="message">Amazing experience working with your team. Highly professional!</p>-->
+<!--        </div>-->
 
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card" data-aos="fade-left">
-            <img src="https://i.pravatar.cc/100?img=12" alt="Client 2" class="avatar" />
-            <h4>Sneha Kapoor</h4>
-            <p class="stars">★★★★☆</p>
-            <p class="message">Great service and excellent communication. Would recommend!</p>
-        </div>
+<!--        &lt;!&ndash; Testimonial 2 &ndash;&gt;-->
+<!--        <div class="testimonial-card" data-aos="fade-left">-->
+<!--            <img src="https://i.pravatar.cc/100?img=12" alt="Client 2" class="avatar" />-->
+<!--            <h4>Sneha Kapoor</h4>-->
+<!--            <p class="stars">★★★★☆</p>-->
+<!--            <p class="message">Great service and excellent communication. Would recommend!</p>-->
+<!--        </div>-->
 
-        <!-- Add more cards like this up to 20 -->
-        <div class="testimonial-card" data-aos="fade-right">
-            <img src="https://i.pravatar.cc/100?img=13" alt="Client 3" class="avatar" />
-            <h4>Amit Patel</h4>
-            <p class="stars">★★★★★</p>
-            <p class="message">Fantastic support throughout the project lifecycle.</p>
-        </div>
+<!--        &lt;!&ndash; Add more cards like this up to 20 &ndash;&gt;-->
+<!--        <div class="testimonial-card" data-aos="fade-right">-->
+<!--            <img src="https://i.pravatar.cc/100?img=13" alt="Client 3" class="avatar" />-->
+<!--            <h4>Amit Patel</h4>-->
+<!--            <p class="stars">★★★★★</p>-->
+<!--            <p class="message">Fantastic support throughout the project lifecycle.</p>-->
+<!--        </div>-->
 
-        <div class="testimonial-card" data-aos="fade-left">
-            <img src="https://i.pravatar.cc/100?img=14" alt="Client 4" class="avatar" />
-            <h4>Priya Nair</h4>
-            <p class="stars">★★★★★</p>
-            <p class="message">Very fast delivery and helpful team. Loved working with them!</p>
-        </div>
+<!--        <div class="testimonial-card" data-aos="fade-left">-->
+<!--            <img src="https://i.pravatar.cc/100?img=14" alt="Client 4" class="avatar" />-->
+<!--            <h4>Priya Nair</h4>-->
+<!--            <p class="stars">★★★★★</p>-->
+<!--            <p class="message">Very fast delivery and helpful team. Loved working with them!</p>-->
+<!--        </div>-->
 
-        <!-- Continue adding more testimonials -->
-    </div>
-</section>
+<!--        &lt;!&ndash; Continue adding more testimonials &ndash;&gt;-->
+<!--    </div>-->
+<!--</section>-->
+
+
+<div th:insert="~{fragments/feedback-details :: reviewsCarousel(${reviews}, ${serviceType})}"></div>
+
 
 <!-- Footer -->
 <div th:insert="~{fragments/footer :: footer}"></div>

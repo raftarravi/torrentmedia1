@@ -10,6 +10,7 @@
   <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
   <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/feedback-details.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}"/>
 
@@ -189,62 +190,66 @@
   </div>
 </section>
 
-<section id="testimonials" class="testimonials container">
-  <div class="section-title">
-    <h2>What Our Clients Say</h2>
-    <p>Don't just take our word for it - hear from businesses we've helped transform through our web solutions.</p>
-  </div>
+<!--<section id="testimonials" class="testimonials container">-->
+<!--  <div class="section-title">-->
+<!--    <h2>What Our Clients Say</h2>-->
+<!--    <p>Don't just take our word for it - hear from businesses we've helped transform through our web solutions.</p>-->
+<!--  </div>-->
 
-  <div class="testimonial-grid">
-    <div class="testimonial-card">
-      <i class="fas fa-quote-right"></i>
-      <div class="testimonial-content">
-        <p>"TorrentMedia completely transformed our online presence. Our new website increased leads by 150% in the first three months, with much better user engagement metrics across the board."</p>
-      </div>
-      <div class="testimonial-author">
-        <div class="author-img">
-          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
-        </div>
-        <div class="author-info">
-          <h4>Sarah Johnson</h4>
-          <p>CEO, TechSolutions Inc.</p>
-        </div>
-      </div>
-    </div>
+<!--  <div class="testimonial-grid">-->
+<!--    <div class="testimonial-card">-->
+<!--      <i class="fas fa-quote-right"></i>-->
+<!--      <div class="testimonial-content">-->
+<!--        <p>"TorrentMedia completely transformed our online presence. Our new website increased leads by 150% in the first three months, with much better user engagement metrics across the board."</p>-->
+<!--      </div>-->
+<!--      <div class="testimonial-author">-->
+<!--        <div class="author-img">-->
+<!--          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">-->
+<!--        </div>-->
+<!--        <div class="author-info">-->
+<!--          <h4>Sarah Johnson</h4>-->
+<!--          <p>CEO, TechSolutions Inc.</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <div class="testimonial-card">
-      <i class="fas fa-quote-right"></i>
-      <div class="testimonial-content">
-        <p>"The custom CMS they built for us has saved our team countless hours. It's intuitive yet powerful, exactly what we needed to manage our complex product catalog efficiently."</p>
-      </div>
-      <div class="testimonial-author">
-        <div class="author-img">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
-        </div>
-        <div class="author-info">
-          <h4>Michael Chen</h4>
-          <p>Operations Director, RetailPro</p>
-        </div>
-      </div>
-    </div>
+<!--    <div class="testimonial-card">-->
+<!--      <i class="fas fa-quote-right"></i>-->
+<!--      <div class="testimonial-content">-->
+<!--        <p>"The custom CMS they built for us has saved our team countless hours. It's intuitive yet powerful, exactly what we needed to manage our complex product catalog efficiently."</p>-->
+<!--      </div>-->
+<!--      <div class="testimonial-author">-->
+<!--        <div class="author-img">-->
+<!--          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">-->
+<!--        </div>-->
+<!--        <div class="author-info">-->
+<!--          <h4>Michael Chen</h4>-->
+<!--          <p>Operations Director, RetailPro</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <div class="testimonial-card">
-      <i class="fas fa-quote-right"></i>
-      <div class="testimonial-content">
-        <p>"From initial concept to final delivery, the TorrentMedia team was professional, creative, and attentive to our specific needs. The site performs beautifully on all devices."</p>
-      </div>
-      <div class="testimonial-author">
-        <div class="author-img">
-          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
-        </div>
-        <div class="author-info">
-          <h4>Emma Rodriguez</h4>
-          <p>Marketing Manager, GreenLife</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!--    <div class="testimonial-card">-->
+<!--      <i class="fas fa-quote-right"></i>-->
+<!--      <div class="testimonial-content">-->
+<!--        <p>"From initial concept to final delivery, the TorrentMedia team was professional, creative, and attentive to our specific needs. The site performs beautifully on all devices."</p>-->
+<!--      </div>-->
+<!--      <div class="testimonial-author">-->
+<!--        <div class="author-img">-->
+<!--          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">-->
+<!--        </div>-->
+<!--        <div class="author-info">-->
+<!--          <h4>Emma Rodriguez</h4>-->
+<!--          <p>Marketing Manager, GreenLife</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<div th:insert="~{fragments/feedback-details :: reviewsCarousel(${reviews}, ${serviceType})}"></div>
+
+
 
 <section id="process" class="process">
   <div class="container">

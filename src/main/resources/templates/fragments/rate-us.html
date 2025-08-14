@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<!-- fragments/feedback-widget.html -->
+<div th:fragment="feedback-widget">
+    <button class="rate-us-btn" id="rateUsBtn">
+        <i class="fas fa-star"></i> <span>Rate Us</span>
+    </button>
+
+    <div class="feedback-popup" id="feedbackPopup" style="display: none;">
+        <div class="popup-header">
+            <h3>Share Your Feedback</h3>
+            <span class="close-popup">&times;</span>
+        </div>
+
+        <form class="feedback-form" th:action="@{/submit-feedback}" method="post" th:object="${feedback}">
+            <div class="form-group">
+                <label for="yourName">Your Name</label>
+                <input type="text" id="yourName" th:field="*{yourName}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <input type="text" id="companyName" th:field="*{companyName}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="yourPosition">Your Position</label>
+                <input type="text" id="yourPosition" th:field="*{yourPosition}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="serviceType">Service Type</label>
+                <select id="serviceType" th:field="*{serviceType}" required>
+                    <option value="">Select a service</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Paid Advertisement">Paid Advertisement</option>
+                    <option value="Graphic Design And UI/UX Design">Graphic Design And UI/UX Design</option>
+                    <option value="Video Editing And Content Shoot">Video Editing And Content Shoot</option>
+                    <option value="Content Strategy">Content Strategy</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" th:field="*{message}" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+    </div>
+
+    <!-- JS only for popup toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rateUsBtn = document.getElementById('rateUsBtn');
+            const feedbackPopup = document.getElementById('feedbackPopup');
+            const closePopup = document.querySelector('.close-popup');
+
+            rateUsBtn.addEventListener('click', () => feedbackPopup.style.display = 'block');
+            closePopup.addEventListener('click', () => feedbackPopup.style.display = 'none');
+
+            window.addEventListener('click', function(e) {
+                if (e.target === feedbackPopup) feedbackPopup.style.display = 'none';
+            });
+        });
+    </script>
+</div>
+
+
+</body>
+</html>

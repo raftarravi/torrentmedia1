@@ -37,10 +37,20 @@ public class HomeService {
     @Autowired
     InfluencerService influencerService;
 
+    @Autowired
+    MailService mailService;
+
 
 
     public void saveNewsLetter(NewsLetter newsLetter){
+
         newsLetterRepo.save(newsLetter);
+        try{
+            mailService.sendEmail(newsLetter.getEmail(),"Welcome to Torrent Media Newsletter!","Thank you for subscribing to our newsletter!");
+        }catch(Exception e){
+            System.out.println("giving Exception");
+        }
+
     }
 
     public void saveContactUs(ContactUsForm contactUsForm){
@@ -55,10 +65,15 @@ public class HomeService {
 
     public String loginAuthentication(String email, String password) {
         Optional<User> user = Optional.ofNullable(userRepository.findByEmail(email));
-        User user1 = user.get();
 
-        if(user1.getPassword().equals(password)) return "valid";
-        else return "invalid";
+        if (user.isPresent()) {
+            User user1 = user.get();
+            if (user1.getPassword().equals(password)) return "valid";
+            else return "invalid";
+        } else {
+            return "invalid"; // Or "user not found"
+        }
+
     }
 
     public boolean saveInfluencer(Influencer influencer)  {
@@ -127,6 +142,15 @@ public class HomeService {
     }
 
     public User getUserByEmail(String email){
-        return userRepository.findByEmail(email);
+        Optional<User> user = Optional.ofNullable(userRepository.findByEmail(email));
+        User user1;
+        if (user.isPresent()) {
+            user1 = user.get();
+
+        } else {
+           user1 = null; // Or "user not found"
+        }
+
+        return user1;
     }
 }

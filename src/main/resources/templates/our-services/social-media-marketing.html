@@ -9,6 +9,7 @@
   <link rel="stylesheet" th:href="@{/css/fragment/navbar.css}" />
   <link rel="stylesheet" th:href="@{/css/fragment/sidebar-icon.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/footer.css}"/>
+  <link rel="stylesheet" th:href="@{/css/fragment/feedback-details.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/hero-section.css}"/>
   <link rel="stylesheet" th:href="@{/css/fragment/authentication/icon.css}"/>
 
@@ -164,64 +165,67 @@
 </section>
 
 <!-- Testimonials -->
-<section class="testimonials">
-  <div class="testimonial-container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>What Our Clients Say</h2>
-      <p>Don't just take our word for it - hear from businesses we've helped transform through social media.</p>
-    </div>
+<!--<section class="testimonials">-->
+<!--  <div class="testimonial-container">-->
+<!--    <div class="section-title" data-aos="fade-up">-->
+<!--      <h2>What Our Clients Say</h2>-->
+<!--      <p>Don't just take our word for it - hear from businesses we've helped transform through social media.</p>-->
+<!--    </div>-->
 
-    <div class="testimonial-grid">
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"SocialBoost completely transformed our social media presence. Our engagement rates tripled and we're now consistently generating leads through our platforms."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
-          </div>
-          <div class="author-info">
-            <h4>Sarah Johnson</h4>
-            <p>Marketing Director, Luxe Fashion</p>
-          </div>
-        </div>
-      </div>
+<!--    <div class="testimonial-grid">-->
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"SocialBoost completely transformed our social media presence. Our engagement rates tripled and we're now consistently generating leads through our platforms."</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Sarah Johnson</h4>-->
+<!--            <p>Marketing Director, Luxe Fashion</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"The team's strategic approach to LinkedIn helped us establish our brand as an industry thought leader and directly resulted in six new client contracts."</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
-          </div>
-          <div class="author-info">
-            <h4>Michael Chen</h4>
-            <p>CEO, TechSolutions</p>
-          </div>
-        </div>
-      </div>
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"The team's strategic approach to LinkedIn helped us establish our brand as an industry thought leader and directly resulted in six new client contracts."</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Michael Chen</h4>-->
+<!--            <p>CEO, TechSolutions</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-        <i class="fas fa-quote-right"></i>
-        <div class="testimonial-content">
-          <p>"From day one, they understood our brand voice and helped us connect authentically with our local community. Our restaurant has never been busier!"</p>
-        </div>
-        <div class="testimonial-author">
-          <div class="author-img">
-            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
-          </div>
-          <div class="author-info">
-            <h4>Emma Rodriguez</h4>
-            <p>Owner, Bella Cucina</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!--      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">-->
+<!--        <i class="fas fa-quote-right"></i>-->
+<!--        <div class="testimonial-content">-->
+<!--          <p>"From day one, they understood our brand voice and helped us connect authentically with our local community. Our restaurant has never been busier!"</p>-->
+<!--        </div>-->
+<!--        <div class="testimonial-author">-->
+<!--          <div class="author-img">-->
+<!--            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">-->
+<!--          </div>-->
+<!--          <div class="author-info">-->
+<!--            <h4>Emma Rodriguez</h4>-->
+<!--            <p>Owner, Bella Cucina</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<div th:insert="~{fragments/feedback-details :: reviewsCarousel(${reviews}, ${serviceType})}"></div>
+
 
 <!-- Process -->
 <section id="process" class="process">
