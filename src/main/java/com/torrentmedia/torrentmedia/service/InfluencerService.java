@@ -58,6 +58,7 @@ public class InfluencerService {
     }
 
    public Influencer getInfluencerByEmail(String email){
+
         return influencerRepository.findByEmail(email);
     }
 

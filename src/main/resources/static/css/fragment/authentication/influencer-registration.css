@@ -101,7 +101,7 @@ body {
 }
 
 /* Floating Label Effect (Optional) */
-/* .form-group {
+ /*.form-group {
   position: relative;
 }
 .form-group label {
@@ -118,7 +118,8 @@ body {
   top: -8px;
   font-size: 0.8rem;
   color: #818cf8;
-} */
+}
+*/
 
 /* Social Media Section */
 .social-media-group {
@@ -147,13 +148,13 @@ body {
 }
 
 .social-input input {
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 .social-input::before {
   content: "@";
   position: absolute;
-  left: 16px;
+  left: 2px;
   top: 50%;
   transform: translateY(-50%);
   color: #64748b;

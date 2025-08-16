@@ -120,40 +120,43 @@ public class HomeController {
 
 
     @PostMapping("/process-login")
-    public String loginAuthentication( @RequestParam String email,
-                                       @RequestParam String password
+    public String loginAuthentication(@RequestParam String email,
+                                      @RequestParam String password,
+                                      Model model) {
 
-    ,Model model ){
+        // 1️⃣ Authenticate user
+        String status = homeService.loginAuthentication(email, password);
 
-        System.out.println(email + " " + password);
-        String status =homeService.loginAuthentication(email,password);
-
-        Map<String,String> influencer = new HashMap<>();
-        User user = homeService.getUserByEmail(email);
-        if(status.equals("valid")){
-            model.addAttribute("isLoggedIn",true);
-            influencer = homeService.getInfluencerDetailByEmail(email);
-        }
-
-
-        if (influencer == null && user != null) {
-            // Handle "not found" case
-            model.addAttribute("feedback", new Feedback());
-
-            List<Feedback> reviews = feedbackRepository.findAllByServiceType("Graphic Design And UI/UX Design");
-            model.addAttribute("reviews", reviews);
-            model.addAttribute("serviceType", "Graphic Design And UI/UX Design");
-
-            return "home"; // or redirect to a not found page
-        }else if(user == null){
-            model.addAttribute("message" , "you are not registered yet");
+        if (!"valid".equals(status)) {
+            model.addAttribute("message", "Invalid email or password");
             return "error";
         }
 
-        model.addAttribute("influencer", influencer);
+        // 2️⃣ Get the user from DB
+        User user = homeService.getUserByEmail(email);
+        if (user == null) {
+            model.addAttribute("message", "You are not registered yet");
+            return "error";
+        }
 
-        return "fragments/authentication/profile";
+        model.addAttribute("isLoggedIn", true);
+
+        // 3️⃣ Get influencer details for this user
+        Map<String, String> influencer = homeService.getInfluencerDetailByEmail(user.getEmail());
+
+        // 4️⃣ If influencer exists → show profile, else → show home
+        if (influencer != null && !influencer.isEmpty()) {
+            model.addAttribute("influencer", influencer);
+            return "fragments/authentication/profile";
+        } else {
+            model.addAttribute("feedback", new Feedback());
+            List<Feedback> reviews = feedbackRepository.findAllByServiceType("Graphic Design And UI/UX Design");
+            model.addAttribute("reviews", reviews);
+            model.addAttribute("serviceType", "Graphic Design And UI/UX Design");
+            return "home";
+        }
     }
+
 
     @GetMapping("/signup")
     public String showSignUpForm(Model model) {
@@ -266,8 +269,8 @@ public class HomeController {
             HttpSession session,
             Model model
     ) {
-        Map<String, String> exitinfluencer = homeService.getInfluencerDetailByEmail(email);
-        if(!(exitinfluencer.isEmpty())){
+        User exitinfluencer = homeService.getUserByEmail(email);
+        if(exitinfluencer != null){
             model.addAttribute("message" ,"your email is already in use");
             return "error";
         }

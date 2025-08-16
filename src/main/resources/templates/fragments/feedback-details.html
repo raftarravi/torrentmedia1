@@ -30,7 +30,14 @@
                 <img src="/images/human-avatar.jpg" th:alt="${review.yourName}">
                 <div class="author-info">
                   <h4 th:text="${review.yourName}"></h4>
-                  <p th:text="${review.yourPosition + ', ' + review.companyName}"></p>
+<!--                  <p th:text="${review.yourPosition + ', ' + review.companyName}"></p>-->
+                  <p th:if="${review.yourPosition != null and review.companyName != null}"
+                     th:text="${review.yourPosition + ', ' + review.companyName}"></p>
+                  <p th:if="${review.yourPosition != null and review.companyName == null}"
+                     th:text="${review.yourPosition}"></p>
+                  <p th:if="${review.yourPosition == null and review.companyName != null}"
+                     th:text="${review.companyName}"></p>
+
                 </div>
               </div>
             </div>

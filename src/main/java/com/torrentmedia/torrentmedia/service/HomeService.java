@@ -137,6 +137,7 @@ public class HomeService {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //        String email = authentication.getName();
         Influencer influencer = influencerService.getInfluencerByEmail(email);
+        if(influencer == null) return null;
         Map<String,String> influencerDetail = influencerService.getInfluencerDetail(influencer.getId());
         return influencerDetail;
     }
