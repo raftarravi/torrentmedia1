@@ -373,6 +373,7 @@
 
        #con-main-container .con-contact-info div {
            display: flex;
+            color: #000000;
            align-items: center;
            margin-bottom: 30px;
            transition: transform 0.3s ease, color 0.3s ease;

@@ -33,13 +33,26 @@
       />
 
       <label for="password">Password</label>
-      <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Create a password"
-              required
-      />
+      <div class="password-container">
+        <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+        />
+        <span id="togglePassword" class="toggle-icon">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         fill="none" viewBox="0 0 24 24"
+         stroke="currentColor" width="20" height="20">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274
+           4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+    </svg>
+  </span>
+      </div>
 
       <label for="confirmPassword">Confirm Password</label>
       <input
@@ -55,8 +68,44 @@
         Already have an account?
         <a th:href="@{/login}">Login</a>
       </p>
+
+      <p th:if="${loginError}" th:text="${loginError}" class="error-message"></p>
+
     </form>
   </div>
 </div>
+<script>
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordInput = document.getElementById("password");
+
+  let passwordVisible = false;
+
+  togglePassword.addEventListener("click", () => {
+    passwordVisible = !passwordVisible;
+    passwordInput.type = passwordVisible ? "text" : "password";
+
+    // Swap SVG icon
+    togglePassword.innerHTML = passwordVisible
+      ? `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor" width="20" height="20">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+             d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7
+                a9.97 9.97 0 012.045-3.368m3.86-2.552A9.978 9.978 0 0112 5c4.477
+                0 8.268 2.943 9.542 7a9.973 9.973 0 01-4.043 5.197M15
+                12a3 3 0 11-6 0 3 3 0 016 0z" />
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+             d="M3 3l18 18" />
+         </svg>`
+      : `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor" width="20" height="20">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+             d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+             d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0
+                8.268 2.943 9.542 7-1.274 4.057-5.065
+                7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+         </svg>`;
+  });
+</script>
 </body>
 </html>

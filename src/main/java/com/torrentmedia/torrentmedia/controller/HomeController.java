@@ -128,15 +128,15 @@ public class HomeController {
         String status = homeService.loginAuthentication(email, password);
 
         if (!"valid".equals(status)) {
-            model.addAttribute("message", "Invalid email or password");
-            return "error";
+            model.addAttribute("loginError", "Invalid email or password");
+            return "fragments/authentication/login";
         }
 
         // 2️⃣ Get the user from DB
         User user = homeService.getUserByEmail(email);
         if (user == null) {
-            model.addAttribute("message", "You are not registered yet");
-            return "error";
+            model.addAttribute("loginError", "You are not registered yet");
+            return "fragments/authentication/login";
         }
 
         model.addAttribute("isLoggedIn", true);
@@ -171,8 +171,8 @@ public class HomeController {
         System.out.println(name + " " + email + "" + password);
         User users = homeService.getUserByEmail(email);
         if(users != null){
-            model.addAttribute("message" , "email is already in use so use other email");
-            return "error";
+            model.addAttribute("loginError" , "email is already in use so use other email");
+            return "fragments/authentication/sign-up";
         }
         User user = new User();
         user.setUserName(name);
@@ -271,8 +271,8 @@ public class HomeController {
     ) {
         User exitinfluencer = homeService.getUserByEmail(email);
         if(exitinfluencer != null){
-            model.addAttribute("message" ,"your email is already in use");
-            return "error";
+            model.addAttribute("loginError" ,"your email is already in use");
+            return "fragments/authentication/influencer-registration";
         }
 
         // Validate password confirmation

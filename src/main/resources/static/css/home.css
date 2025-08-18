@@ -519,10 +519,10 @@
 
         .homefour-cards-container {
             display: flex;
-            flex-wrap: nowrap; /* All cards in one row */
-            gap: 45px;
-            overflow-x: auto;
-            padding-bottom: 15px;
+                justify-content: center;   /* ✅ centers cards horizontally */
+                flex-wrap: wrap;           /* ✅ allows wrapping if needed */
+                gap: 45px;
+                padding-bottom: 15px;
         }
 
         .homefour-cards-container::-webkit-scrollbar {

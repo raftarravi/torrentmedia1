@@ -47,3 +47,45 @@
     .dropdown-menu a:hover {
       background-color: #0000FF;
     }
+
+    @media (max-width: 768px) {
+      .avatar-container {
+        float: none;             /* prevent float issues */
+        margin: 10px auto;       /* center avatar */
+        display: block;
+        text-align: center;
+      }
+
+      .avatar-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;         /* slightly bigger for touch */
+      }
+
+      .dropdown-menu {
+        right: 50%;
+        transform: translateX(50%); /* center dropdown */
+        min-width: 200px;
+      }
+    }
+
+    /* Mobile phones */
+    @media (max-width: 480px) {
+      .avatar-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+      }
+
+      .dropdown-menu {
+        width: 90%;              /* almost full width */
+        left: 5%;                /* center horizontally */
+        right: auto;
+        transform: none;
+      }
+
+      .dropdown-menu a {
+        padding: 12px;           /* bigger touch target */
+        font-size: 16px;
+      }
+    }
