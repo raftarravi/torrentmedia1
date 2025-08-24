@@ -28,11 +28,11 @@ public class InfluencerService {
         return imageRepository.findAll();
     }
 
-    public Influencer getInfluencerById(Long Id){
+    public Influencer getInfluencerById(String Id){
        return influencerRepository.findById(Id).get();
     }
 
-    public  Map<String, String> getInfluencerDetail(Long Id){
+    public  Map<String, String> getInfluencerDetail(String Id){
 
         Influencer inf = getInfluencerById(Id);
         Map<String, String> data = new HashMap<>();

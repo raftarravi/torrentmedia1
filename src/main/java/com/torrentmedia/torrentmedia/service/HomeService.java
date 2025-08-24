@@ -4,7 +4,7 @@ import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.torrentmedia.torrentmedia.entity.*;
 import com.torrentmedia.torrentmedia.repository.*;
-import org.antlr.v4.runtime.misc.LogManager;
+//import org.antlr.v4.runtime.misc.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -77,7 +77,7 @@ public class HomeService {
     }
 
     public boolean saveInfluencer(Influencer influencer)  {
-            Long Id = influencer.getId();
+            String Id = influencer.getId();
             influencerRepository.save(influencer);
             System.out.println(influencer);
 
@@ -130,7 +130,7 @@ public class HomeService {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName();
         Influencer influencer = influencerService.getInfluencerByEmail(email);
-        Map<String,String> influencerDetail = influencerService.getInfluencerDetail(influencer.getId());
+        Map<String,String> influencerDetail = influencerService.getInfluencerDetail(String.valueOf(influencer.getId()));
         return influencerDetail;
     }
     public Map<String ,String> getInfluencerDetailByEmail(String email){
@@ -138,7 +138,7 @@ public class HomeService {
 //        String email = authentication.getName();
         Influencer influencer = influencerService.getInfluencerByEmail(email);
         if(influencer == null) return null;
-        Map<String,String> influencerDetail = influencerService.getInfluencerDetail(influencer.getId());
+        Map<String,String> influencerDetail = influencerService.getInfluencerDetail(String.valueOf(influencer.getId()));
         return influencerDetail;
     }
 

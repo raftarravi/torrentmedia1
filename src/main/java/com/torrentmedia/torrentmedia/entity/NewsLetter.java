@@ -1,14 +1,19 @@
 package com.torrentmedia.torrentmedia.entity;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table
+//
+//@Entity
+//@Table
+@Document(collection = "newsletter")
 public class NewsLetter {
-
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long Id;
+    String Id;
     String email;
 
     public NewsLetter() {

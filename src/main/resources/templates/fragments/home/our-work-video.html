@@ -7,66 +7,71 @@
 <body>
 <div th:fragment="videoGrid">
   <style>
-    body {
-        margin: 0;
-        padding: 0;
+  body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  }
 
-        background: #ffffff;
-    }
-    .video-grid {
+  .video-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 10px;
+  }
 
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1px;
-        max-width: 1800px;
-        margin: 0 auto;
-    }
-    .video-container {
-        position: relative;
-        top:3px;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
-        height: 0;
-        overflow: hidden;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .video-container video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .video-label {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        color: white;
-        background: rgba(0,0,0,0.7);
-        padding: 5px 10px;
-        border-radius: 4px;
-        font-size: 14px;
-        z-index: 1;
-    }
-    @media (max-width: 1200px) {
-        .video-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-    @media (max-width: 768px) {
-        .video-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    @media (max-width: 480px) {
-        .video-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-  </style>
+  .video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.78%; /* 9:16 aspect ratio → (16/9 * 100) */
+  height: 0;
+  overflow: hidden;
+  background: #000; /* black bg like reels */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
 
+  .video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;   /* take full width */
+  height: 100%;  /* maintain aspect ratio */
+  object-fit: cover; /* crop to fill reel-style */
+  border-radius: 12px;
+  }
+
+  .video-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background: rgba(0,0,0,0.7);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 1;
+  }
+
+  /* Responsive grids */
+  @media (max-width: 1200px) {
+  .video-grid {
+  grid-template-columns: repeat(3, 1fr);
+  }
+  }
+  @media (max-width: 768px) {
+  .video-grid {
+  grid-template-columns: repeat(2, 1fr);
+  }
+  }
+  @media (max-width: 480px) {
+  .video-grid {
+  grid-template-columns: 1fr;
+  }
+  }
+</style>
   <div class="video-grid">
     <div class="video-container">
       <video muted loop autoplay playsinline>

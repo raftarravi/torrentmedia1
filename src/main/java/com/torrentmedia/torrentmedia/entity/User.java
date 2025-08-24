@@ -1,14 +1,19 @@
 package com.torrentmedia.torrentmedia.entity;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table( name = "users")
+//
+//@Entity
+//@Table( name = "users")
+@Document(collection = "users")
 public class User {
 
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long Id;
+    String Id;
 
     String userName;
 

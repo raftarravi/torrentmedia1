@@ -78,7 +78,7 @@ public class InfluencerController {
     }
 
     @GetMapping("/influencer/{id}")
-    public String getInfluencerById(@PathVariable Long id, Model model) {
+    public String getInfluencerById(@PathVariable String id, Model model) {
         Map<String,String> influencer = influencerService.getInfluencerDetail(id);
 
         if (influencer == null) {
