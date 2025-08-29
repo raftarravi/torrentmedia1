@@ -245,7 +245,8 @@
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+           grid-template-columns: repeat(3, 1fr);
+
             gap: 40px;
             margin-top: 60px;
         }
@@ -321,7 +322,8 @@
 
         .process-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+           grid-template-columns: repeat(3, 1fr);
+
             gap: 40px;
             counter-reset: step-counter;
             margin-top: 60px;

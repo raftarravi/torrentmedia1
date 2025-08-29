@@ -1,0 +1,538 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>list</title>-->
+<!--    <link rel="stylesheet" th:href="@{../css/form/companies-list.css}" />-->
+<!--</head>-->
+<!--<body>-->
+<!--<section class="company-list" th:fragment="companyList(companies)">-->
+
+<!--    &lt;!&ndash; Loop through dynamic company list &ndash;&gt;-->
+<!--    <div class="company-card" th:each="company : ${companies}">-->
+<!--        <h2 th:text="${company.name}">Company Name</h2>-->
+<!--        <p th:text="${company.description}">Company description</p>-->
+<!--        <a th:href="${company.formLink}" target="_blank" class="apply-btn">Apply Now</a>-->
+<!--    </div>-->
+
+<!--</section>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TorrentMedia - Navigation</title>
+        <link rel="stylesheet" th:href="@{../css/form/companies-list.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+
+            min-height: 100vh;
+        }
+
+        .container {
+
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background-color: white;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(to right, #101d70, #0c2c7a);
+            color: white;
+            padding: 8px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar i {
+            margin-right: 6px;
+            color: #04b4f0;
+        }
+
+        .top-right > span {
+            margin-left: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            margin-left: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #04b4f0;
+            transform: translateY(-2px);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Branding */
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .brand-name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #101d70;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-name span {
+            font-family: 'Great Vibes', cursive;
+            font-weight: 500;
+            color: #04b4f0;
+        }
+
+        .tagline {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            color: #777;
+            margin-top: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Nav Links */
+        .nav-links {
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav-links a {
+            color: #101d70;
+            text-decoration: none;
+            padding: 12px 18px;
+            font-weight: 500;
+            position: relative;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        /* Underline animation */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: #04b4f0;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        /* Hover effect */
+        .nav-links a:hover {
+            color: #04b4f0;
+            background-color: rgba(4, 180, 240, 0.08);
+        }
+
+        .nav-links a:hover::after {
+            width: 70%;
+        }
+
+        .nav-links a.active {
+            color: #04b4f0;
+        }
+
+        .nav-links a.active::after {
+            width: 70%;
+        }
+
+        /* Brand Collaboration Button - Replaces Call Div */
+        .brand-collab-btn {
+            background: linear-gradient(135deg, #ff6b3c 0%, #ff4b1f 100%);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(255, 107, 60, 0.35);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+
+        .brand-collab-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 60, 0.5);
+        }
+
+        .brand-collab-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(255, 107, 60, 0.35);
+        }
+
+        /* Icons */
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .search-icon {
+            font-size: 18px;
+            color: #101d70;
+            background: #f5f7ff;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-icon:hover {
+            background: #04b4f0;
+            color: white;
+            transform: rotate(15deg);
+        }
+
+        /* Search Box */
+        .search-box {
+            position: absolute;
+            top: 100%;
+            right: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            width: 350px;
+            transform-origin: top right;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid #e0e6ff;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            border-color: #04b4f0;
+            box-shadow: 0 0 0 3px rgba(4, 180, 240, 0.2);
+        }
+
+        /* Hamburger for Mobile */
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #101d70;
+            background: #f5f7ff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger:hover {
+            background: #04b4f0;
+            color: white;
+        }
+
+        /* Demo Content */
+        .demo-content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .demo-content h2 {
+            color: #101d70;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .demo-content p {
+            color: #666;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 25px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .nav-links a {
+                padding: 10px 15px;
+                font-size: 15px;
+            }
+
+            .brand-collab-btn {
+                padding: 12px 22px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .brand-name {
+                font-size: 28px;
+            }
+
+            .top-bar {
+                font-size: 13px;
+                padding: 10px 20px;
+            }
+
+            .top-right > span {
+                margin-left: 15px;
+            }
+
+            .navbar {
+                padding: 15px 20px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                gap: 0;
+            }
+
+            .nav-links a {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                padding: 12px 20px;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+                padding: 15px;
+            }
+
+            .hamburger {
+                display: block;
+                order: 2;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+                margin-top: 15px;
+                order: 4;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+                border-radius: 0;
+                text-align: center;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .icons {
+                order: 3;
+                margin-top: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .brand-collab-btn {
+                margin: 0 auto;
+            }
+
+            .search-box {
+                right: 15px;
+                width: calc(100% - 30px);
+            }
+
+            .logo-text {
+                order: 1;
+                flex-grow: 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand-name {
+                font-size: 24px;
+            }
+
+            .tagline {
+                font-size: 10px;
+            }
+
+            .top-right {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .top-right > span {
+                margin-left: 0;
+            }
+
+            .social-icons {
+                margin-top: 5px;
+            }
+
+            .brand-collab-btn {
+                padding: 12px 20px;
+                font-size: 13px;
+            }
+
+            .search-icon {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div th:fragment="mainNavbar">
+        <!-- Sticky Wrapper -->
+        <div class="sticky-wrapper">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="top-left">
+                    <span><i class="fa-solid fa-envelope"></i> contact@torrentmedia.in</span>
+                </div>
+                <div class="top-right">
+                    <span><i class="fa-solid fa-location-dot"></i> TorrentMedia, HSR Layout, Bengaluru</span>
+                    <span class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=61578723058870&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://youtube.com/@torrentmedia-n2f?si=qqww809AE1BeKlq9" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/torrent-media-8726a7376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/torrentmedia?igsh=MnpxdzV3ODY5OGlu" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                            </a>
+                        </span>
+                </div>
+            </div>
+
+            <!-- Main Navbar -->
+            <header class="navbar">
+                <div class="logo-text">
+                    <div class="brand-name">torrent<span>Media</span></div>
+                    <div class="tagline">GROW DIGITALLY WITH US</div>
+                </div>
+
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <nav class="nav-links" id="navMenu">
+                    <a th:href="@{/}" th:classappend="${currentURI == '/'} ? 'active' : ''">Home</a>
+                    <a th:href="@{/about-us}" th:classappend="${currentURI == '/about-us'} ? 'active' : ''">About Us</a>
+                    <a th:href="@{/services}" th:classappend="${currentURI == '/services'} ? 'active' : ''">Services</a>
+                    <a th:href="@{/influencer}" th:classappend="${currentURI == '/influencer'} ? 'active' : ''">Influencer</a>
+                    <a th:href="@{/faq}" th:classappend="${currentURI == '/faq'} ? 'active' : ''">FAQ</a>
+                    <a th:href="@{/contact}" th:classappend="${currentURI == '/contact'} ? 'active' : ''">Contact Us</a>
+                </nav>
+
+                <div class="icons">
+                    <i class="fa-solid fa-magnifying-glass search-icon" onclick="toggleSearch()"></i>
+
+                    <div class="search-box" id="searchBox" style="display: none;">
+                        <input type="text" placeholder="Search..." id="searchInput">
+                    </div>
+
+                    <!-- Replaced Call Div with Brand Collaboration Button -->
+                    <button class="brand-collab-btn" onclick="window.location.href='/brand-collaboration'">
+                        <i class="fas fa-handshake"></i> Brand Collaboration
+                    </button>
+                </div>
+            </header>
+        </div>
+
+        <section class="company-list" th:fragment="companyList(companies)">
+
+            <!-- Loop through dynamic company list -->
+            <div class="company-card" th:each="company : ${companies}">
+                <h2 th:text="${company.name}">Company Name</h2>
+                <p th:text="${company.description}">Company description</p>
+                <a th:href="${company.formLink}" target="_blank" class="apply-btn">Apply Now</a>
+            </div>
+
+        </section>
+
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('navMenu');
+                menu.classList.toggle('show');
+            }
+
+            function toggleSearch() {
+                const searchBox = document.getElementById('searchBox');
+                if (searchBox.style.display === 'none' || searchBox.style.display === '') {
+                    searchBox.style.display = 'block';
+                    document.getElementById('searchInput').focus();
+                } else {
+                    searchBox.style.display = 'none';
+                }
+            }
+
+            // Close search box when clicking outside
+            document.addEventListener('click', function(event) {
+                const searchBox = document.getElementById('searchBox');
+                const searchIcon = document.querySelector('.search-icon');
+
+                if (searchBox.style.display === 'block' &&
+                    !searchBox.contains(event.target) &&
+                    !searchIcon.contains(event.target)) {
+                    searchBox.style.display = 'none';
+                }
+            });
+        </script>
+    </div>
+</div>
+</body>
+</html>

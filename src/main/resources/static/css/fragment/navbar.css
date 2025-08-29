@@ -185,6 +185,34 @@ body {
     color: #101d70;
 }
 
+.brand-collab-btn {
+            background: linear-gradient(135deg, #ff6b3c 0%, #ff4b1f 100%);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(255, 107, 60, 0.35);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+
+        .brand-collab-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 60, 0.5);
+        }
+
+        .brand-collab-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(255, 107, 60, 0.35);
+        }
+
 @media (max-width: 1024px) {
     .brand-name {
         font-size: 24px;
@@ -195,6 +223,14 @@ body {
     .icons {
         gap: 15px;
     }
+    .top-bar {
+                    font-size: 13px;
+                    padding: 10px 20px;
+                }
+
+                .top-right > span {
+                    margin-left: 15px;
+                }
     call {
             gap: 6px;
         }
@@ -208,6 +244,10 @@ body {
         .call div {
             font-size: 12px;
         }
+         .brand-collab-btn {
+                        padding: 12px 22px;
+                        font-size: 14px;
+                    }
 }
 
 
@@ -228,16 +268,18 @@ body {
         .call div {
             font-size: 12px;
         }
+
 }
 
 
 /* Responsive */
 @media (max-width: 768px) {
     .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                    padding: 12px 20px;
+                }
 
     .navbar {
         flex-direction: column;
@@ -284,6 +326,10 @@ body {
         .call div {
             font-size: 12px;
         }
+        .brand-collab-btn {
+                        margin: 0 auto;
+                    }
+
 }
 .active {
     color: #007bff;
@@ -307,6 +353,21 @@ body {
         padding: 8px;
         font-size: 18px;
     }
+
+    .top-right {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
+
+                .top-right > span {
+                    margin-left: 0;
+                }
+
+                .social-icons {
+                    margin-top: 5px;
+                }
+
     call {
             gap: 6px;
         }
@@ -320,4 +381,40 @@ body {
         .call div {
             font-size: 12px;
         }
+         .brand-collab-btn {
+                        padding: 12px 20px;
+                        font-size: 13px;
+                    }
  }
+
+ .top-bar {
+             background: linear-gradient(to right, #101d70, #0c2c7a);
+             color: white;
+             padding: 8px 30px;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             font-size: 14px;
+             flex-wrap: wrap;
+         }
+
+         .top-bar i {
+             margin-right: 6px;
+             color: #04b4f0;
+         }
+
+         .top-right > span {
+             margin-left: 20px;
+         }
+
+         .social-icons a {
+             color: white;
+             text-decoration: none;
+             margin-left: 12px;
+             transition: all 0.3s ease;
+         }
+
+         .social-icons a:hover {
+             color: #04b4f0;
+             transform: translateY(-2px);
+         }
