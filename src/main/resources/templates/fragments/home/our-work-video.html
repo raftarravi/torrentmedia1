@@ -114,23 +114,29 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const videos = document.querySelectorAll('video');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.play().catch(e => console.log('Autoplay prevented:', e));
-                } else {
-                    entry.target.pause();
-                }
-            });
-        }, { threshold: 0.5 });
+        const videos = document.querySelectorAll('.video-container video');
 
+        // Keep all videos autoplay + muted
         videos.forEach(video => {
-            observer.observe(video);
             video.muted = true;
+            video.play().catch(e => console.log('Autoplay prevented:', e));
+
+            // Turn ON sound on hover
+            video.parentElement.addEventListener('mouseenter', () => {
+                // First mute all videos (only one plays with sound at a time)
+                videos.forEach(v => v.muted = true);
+                video.muted = false;
+            });
+
+            // Turn OFF sound when hover ends
+            video.parentElement.addEventListener('mouseleave', () => {
+                video.muted = true;
+            });
         });
     });
   </script>
+
+
 </div>
 
 </body>

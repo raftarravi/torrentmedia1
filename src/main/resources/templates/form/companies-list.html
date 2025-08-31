@@ -1,23 +1,4 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>list</title>-->
-<!--    <link rel="stylesheet" th:href="@{../css/form/companies-list.css}" />-->
-<!--</head>-->
-<!--<body>-->
-<!--<section class="company-list" th:fragment="companyList(companies)">-->
 
-<!--    &lt;!&ndash; Loop through dynamic company list &ndash;&gt;-->
-<!--    <div class="company-card" th:each="company : ${companies}">-->
-<!--        <h2 th:text="${company.name}">Company Name</h2>-->
-<!--        <p th:text="${company.description}">Company description</p>-->
-<!--        <a th:href="${company.formLink}" target="_blank" class="apply-btn">Apply Now</a>-->
-<!--    </div>-->
-
-<!--</section>-->
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -107,6 +88,7 @@
             font-weight: 700;
             color: #101d70;
             letter-spacing: 0.5px;
+             text-align: center;
         }
 
         .brand-name span {
@@ -172,7 +154,7 @@
 
         /* Brand Collaboration Button - Replaces Call Div */
         .brand-collab-btn {
-            background: linear-gradient(135deg, #ff6b3c 0%, #ff4b1f 100%);
+            background: #007bff;
             color: white;
             border: none;
             padding: 14px 28px;
@@ -190,6 +172,7 @@
         }
 
         .brand-collab-btn:hover {
+            background: #ffffff;
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(255, 107, 60, 0.5);
         }
@@ -462,7 +445,7 @@
             <header class="navbar">
                 <div class="logo-text">
                     <div class="brand-name">torrent<span>Media</span></div>
-                    <div class="tagline">GROW DIGITALLY WITH US</div>
+                    <div class="tagline">WHERE CREATIVITY STREAMS INTO RESULT</div>
                 </div>
 
                 <div class="hamburger" onclick="toggleMenu()">
@@ -486,7 +469,7 @@
                     </div>
 
                     <!-- Replaced Call Div with Brand Collaboration Button -->
-                    <button class="brand-collab-btn" onclick="window.location.href='/brand-collaboration'">
+                    <button class="brand-collab-btn" onclick="window.location.href='/companies-list'">
                         <i class="fas fa-handshake"></i> Brand Collaboration
                     </button>
                 </div>

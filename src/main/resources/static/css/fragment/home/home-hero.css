@@ -254,6 +254,10 @@
             animation-delay: 2s;
         }
 
+        .typing-text.done {
+          border-right: none;
+        }
+
         /* Animations */
         @keyframes kenburns {
             0% {

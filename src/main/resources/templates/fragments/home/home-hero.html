@@ -92,6 +92,11 @@
                 typingText.textContent = originalText;
             }, 1200);
         });
+
+        setTimeout(() => {
+  document.querySelector(".typing-text").classList.add("done");
+}, 3000); // 3s typing + 1.2s delay
+
     </script>
 </div>
 
