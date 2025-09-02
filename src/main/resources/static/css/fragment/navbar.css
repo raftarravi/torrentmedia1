@@ -1,8 +1,10 @@
+/* Reset & Base */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
 
+/* Sticky Wrapper */
 .sticky-wrapper {
     position: sticky;
     top: 0;
@@ -12,9 +14,9 @@ body {
 
 /* Top Bar */
 .top-bar {
-    background-color: #101d70;
+    background: linear-gradient(to right, #101d70, #0c2c7a);
     color: white;
-    padding: 5px 20px;
+    padding: 8px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,12 +31,18 @@ body {
 
 .top-right > span {
     margin-left: 20px;
-    color: #fff;
 }
 
-.social-icons i {
-    margin-left: 10px;
-    cursor: pointer;
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    margin-left: 12px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #04b4f0;
+    transform: translateY(-2px);
 }
 
 /* Navbar */
@@ -57,7 +65,7 @@ body {
 .brand-name {
     font-size: 28px;
     font-weight: 600;
-     color: #101d70;
+    color: #101d70;
     letter-spacing: 1px;
     text-align: center;
 }
@@ -85,14 +93,6 @@ body {
 .nav-links a {
     color: #101d70;
     text-decoration: none;
-     padding: 8px 15px;
-    font-weight: 500;
-    position: relative;
-}
-/* Base link style */
-.nav-links a {
-    color: #101d70;
-    text-decoration: none;
     font-weight: 500;
     position: relative;
     padding: 8px 15px;
@@ -100,7 +100,7 @@ body {
     transition: color 0.3s ease;
 }
 
-/* Underline animation (hidden by default) */
+/* Underline animation */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -113,7 +113,6 @@ body {
     border-radius: 2px;
 }
 
-/* Hover effect */
 .nav-links a:hover {
     color: #007BFF;
     background-color: rgba(4, 180, 240, 0.08);
@@ -122,7 +121,6 @@ body {
 .nav-links a:hover::after {
     width: 100%;
 }
-
 
 .nav-links a.active {
     color: #04b4f0;
@@ -154,6 +152,7 @@ body {
     cursor: pointer;
 }
 
+/* Call Section */
 .call {
     display: flex;
     align-items: center;
@@ -166,7 +165,6 @@ body {
     font-size: 20px;
     padding: 12px;
     border-radius: 50%;
-
 }
 
 .call div {
@@ -187,35 +185,37 @@ body {
     color: #101d70;
 }
 
+/* Brand Collaboration Button */
 .brand-collab-btn {
-            background: #007bff;
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(255, 107, 60, 0.35);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            font-size: 15px;
-        }
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(255, 107, 60, 0.35);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
 
-        .brand-collab-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 107, 60, 0.5);
-            background: black;
-        }
+.brand-collab-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 60, 0.5);
+    background: black;
+}
 
-        .brand-collab-btn:active {
-            transform: translateY(0);
-            box-shadow: 0 4px 15px rgba(255, 107, 60, 0.35);
-        }
+.brand-collab-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(255, 107, 60, 0.35);
+}
 
+/* Responsive - Tablets */
 @media (max-width: 1024px) {
     .brand-name {
         font-size: 24px;
@@ -227,62 +227,56 @@ body {
         gap: 15px;
     }
     .top-bar {
-                    font-size: 13px;
-                    padding: 10px 20px;
-                }
-
-                .top-right > span {
-                    margin-left: 15px;
-                }
-    call {
-            gap: 6px;
-        }
-        .call-icon {
-            font-size: 16px;
-            padding: 8px;
-        }
-        .call strong {
-            font-size: 14px;
-        }
-        .call div {
-            font-size: 12px;
-        }
-         .brand-collab-btn {
-                        padding: 12px 22px;
-                        font-size: 14px;
-                    }
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+    .top-right > span {
+        margin-left: 15px;
+    }
+    .call {
+        gap: 6px;
+    }
+    .call-icon {
+        font-size: 16px;
+        padding: 8px;
+    }
+    .call strong {
+        font-size: 14px;
+    }
+    .call div {
+        font-size: 12px;
+    }
+    .brand-collab-btn {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
 }
 
-
+/* Responsive - Small Laptops */
 @media (max-width: 900px) {
     .navbar {
         flex-wrap: wrap;
     }
-    call {
-            gap: 6px;
-        }
-        .call-icon {
-            font-size: 16px;
-            padding: 8px;
-        }
-        .call strong {
-            font-size: 14px;
-        }
-        .call div {
-            font-size: 12px;
-        }
-
+    .call {
+        gap: 6px;
+    }
+    .call-icon {
+        font-size: 16px;
+        padding: 8px;
+    }
+    .call strong {
+        font-size: 14px;
+    }
+    .call div {
+        font-size: 12px;
+    }
 }
 
-
-/* Responsive */
+/* Responsive - Tablets & Phones */
 @media (max-width: 768px) {
     .top-bar {
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 10px;
-                    padding: 12px 20px;
-                }
+        display: none; /* hide top bar */
+    }
 
     .navbar {
         flex-direction: column;
@@ -316,29 +310,27 @@ body {
         gap: 10px;
         margin-top: 10px;
     }
-    call {
-            gap: 6px;
-        }
-        .call-icon {
-            font-size: 16px;
-            padding: 8px;
-        }
-        .call strong {
-            font-size: 14px;
-        }
-        .call div {
-            font-size: 12px;
-        }
-        .brand-collab-btn {
-                        margin: 0 auto;
-                    }
 
+    .call {
+        gap: 6px;
+    }
+    .call-icon {
+        font-size: 16px;
+        padding: 8px;
+    }
+    .call strong {
+        font-size: 14px;
+    }
+    .call div {
+        font-size: 12px;
+    }
+
+    .brand-collab-btn {
+        margin: 0 auto;
+    }
 }
-.active {
-    color: #007bff;
-    font-weight: bold;
-    border-bottom: 2px solid #007bff;
-}
+
+/* Responsive - Phones */
 @media (max-width: 480px) {
     .brand-name {
         font-size: 20px;
@@ -347,7 +339,7 @@ body {
         font-size: 8px;
     }
     .top-right {
-        display: none; /* Hide extra text for very small screens */
+        display: none;
     }
     .icons {
         gap: 8px;
@@ -356,68 +348,31 @@ body {
         padding: 8px;
         font-size: 18px;
     }
+    .call {
+        gap: 6px;
+    }
+    .call-icon {
+        font-size: 16px;
+        padding: 8px;
+    }
+    .call strong {
+        font-size: 14px;
+    }
+    .call div {
+        font-size: 12px;
+    }
+    .brand-collab-btn {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+    .top-bar {
+        display: none; /* hide top bar again for safety */
+    }
+}
 
-    .top-right {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 8px;
-                }
-
-                .top-right > span {
-                    margin-left: 0;
-                }
-
-                .social-icons {
-                    margin-top: 5px;
-                }
-
-    call {
-            gap: 6px;
-        }
-        .call-icon {
-            font-size: 16px;
-            padding: 8px;
-        }
-        .call strong {
-            font-size: 14px;
-        }
-        .call div {
-            font-size: 12px;
-        }
-         .brand-collab-btn {
-                        padding: 12px 20px;
-                        font-size: 13px;
-                    }
- }
-
- .top-bar {
-             background: linear-gradient(to right, #101d70, #0c2c7a);
-             color: white;
-             padding: 8px 30px;
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-             font-size: 14px;
-             flex-wrap: wrap;
-         }
-
-         .top-bar i {
-             margin-right: 6px;
-             color: #04b4f0;
-         }
-
-         .top-right > span {
-             margin-left: 20px;
-         }
-
-         .social-icons a {
-             color: white;
-             text-decoration: none;
-             margin-left: 12px;
-             transition: all 0.3s ease;
-         }
-
-         .social-icons a:hover {
-             color: #04b4f0;
-             transform: translateY(-2px);
-         }
+/* Active Link */
+.active {
+    color: #007bff;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+}

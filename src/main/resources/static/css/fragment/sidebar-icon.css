@@ -1,151 +1,87 @@
-.side-icons {
-    position: fixed;
-    right: 20px;
-    top: 40%;
+ /* Floating Box (entire container) */
+    .floating-box {
+      position: fixed;
+      top: 60%;
+      right: 20px; /* shifted to right side */
+      transform: translateY(-50%);
+      background: #ffffff;
+      border-radius: 40px;
+      padding: 20px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      animation: floatBox 3s infinite ease-in-out;
+    }
 
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 1000;
-}
+    /* Floating effect for whole box */
+    @keyframes floatBox {
+      0%, 100% {
+        transform: translateY(-50%) translateX(0);
+      }
+      50% {
+        transform: translateY(-58%) translateX(0);
+      }
+    }
 
-.side-icons a {
-    background: #ff4c61;
-    color: white;
-    width: 52px;
-    height: 52px;
-    padding: 0;
-    border-radius: 50%;
-    text-align: center;
-    transition: all 0.3s ease-out;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    animation: bounce 2s infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none !important;
-    font-size: 22px;
-}
+    /* Floating Items (icons in circle) */
+    .floating-item {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #e6f3fc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-.side-icons a:hover {
-    transform: scale(1.15) rotate(5deg);
-    background: #e03950;
-    animation: none;
-    box-shadow: 0 6px 18px rgba(224, 57, 80, 0.4);
-    animation: pulse 1.5s infinite;
-}
+    /* Icon */
+    .floating-item i {
+      font-size: 24px;
+      color: #0099e6;
+      transition: color 0.3s ease;
+    }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
+    /* Hover effect */
+    .floating-item:hover {
+      transform: scale(1.1);
+      background: #0099e6;
     }
-    40% {
-        transform: translateY(-12px); /* Stronger bounce */
+    .floating-item:hover i {
+      color: #fff;
     }
-    60% {
-        transform: translateY(-6px);
-    }
-}
 
-/* New pulse animation for hover */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(224, 57, 80, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 12px rgba(224, 57, 80, 0); /* Larger pulse */
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(224, 57, 80, 0);
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .side-icons {
-        right: 18px;
-        gap: 14px;
-    }
-    .side-icons a {
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .floating-box {
+        right: 10px;
+        padding: 15px 8px;
+        gap: 15px;
+      }
+      .floating-item {
         width: 50px;
         height: 50px;
-        font-size: 21px;
-    }
-}
-
-/* =============================
-   Tablets & Small Laptops (≤992px)
-   ============================= */
-@media (max-width: 992px) {
-    .side-icons {
-        right: 16px;
-        gap: 13px;
-    }
-    .side-icons a {
-        width: 48px;
-        height: 48px;
+      }
+      .floating-item i {
         font-size: 20px;
+      }
     }
-}
 
-/* =============================
-   Tablets (≤768px)
-   ============================= */
-@media (max-width: 768px) {
-    .side-icons {
-        right: 15px;
-        bottom: 25px;
+    @media (max-width: 480px) {
+      .floating-box {
+        right: 5px;
         gap: 12px;
-    }
-    .side-icons a {
-        width: 46px;
-        height: 46px;
-        font-size: 19px;
-    }
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-8px); }
-        60% { transform: translateY(-4px); }
-    }
-    .side-icons a:hover {
-        transform: scale(1.12) rotate(4deg);
-    }
-}
-
-/* =============================
-   Small Phones (≤576px)
-   ============================= */
-@media (max-width: 576px) {
-    .side-icons {
-            flex-direction: column; /* Keep vertical */
-            bottom: 20px;           /* Push up from bottom */
-            right: 15px;            /* Stay on right side */
-            transform: none;        /* Remove centering */
-            gap: 10px;
-        }
-    .side-icons a {
-        width: 44px;
-        height: 44px;
+      }
+      .floating-item {
+        width: 45px;
+        height: 45px;
+      }
+      .floating-item i {
         font-size: 18px;
+      }
     }
-}
-
-/* =============================
-   Extra Small Phones (≤400px)
-   ============================= */
-@media (max-width: 400px) {
-    .side-icons {
-
-                flex-direction: column; /* Keep vertical */
-                bottom: 20px;           /* Push up from bottom */
-                right: 15px;            /* Stay on right side */
-                transform: none;        /* Remove centering */
-                gap: 10px;
-
-    }
-    .side-icons a {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-}

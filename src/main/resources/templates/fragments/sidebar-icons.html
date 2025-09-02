@@ -13,16 +13,27 @@
 
 <!-- Thymeleaf fragment definition -->
 <div th:fragment="sideIcons">
-  <div class="side-icons">
-    <a href="tel:+91-9919328475" class="animate-scale-in" title="Call Us">
-      <i class="fa-solid fa-phone-volume"></i>
-    </a>
-    <a href="#top" class="animate-scale-in" title="Go to Top">
-      <i class="fa-solid fa-arrow-up"></i>
-    </a>
-    <a href="mailto:contact@torrentmedia.in" class="animate-scale-in" title="Mail Us">
-      <i class="fa-solid fa-envelope"></i>
-    </a>
+<!--  <div class="side-icons">-->
+<!--    <a href="tel:+91-9919328475" class="animate-scale-in" title="Call Us">-->
+<!--      <i class="fa-solid fa-phone-volume"></i>-->
+<!--    </a>-->
+<!--    <a href="#top" class="animate-scale-in" title="Go to Top">-->
+<!--      <i class="fa-solid fa-arrow-up"></i>-->
+<!--    </a>-->
+<!--    <a href="mailto:contact@torrentmedia.in" class="animate-scale-in" title="Mail Us">-->
+<!--      <i class="fa-solid fa-envelope"></i>-->
+<!--    </a>-->
+<!--  </div>-->
+  <div class="floating-box">
+    <div class="floating-item" onclick="window.location.href='tel:+91-9919328475'">
+      <i class="fas fa-phone-alt"></i>
+    </div>
+    <div class="floating-item" onclick="window.open('https://www.google.com/maps/place/Bengaluru,+Karnataka/@12.9539974,77.6309395,11z/data=!3m1!4b1!4m6!3m5!1s0x3bae1670c9b44e6d:0xf8dfc3e8517e4fe0!8m2!3d12.9628669!4d77.577509!16zL20vMDljMTc?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D', '_blank')">
+      <i class="fas fa-location-arrow"></i>
+    </div>
+    <div class="floating-item" onclick="window.location.href='mailto:contact@torrentmedia.in'">
+      <i class="fas fa-envelope"></i>
+    </div>
   </div>
 </div>
 

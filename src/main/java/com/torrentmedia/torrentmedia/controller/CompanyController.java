@@ -29,9 +29,17 @@ public class CompanyController {
     }
     @GetMapping("/companies-list/admin")
     public String showCompaniesAdmin(Model model) {
-        model.addAttribute("companies", companyService.getAllCompanies());
-        List<Company> cc = companyService.getAllCompanies();
-        System.out.println(cc.getFirst());
+        List<Company> companies = companyService.getAllCompanies();
+        //model.addAttribute("companies", companyService.getAllCompanies());
+        if (!companies.isEmpty()) {
+            Company first = companies.getFirst(); // safe
+            model.addAttribute("companies", companies);
+        } else {
+            // handle empty case gracefully
+            model.addAttribute("companies", null);
+        }
+//        List<Company> cc = companyService.getAllCompanies();
+//        System.out.println(cc.getFirst());
         model.addAttribute("company", new Company()); // for form binding
         return "form/form-management"; // Thymeleaf template
     }
