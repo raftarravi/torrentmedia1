@@ -830,6 +830,10 @@ ul, ol {
     .hero-content {
             padding: 15px;
         }
+        .hero-cta{
+        justify-items: center;
+        }
+
 }
 
 @media (max-width: 576px) {
@@ -860,5 +864,9 @@ ul, ol {
     }
     .hero-content {
         padding: 15px;
+    }
+    .hero-cta{
+            justify-items: center;
+            align-items: center;
     }
 }

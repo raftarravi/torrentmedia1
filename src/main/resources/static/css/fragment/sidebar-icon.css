@@ -64,8 +64,8 @@
         gap: 15px;
       }
       .floating-item {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
       }
       .floating-item i {
         font-size: 20px;
@@ -78,8 +78,8 @@
         gap: 12px;
       }
       .floating-item {
-        width: 45px;
-        height: 45px;
+        width: 35px;
+        height: 35px;
       }
       .floating-item i {
         font-size: 18px;

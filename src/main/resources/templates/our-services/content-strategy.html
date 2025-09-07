@@ -303,11 +303,35 @@
 
 <!-- AOS Animation -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
+    // Initialize AOS with options
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            disable: window.innerWidth < 768 ? true : false // Disable on mobile if preferred
+        });
+
+        // Add loading state to buttons
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                }
+
+                this.style.opacity = '0.8';
+                this.style.pointerEvents = 'none';
+
+                // Simulate loading (remove in production)
+                setTimeout(() => {
+                    this.style.opacity = '1';
+                    this.style.pointerEvents = 'auto';
+                }, 1500);
+            });
+        });
     });
 </script>
 </body>
