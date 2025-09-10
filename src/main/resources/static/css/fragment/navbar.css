@@ -327,6 +327,7 @@ body {
 
     .brand-collab-btn {
         margin: 0 auto;
+
     }
 }
 
@@ -347,7 +348,12 @@ body {
     .search-icon, .grid-icon {
         padding: 8px;
         font-size: 18px;
+
     }
+    .search-box {
+            display: none !important;
+    }
+
     .call {
         gap: 6px;
     }

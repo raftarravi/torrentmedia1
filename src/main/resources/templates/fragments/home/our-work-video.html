@@ -1,145 +1,344 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div th:fragment="videoGrid">-->
+<!--  <style>-->
+<!--    body {-->
+<!--    margin: 0;-->
+<!--    padding: 0;-->
+<!--    background: #ffffff;-->
+<!--    }-->
+
+<!--    .video-grid {-->
+<!--    display: grid;-->
+<!--    grid-template-columns: repeat(3, 1fr);-->
+<!--    gap: 10px;-->
+<!--    max-width: 1800px;-->
+<!--    margin: 0 auto;-->
+<!--    padding: 10px;-->
+<!--    }-->
+
+<!--    .video-container {-->
+<!--    position: relative;-->
+<!--    width: 100%;-->
+<!--    padding-bottom: 177.78%; /* 9:16 aspect ratio → (16/9 * 100) */-->
+<!--    height: 0;-->
+<!--    overflow: hidden;-->
+<!--    background: #000; /* black bg like reels */-->
+<!--    border-radius: 12px;-->
+<!--    box-shadow: 0 4px 10px rgba(0,0,0,0.15);-->
+<!--    }-->
+
+<!--    .video-container video {-->
+<!--    position: absolute;-->
+<!--    top: 0;-->
+<!--    left: 0;-->
+<!--    width: 100%;   /* take full width */-->
+<!--    height: 100%;  /* maintain aspect ratio */-->
+<!--    object-fit: cover; /* crop to fill reel-style */-->
+<!--    border-radius: 12px;-->
+<!--    }-->
+
+<!--    .video-label {-->
+<!--    position: absolute;-->
+<!--    bottom: 10px;-->
+<!--    left: 10px;-->
+<!--    color: white;-->
+<!--    background: rgba(0,0,0,0.7);-->
+<!--    padding: 5px 10px;-->
+<!--    border-radius: 4px;-->
+<!--    font-size: 14px;-->
+<!--    z-index: 1;-->
+<!--    }-->
+
+<!--    /* Responsive grids */-->
+<!--    @media (max-width: 1200px) {-->
+<!--    .video-grid {-->
+<!--    grid-template-columns: repeat(3, 1fr);-->
+<!--    }-->
+<!--    }-->
+<!--    @media (max-width: 768px) {-->
+<!--    .video-container:nth-child(n+4) {-->
+<!--      display: none;-->
+<!--    }-->
+<!--    .video-grid {-->
+<!--    grid-template-columns: repeat(2, 1fr);-->
+<!--    }-->
+<!--    }-->
+<!--    @media (max-width: 480px) {-->
+<!--    .video-grid {-->
+<!--    grid-template-columns: 1fr;-->
+<!--    }-->
+<!--    }-->
+<!--  </style>-->
+<!--  <div class="video-grid">-->
+<!--    <div class="video-container">-->
+<!--      <video muted loop autoplay playsinline>-->
+<!--        <source src="video/video1.mp4" type="video/mp4">-->
+<!--      </video>-->
+<!--      <div class="video-label"></div>-->
+<!--    </div>-->
+<!--    <div class="video-container">-->
+<!--      <video muted loop autoplay playsinline>-->
+<!--        <source src="video/video2.mp4" type="video/mp4">-->
+<!--      </video>-->
+<!--      <div class="video-label"></div>-->
+<!--    </div>-->
+<!--    <div class="video-container">-->
+<!--      <video muted loop autoplay playsinline>-->
+<!--        <source src="video/video3.mp4" type="video/mp4">-->
+<!--      </video>-->
+<!--      <div class="video-label"></div>-->
+<!--    </div>-->
+<!--    <div class="video-container">-->
+<!--      <video muted loop autoplay playsinline>-->
+<!--        <source src="video/video4.mp4" type="video/mp4">-->
+<!--      </video>-->
+<!--      <div class="video-label"></div>-->
+<!--    </div>-->
+<!--    <div class="video-container">-->
+<!--      <video muted loop autoplay playsinline>-->
+<!--        <source src="video/video5.mp4" type="video/mp4">-->
+<!--      </video>-->
+<!--      <div class="video-label"></div>-->
+<!--    </div>-->
+<!--    <div class="video-container">-->
+<!--      <video muted loop autoplay playsinline>-->
+<!--        <source src="video/video6.mp4" type="video/mp4">-->
+<!--      </video>-->
+<!--      <div class="video-label"></div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--  <script>-->
+<!--    document.addEventListener('DOMContentLoaded', function() {-->
+<!--        const videos = document.querySelectorAll('.video-container video');-->
+
+<!--        // Keep all videos autoplay + muted-->
+<!--        videos.forEach(video => {-->
+<!--            video.muted = true;-->
+<!--            video.play().catch(e => console.log('Autoplay prevented:', e));-->
+
+<!--            // Turn ON sound on hover-->
+<!--            video.parentElement.addEventListener('mouseenter', () => {-->
+<!--                // First mute all videos (only one plays with sound at a time)-->
+<!--                videos.forEach(v => v.muted = true);-->
+<!--                video.muted = false;-->
+<!--            });-->
+
+<!--            // Turn OFF sound when hover ends-->
+<!--            video.parentElement.addEventListener('mouseleave', () => {-->
+<!--                video.muted = true;-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+<!--  </script>-->
+
+
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Video Grid</title>
+
 </head>
 <body>
+
 <div th:fragment="videoGrid">
+
   <style>
-  body {
-  margin: 0;
-  padding: 0;
-  background: #ffffff;
-  }
+    :root {
+      --bg-color: #f9f9f9;
+      --label-bg: rgba(0,0,0,0.6);
+      --label-gradient: linear-gradient(45deg, #ff4d6d, #6b5bff);
+      --transition-speed: 0.3s;
+    }
 
-  .video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 10px;
-  }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: var(--bg-color);
+    }
 
-  .video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 177.78%; /* 9:16 aspect ratio → (16/9 * 100) */
-  height: 0;
-  overflow: hidden;
-  background: #000; /* black bg like reels */
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  }
+    /* Grid layout */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+      max-width: 1800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-  .video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;   /* take full width */
-  height: 100%;  /* maintain aspect ratio */
-  object-fit: cover; /* crop to fill reel-style */
-  border-radius: 12px;
-  }
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 177.78%; /* 9:16 aspect ratio */
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      background: #000;
+      cursor: pointer;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
 
-  .video-label {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
-  background: rgba(0,0,0,0.7);
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 14px;
-  z-index: 1;
-  }
+    .video-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    }
 
-  /* Responsive grids */
-  @media (max-width: 1200px) {
-  .video-grid {
-  grid-template-columns: repeat(3, 1fr);
-  }
-  }
-  @media (max-width: 768px) {
-  .video-container:nth-child(n+4) {
-    display: none;
-  }
-  .video-grid {
-  grid-template-columns: repeat(2, 1fr);
-  }
-  }
-  @media (max-width: 480px) {
-  .video-grid {
-  grid-template-columns: 1fr;
-  }
-  }
-</style>
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      transition: transform var(--transition-speed);
+    }
+
+    .video-container:hover video {
+      transform: scale(1.03);
+    }
+
+    .video-label {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      color: #fff;
+      background: var(--label-bg);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      z-index: 2;
+      backdrop-filter: blur(4px);
+      transition: background var(--transition-speed);
+    }
+
+    .video-label:hover {
+      background: var(--label-gradient);
+      color: #fff;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 15px;
+      }
+      .video-label {
+        font-size: 13px;
+        padding: 5px 10px;
+      }
+      .video-container:nth-child(n+4) {
+         display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .video-label {
+        font-size: 12px;
+        padding: 4px 8px;
+      }
+    }
+  </style>
+
   <div class="video-grid">
     <div class="video-container">
-      <video muted loop autoplay playsinline>
+      <video muted loop playsinline>
         <source src="video/video1.mp4" type="video/mp4">
       </video>
-      <div class="video-label"></div>
+
     </div>
     <div class="video-container">
-      <video muted loop autoplay playsinline>
+      <video muted loop playsinline>
         <source src="video/video2.mp4" type="video/mp4">
       </video>
-      <div class="video-label"></div>
+
     </div>
     <div class="video-container">
-      <video muted loop autoplay playsinline>
+      <video muted loop playsinline>
         <source src="video/video3.mp4" type="video/mp4">
       </video>
-      <div class="video-label"></div>
+
     </div>
     <div class="video-container">
-      <video muted loop autoplay playsinline>
+      <video muted loop playsinline>
         <source src="video/video4.mp4" type="video/mp4">
       </video>
-      <div class="video-label"></div>
+
     </div>
     <div class="video-container">
-      <video muted loop autoplay playsinline>
+      <video muted loop playsinline>
         <source src="video/video5.mp4" type="video/mp4">
       </video>
-      <div class="video-label"></div>
+
     </div>
     <div class="video-container">
-      <video muted loop autoplay playsinline>
+      <video muted loop playsinline>
         <source src="video/video6.mp4" type="video/mp4">
       </video>
-      <div class="video-label"></div>
     </div>
-
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const videos = document.querySelectorAll('.video-container video');
+      const videos = document.querySelectorAll('.video-container video');
 
-        // Keep all videos autoplay + muted
-        videos.forEach(video => {
-            video.muted = true;
+      // Lazy play using Intersection Observer
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const video = entry.target;
+          if(entry.isIntersecting) {
             video.play().catch(e => console.log('Autoplay prevented:', e));
-
-            // Turn ON sound on hover
-            video.parentElement.addEventListener('mouseenter', () => {
-                // First mute all videos (only one plays with sound at a time)
-                videos.forEach(v => v.muted = true);
-                video.muted = false;
-            });
-
-            // Turn OFF sound when hover ends
-            video.parentElement.addEventListener('mouseleave', () => {
-                video.muted = true;
-            });
+          } else {
+            video.pause();
+          }
         });
+      }, { threshold: 0.5 });
+
+      videos.forEach(video => {
+        video.muted = true;
+        observer.observe(video);
+      });
+
+      // Desktop hover sound
+      videos.forEach(video => {
+        video.parentElement.addEventListener('mouseenter', () => {
+          videos.forEach(v => v.muted = true);
+          video.muted = false;
+        });
+        video.parentElement.addEventListener('mouseleave', () => {
+          video.muted = true;
+        });
+      });
+
+      // Mobile tap-to-play
+      if(window.innerWidth <= 768) {
+        videos.forEach(video => {
+          video.parentElement.addEventListener('click', () => {
+            if(video.paused) video.play();
+            else video.pause();
+          });
+        });
+      }
     });
   </script>
-
-
 </div>
 
 </body>

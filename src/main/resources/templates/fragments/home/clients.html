@@ -1,0 +1,571 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  &lt;!&ndash; FontAwesome (arrows) &ndash;&gt;-->
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">-->
+<!--  &lt;!&ndash; Owl Carousel CSS &ndash;&gt;-->
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">-->
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">-->
+<!--</head>-->
+<!--<body>-->
+
+<!--&lt;!&ndash;&lt;!&ndash; Torrent Media Clients Section &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<section th:fragment="clients" id="tm_clients" class="tm_clients front-clients">&ndash;&gt;-->
+<!--&lt;!&ndash;  <style>&ndash;&gt;-->
+<!--&lt;!&ndash;    .tm_clients {&ndash;&gt;-->
+<!--&lt;!&ndash;      padding: 70px 0;&ndash;&gt;-->
+<!--&lt;!&ndash;      background: linear-gradient(135deg, #fdfdfd, #f5f7fa);&ndash;&gt;-->
+<!--&lt;!&ndash;      text-align: center;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .tm_clients .title {&ndash;&gt;-->
+<!--&lt;!&ndash;      font-size: 26px;&ndash;&gt;-->
+<!--&lt;!&ndash;      margin-bottom: 50px;&ndash;&gt;-->
+<!--&lt;!&ndash;      color: #222;&ndash;&gt;-->
+<!--&lt;!&ndash;      font-weight: 700;&ndash;&gt;-->
+<!--&lt;!&ndash;      letter-spacing: 0.5px;&ndash;&gt;-->
+<!--&lt;!&ndash;      display: inline-block;&ndash;&gt;-->
+<!--&lt;!&ndash;      position: relative;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .tm_clients .title::after {&ndash;&gt;-->
+<!--&lt;!&ndash;      content: "";&ndash;&gt;-->
+<!--&lt;!&ndash;      display: block;&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 70px;&ndash;&gt;-->
+<!--&lt;!&ndash;      height: 3px;&ndash;&gt;-->
+<!--&lt;!&ndash;      background: #0F9D58;&ndash;&gt;-->
+<!--&lt;!&ndash;      margin: 12px auto 0;&ndash;&gt;-->
+<!--&lt;!&ndash;      border-radius: 2px;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    /* Each carousel item */&ndash;&gt;-->
+<!--&lt;!&ndash;    .owl-carousel .item {&ndash;&gt;-->
+<!--&lt;!&ndash;      display: flex;&ndash;&gt;-->
+<!--&lt;!&ndash;      justify-content: center;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .tm_clients_logo {&ndash;&gt;-->
+<!--&lt;!&ndash;      padding: 20px;&ndash;&gt;-->
+<!--&lt;!&ndash;      background: #fff;&ndash;&gt;-->
+<!--&lt;!&ndash;      border-radius: 14px;&ndash;&gt;-->
+<!--&lt;!&ndash;      box-shadow: 0 4px 12px rgba(0,0,0,0.05);&ndash;&gt;-->
+<!--&lt;!&ndash;      transition: transform 0.4s ease, box-shadow 0.4s ease;&ndash;&gt;-->
+<!--&lt;!&ndash;      position: relative;&ndash;&gt;-->
+<!--&lt;!&ndash;      overflow: hidden;&ndash;&gt;-->
+<!--&lt;!&ndash;      max-width: 160px; /* limit width */&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .tm_clients_logo img {&ndash;&gt;-->
+<!--&lt;!&ndash;      max-width: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;      height: 80px;&ndash;&gt;-->
+<!--&lt;!&ndash;      object-fit: contain;&ndash;&gt;-->
+<!--&lt;!&ndash;      filter: grayscale(100%) brightness(0.85);&ndash;&gt;-->
+<!--&lt;!&ndash;      transition: filter 0.4s ease, transform 0.4s ease;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .tm_clients_logo:hover {&ndash;&gt;-->
+<!--&lt;!&ndash;      transform: translateY(-10px) scale(1.07) rotate(-1deg);&ndash;&gt;-->
+<!--&lt;!&ndash;      box-shadow: 0 12px 28px rgba(0,0,0,0.2);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .tm_clients_logo:hover img {&ndash;&gt;-->
+<!--&lt;!&ndash;      filter: grayscale(0%) brightness(1.05);&ndash;&gt;-->
+<!--&lt;!&ndash;      transform: scale(1.15) rotate(2deg);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    /* Owl Nav Arrows */&ndash;&gt;-->
+<!--&lt;!&ndash;    .owl-nav {&ndash;&gt;-->
+<!--&lt;!&ndash;      position: absolute;&ndash;&gt;-->
+<!--&lt;!&ndash;      top: 40%;&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;      display: flex;&ndash;&gt;-->
+<!--&lt;!&ndash;      justify-content: space-between;&ndash;&gt;-->
+<!--&lt;!&ndash;      pointer-events: none;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .owl-nav button {&ndash;&gt;-->
+<!--&lt;!&ndash;      background: rgba(15,157,88,0.85) !important;&ndash;&gt;-->
+<!--&lt;!&ndash;      color: #fff !important;&ndash;&gt;-->
+<!--&lt;!&ndash;      border-radius: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 44px;&ndash;&gt;-->
+<!--&lt;!&ndash;      height: 44px;&ndash;&gt;-->
+<!--&lt;!&ndash;      font-size: 18px !important;&ndash;&gt;-->
+<!--&lt;!&ndash;      display: flex;&ndash;&gt;-->
+<!--&lt;!&ndash;      align-items: center;&ndash;&gt;-->
+<!--&lt;!&ndash;      justify-content: center;&ndash;&gt;-->
+<!--&lt;!&ndash;      pointer-events: all;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;  </style>&ndash;&gt;-->
+
+<!--&lt;!&ndash;  <div class="tm-container">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h5 class="title">Torrent Media Happy Clients</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="tm_owl_carousel owl-carousel owl-theme">&ndash;&gt;-->
+
+<!--&lt;!&ndash;      &lt;!&ndash; Logos must be wrapped in .item &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="tm_clients_logo">&ndash;&gt;-->
+<!--&lt;!&ndash;          <img th:src="@{/images/clients-logo/cpy-fashion.jpeg}" alt="Client 1">&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="tm_clients_logo">&ndash;&gt;-->
+<!--&lt;!&ndash;          <img th:src="@{/images/clients-logo/bansal-medicos.jpeg}" alt="Client 2">&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="tm_clients_logo">&ndash;&gt;-->
+<!--&lt;!&ndash;          <img th:src="@{/images/clients-logo/niket-marble.jpeg}" alt="Client 3">&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="tm_clients_logo">&ndash;&gt;-->
+<!--&lt;!&ndash;          <img th:src="@{/images/clients-logo/hika.png}" alt="Client 4">&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="tm_clients_logo">&ndash;&gt;-->
+<!--&lt;!&ndash;          <img th:src="@{/images/clients-logo/skyplan.jpeg}" alt="Client 5">&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</section>&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash; JS (must be after HTML) &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+<!--&lt;!&ndash;  $(document).ready(function () {&ndash;&gt;-->
+<!--&lt;!&ndash;    $(".tm_owl_carousel").owlCarousel({&ndash;&gt;-->
+<!--&lt;!&ndash;      loop: true,&ndash;&gt;-->
+<!--&lt;!&ndash;      autoplay: true,&ndash;&gt;-->
+<!--&lt;!&ndash;      autoplayTimeout: 0,&ndash;&gt;-->
+<!--&lt;!&ndash;      autoplaySpeed: 8000,&ndash;&gt;-->
+<!--&lt;!&ndash;      slideTransition: 'linear',&ndash;&gt;-->
+<!--&lt;!&ndash;      nav: true,&ndash;&gt;-->
+<!--&lt;!&ndash;      navText: [&ndash;&gt;-->
+<!--&lt;!&ndash;        "<i class='fas fa-angle-left'></i>",&ndash;&gt;-->
+<!--&lt;!&ndash;        "<i class='fas fa-angle-right'></i>"&ndash;&gt;-->
+<!--&lt;!&ndash;      ],&ndash;&gt;-->
+<!--&lt;!&ndash;      dots: false,&ndash;&gt;-->
+<!--&lt;!&ndash;      margin: 30,&ndash;&gt;-->
+<!--&lt;!&ndash;      responsive: {&ndash;&gt;-->
+<!--&lt;!&ndash;        0: { items: 2, margin: 15 },&ndash;&gt;-->
+<!--&lt;!&ndash;        575: { items: 3, margin: 20 },&ndash;&gt;-->
+<!--&lt;!&ndash;        767: { items: 4, margin: 25 },&ndash;&gt;-->
+<!--&lt;!&ndash;        991: { items: 5, margin: 30 },&ndash;&gt;-->
+<!--&lt;!&ndash;        1199: { items: 6, margin: 40 }&ndash;&gt;-->
+<!--&lt;!&ndash;      }&ndash;&gt;-->
+<!--&lt;!&ndash;    });&ndash;&gt;-->
+<!--&lt;!&ndash;  });&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+
+<!--&lt;!&ndash; fragments/clients.html &ndash;&gt;-->
+<!--<div th:fragment="clients">-->
+<!--  <style>-->
+<!--    .dt_clients {-->
+<!--      padding: 50px 0;-->
+<!--      text-align: center;-->
+<!--    }-->
+
+<!--    .dt_clients .title {-->
+<!--      font-size: 24px;-->
+<!--      font-weight: bold;-->
+<!--      margin-bottom: 30px;-->
+<!--    }-->
+
+<!--    /* Card styling */-->
+<!--    .dt_clients_logo {-->
+<!--      display: flex;-->
+<!--      align-items: center;-->
+<!--      justify-content: center;-->
+<!--      background: #fff;-->
+<!--      padding: 15px;-->
+<!--      border-radius: 12px;-->
+<!--      min-width: fit-content;-->
+<!--      min-height: fit-content;-->
+<!--      border: 2px solid transparent;-->
+<!--      transition: all 0.3s ease-in-out;-->
+<!--    }-->
+
+<!--    /* Hover: border becomes blue */-->
+<!--    .dt_clients_logo:hover {-->
+<!--      border: 2px solid #007bff;-->
+<!--      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);-->
+<!--      transform: translateY(-5px);-->
+<!--    }-->
+
+<!--    .dt_clients_logo img {-->
+<!--      max-width: 100%;-->
+<!--      height: auto;-->
+<!--      display: block;-->
+<!--      object-fit: contain;-->
+<!--    }-->
+
+<!--    /* Owl nav styling */-->
+<!--    .owl-nav button {-->
+<!--      position: absolute;-->
+<!--      top: 50%;-->
+<!--      transform: translateY(-50%);-->
+<!--      background: rgba(255, 255, 255, 0.9);-->
+<!--      border: none;-->
+<!--      font-size: 22px;-->
+<!--      color: #333;-->
+<!--      width: 40px;-->
+<!--      height: 40px;-->
+<!--      border-radius: 50%;-->
+<!--      display: flex;-->
+<!--      align-items: center;-->
+<!--      justify-content: center;-->
+<!--      box-shadow: 0 2px 6px rgba(0,0,0,0.15);-->
+<!--      transition: all 0.3s ease-in-out;-->
+<!--    }-->
+
+<!--    .owl-nav button:hover {-->
+<!--      background: #007bff;-->
+<!--      color: #fff;-->
+<!--    }-->
+
+<!--    .owl-nav .owl-prev {-->
+<!--      left: -50px;-->
+<!--    }-->
+
+<!--    .owl-nav .owl-next {-->
+<!--      right: -50px;-->
+<!--    }-->
+
+<!--    /* Responsive nav adjustments */-->
+<!--    @media (max-width: 768px) {-->
+<!--      .owl-nav .owl-prev { left: -25px; }-->
+<!--      .owl-nav .owl-next { right: -25px; }-->
+<!--      .owl-nav button { width: 35px; height: 35px; font-size: 18px; }-->
+<!--    }-->
+
+<!--    @media (max-width: 480px) {-->
+<!--      .owl-nav .owl-prev { left: -15px; }-->
+<!--      .owl-nav .owl-next { right: -15px; }-->
+<!--      .owl-nav button { width: 30px; height: 30px; font-size: 16px; }-->
+<!--    }-->
+<!--  </style>-->
+
+<!--  <section id="dt_clients" class="dt_clients dt_clients&#45;&#45;one front-clients">-->
+<!--    <div class="dt-container">-->
+<!--      <h5 class="title">Torrent media Happy Family</h5>-->
+<!--      <div class="dt_owl_carousel owl-theme owl-carousel" data-owl-options='{-->
+<!--        "loop": true,-->
+<!--        "autoplay": true,-->
+<!--        "autoplayTimeout": 5000,-->
+<!--        "autoplayHoverPause": true,-->
+<!--        "nav": true,-->
+<!--        "navText": ["<i class=\"fas fa-angle-left\"></i>","<i class=\"fas fa-angle-right\"></i>"],-->
+<!--        "dots": false,-->
+<!--        "margin": 20,-->
+<!--        "items": 2,-->
+<!--        "smartSpeed": 700,-->
+<!--        "stagePadding": 10,-->
+<!--        "responsive": {-->
+<!--          "0": {"margin": 10, "items": 2},-->
+<!--          "375": {"margin": 15, "items": 2},-->
+<!--          "575": {"margin": 20, "items": 3},-->
+<!--          "767": {"margin": 25, "items": 4},-->
+<!--          "991": {"margin": 30, "items": 5},-->
+<!--          "1199": {"margin": 40, "items": 5}-->
+<!--        }-->
+<!--      }'>-->
+<!--        <div class="dt_clients_logo">-->
+<!--          <a href="javascript:void(0);">-->
+<!--            <img src="https://novarsis.tech/wp-content/uploads/2025/07/Clients-Logo-for-Novarsis-Pic-1-scaled.webp" alt="">-->
+<!--          </a>-->
+<!--        </div>-->
+
+<!--        <div class="dt_clients_logo">-->
+<!--          <a href="javascript:void(0);">-->
+<!--            <img src="https://novarsis.tech/wp-content/uploads/2025/07/Clients-Logo-for-Novarsis-Pic-2-scaled.webp" alt="">-->
+<!--          </a>-->
+<!--        </div>-->
+
+<!--        <div class="dt_clients_logo">-->
+<!--          <a href="javascript:void(0);">-->
+<!--            <img src="https://novarsis.tech/wp-content/uploads/2025/07/Clients-Logo-for-Novarsis-Pic-3-scaled.webp" alt="">-->
+<!--          </a>-->
+<!--        </div>-->
+
+<!--        <div class="dt_clients_logo">-->
+<!--          <a href="javascript:void(0);">-->
+<!--            <img src="https://novarsis.tech/wp-content/uploads/2025/07/Clients-Logo-for-Novarsis-Pic-4-scaled.webp" alt="">-->
+<!--          </a>-->
+<!--        </div>-->
+
+<!--        <div class="dt_clients_logo">-->
+<!--          <a href="javascript:void(0);">-->
+<!--            <img src="https://novarsis.tech/wp-content/uploads/2025/07/Clients-Logo-for-Novarsis-Pic-5-scaled.webp" alt="">-->
+<!--          </a>-->
+<!--        </div>-->
+
+<!--        <div class="dt_clients_logo">-->
+<!--          <a href="javascript:void(0);">-->
+<!--            <img src="https://novarsis.tech/wp-content/uploads/2025/07/Clients-Logo-for-Novarsis-Pic-6-scaled.webp" alt="">-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+<!--  <script>-->
+<!--    $(document).ready(function(){-->
+<!--      $(".dt_owl_carousel").each(function () {-->
+<!--        var $carousel = $(this);-->
+<!--        var options = $carousel.data("owl-options");-->
+<!--        $carousel.owlCarousel(options);-->
+<!--      });-->
+<!--    });-->
+<!--  </script>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novarsis Clients</title>
+
+  <!-- FontAwesome for navigation arrows -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
+</head>
+<body>
+<div th:fragment="clients">
+  <style>
+    body {
+   font-family: Arial, sans-serif;
+   background: #fff; /* light gray page background for contrast */
+   margin: 0;
+   padding: 0;
+ }
+
+ .dt_clients {
+   padding: 60px 0;
+   text-align: center;
+ }
+
+ .dt_clients .title {
+   font-size: 26px;
+   font-weight: bold;
+   margin-bottom: 40px;
+   color: #333;
+ }
+ /* Title styling with gradient and animation */
+.dt_clients .title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #007bff, #00c6ff, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+  animation: gradientMove 3s linear infinite;
+}
+
+/* Shine animation on text */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Optional: underline graphics effect */
+.dt_clients .title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #007bff;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0,123,255,0.4);
+  animation: underlinePulse 2s infinite;
+}
+
+@keyframes underlinePulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.7; }
+  50% { transform: scaleX(1.3); opacity: 1; }
+}
+
+
+ /* Card container for each logo with fixed size */
+ .dt_clients_logo {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #ffffff;              /* white card */
+   width: 220px;                     /* fixed width */
+   height: 160px;                    /* fixed height */
+   padding: 15px;                    /* internal spacing */
+   margin: 15px;
+   border-radius: 15px;
+   border: 2px solid transparent;    /* invisible default border */
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+   transition: all 0.3s ease-in-out;
+   cursor: pointer;
+ }
+
+ /* Remove underline and gap */
+ .dt_clients_logo a {
+   text-decoration: none !important;
+   display: block;
+   line-height: 0;
+   width: 100%;
+   height: 100%;
+ }
+
+ /* Image styling inside fixed card */
+ .dt_clients_logo img {
+   max-width: 100%;
+   max-height: 100%;
+   object-fit: contain;
+   display: block;
+   margin: 0 auto;
+ }
+
+ /* Hover effect: blue border + glow + lift */
+ .dt_clients_logo:hover {
+   border: 2px solid #007bff;
+   box-shadow: 0 8px 20px rgba(0, 123, 255, 0.25);
+   transform: translateY(-5px);
+ }
+
+ /* Owl Carousel navigation buttons */
+ .owl-nav button {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   background: rgba(255, 255, 255, 0.95);
+   border: none;
+   font-size: 22px;
+   color: #333;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+   transition: all 0.3s ease-in-out;
+ }
+
+ .owl-nav button:hover {
+   background: #007bff;
+   color: #fff;
+   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.35);
+ }
+
+ .owl-nav .owl-prev { left: -50px; }
+ .owl-nav .owl-next { right: -50px; }
+
+ /* Responsive adjustments */
+ @media (max-width: 768px) {
+   .owl-nav .owl-prev { left: -25px; }
+   .owl-nav .owl-next { right: -25px; }
+   .owl-nav button { width: 35px; height: 35px; font-size: 18px; }
+   .dt_clients_logo {width: 180px;                     /* fixed width */
+   height: 120px; }
+ }
+
+ @media (max-width: 480px) {
+   .owl-nav .owl-prev { left: -15px; }
+   .owl-nav .owl-next { right: -15px; }
+   .owl-nav button { width: 30px; height: 30px; font-size: 16px; }
+ }
+
+  </style>
+  <section id="dt_clients" class="dt_clients dt_clients--one front-clients">
+    <div class="dt-container">
+      <h5 class="title">Our Happy Clients</h5>
+      <div class="dt_owl_carousel owl-theme owl-carousel" data-owl-options='{
+        "loop": true,
+        "autoplay": true,
+        "autoplayTimeout": 5000,
+        "autoplayHoverPause": true,
+        "nav": true,
+        "navText": ["<i class=\"fas fa-angle-left\"></i>","<i class=\"fas fa-angle-right\"></i>"],
+        "dots": false,
+        "margin": 20,
+        "items": 2,
+        "smartSpeed": 700,
+        "stagePadding": 10,
+        "responsive": {
+          "0": {"margin": 10, "items": 2},
+          "375": {"margin": 15, "items": 2},
+          "575": {"margin": 20, "items": 3},
+          "767": {"margin": 25, "items": 4},
+          "991": {"margin": 30, "items": 5},
+          "1199": {"margin": 40, "items": 5}
+        }
+      }'>
+        <!-- Card 1 -->
+        <div class="dt_clients_logo">
+          <a href="javascript:void(0);">
+            <img th:src="@{/images/clients-logo/cpy-fashion.jpeg}" alt="">
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="dt_clients_logo">
+          <a href="javascript:void(0);">
+            <img th:src="@{/images/clients-logo/bansal-medicos.jpeg}" alt="">
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="dt_clients_logo">
+          <a href="javascript:void(0);">
+            <img  th:src="@{/images/clients-logo/niket-marble.jpeg}" alt="">
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="dt_clients_logo">
+          <a href="javascript:void(0);">
+            <img th:src="@{/images/clients-logo/hika.png}" alt="">
+          </a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="dt_clients_logo">
+          <a href="javascript:void(0);">
+            <img th:src="@{/images/clients-logo/skyplan.jpeg}" alt="">
+          </a>
+        </div>
+  </section>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $(".dt_owl_carousel").each(function () {
+        var $carousel = $(this);
+        var options = $carousel.data("owl-options");
+        $carousel.owlCarousel(options);
+      });
+    });
+  </script>
+</div>
+</body>
+</html>
